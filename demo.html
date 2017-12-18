@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo</title>
+	<link rel="stylesheet" href="style/main.css">
+	<link rel=icon href=img/favicon.png sizes="16x16" type="image/png">
+	<link rel=icon href=img/icon.png sizes="128x128" type="image/png">
+	<script src="js/main.js"></script>
+</head>
+<body>
+<header class="bg-gradient-ocher">
+	<h1 class="icon-menu text-white icon" id="menuButton"></h1>
+	<h1 class="text-white text-center banner" style="font-family: 'Ubuntu'">Título principal</h1>
+	<h1 class="icon-user icon text-white" id="footerButton"></h1>
+</header>
+<nav id="menu" class="sidebar">
+<fieldset class="lista border-orange bg-dark-grey"><legend class="border border-orange text-blue bg-dark-grey">Lista de enlaces:</legend>
+    <ul class="row-container no-style">
+        <li class="row-content text-center"><a href="#">elemento ul 1</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 2</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 3</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 4</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 5</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 6</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 7</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 8</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 9</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 10</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 11</a></li>
+        <li class="row-content text-center"><a href="#">elemento ul 12</a></li>
+    </ul>
+</fieldset>
+</nav>
+<section>
+	<article class="text-center">
+		<h1>header 1</h1>
+		<h2>header 2</h2>
+		<h3>header 3</h3>
+		<h4>header 4</h4>
+		<h5>header 5</h5>
+		<h6>header 6</h6>		
+	</article>
+</section>
+<section>
+	<article>
+		<h3 class="title">Prueba listas</h3>
+		<div><strong>Lista desordenada</strong></div>
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+		</ul>
+		<div><strong>Lista desordenada</strong></div>
+		<ul>
+			<li>item1</li>
+			<li>Lista desordenada
+				<ul>
+					<li>item1</li>
+					<li>item2</li>
+				</ul>
+			</li>
+			<li>Lista ordenada
+				<ol>
+					<li>item1</li>
+					<li>item2</li>
+				</ol>
+			</li>
+		</ul>
+		<div><strong>Lista ordenada</strong></div>
+		<ol>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+		</ol>
+		<div><strong>Lista ordenada</strong></div>
+		<ol>
+			<li>item1</li>
+			<li>Lista desordenada
+				<ul>
+					<li>item1</li>
+					<li>item2</li>
+				</ul>
+			</li>
+			<li>Lista ordenada
+				<ol>
+					<li>item1</li>
+					<li>item2</li>
+				</ol>
+			</li>
+		</ol>	
+	</article>
+</section>
+<section>
+	<div style="border:solid 1px #333;overflow:scroll;white-space:nowrap;">
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
+	<div style="clear:both;"></div>
+	</div>
+</section>
+<section>
+	<article>
+		<h3 class="title">Prueba inputs</h3>
+		<form action="">
+			<fieldset>
+			<legend>demo</legend>
+				<label class="icon-user"></label>
+				<input type="text" placeholder="user">
+				<label class="icon-lock"></label>
+				<input type="password" placeholder="password">
+				<label class="icon-envelop"></label>
+				<input type="email" placeholder="email">
+				<label class="icon-mobile"></label>
+				<input type="tel" placeholder="phone number">
+			</fieldset>
+		</form>
+	</article>
+</section>
+<section>
+<article>
+	<h3 class="title">Paleta de gradientes</h3>
+	<div class="row-container">
+		<div class="row-content text-center bg-gradient-orange" style="height: 30px">orange1</div>
+		<div class="row-content text-center bg-gradient-gray" style="height: 30px">gray</div>
+		<div class="row-content text-center bg-gradient-ocher" style="height: 30px">ocher</div>
+		<div class="row-content text-center bg-gradient-blue" style="height: 30px">blue</div>
+		<div class="row-content text-center alertBtn" style="height: 30px">yellow</div>
+		<div class="row-content text-center callBtn" style="height: 30px">green</div>
+		<div class="row-content text-center dangerBtn" style="height: 30px">red</div>
+	</div>
+</article>
+</section>
+<style>
+	.colores, .colores *{
+		font-family: 'UbuntuMono',monospace;
+	}
+	.colores h3{
+		font-family: 'FiraSans';
+	}
+	.colores .row-content{
+		max-width: 33%;
+	}
+</style>
+<section>
+<article class="colores">
+<h3 class="title">Paleta de colores</h3>
+<div class="row-container">
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta gray 1:</div>
+		<div class="bg-white">bg-white #FDFDFD</div>
+		<div class="bg-smoke">bg-smoke #F5F5F5</div>
+		<div class="bg-black text-white">bg-black #101010</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta gray 2:</div>
+		<div class="bg-gray1">bg-gray1 #DCDCDC</div>
+		<div class="bg-gray2">bg-gray2 #333333</div>
+		<div class="bg-gray3 text-white">bg-gray3 #2D2D2D</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta bluegray:</div>
+		<div class="bg-bluegray1">bg-bluegray1 #CFD8DC</div>
+		<div class="bg-bluegray2">bg-bluegray2 #6389A8</div>
+		<div class="bg-bluegray3 text-white">bg-bluegray3 #263238</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta darkblue:</div>
+		<div class="bg-blue4">bg-blue4 #536DFE</div>
+		<div class="bg-blue5">bg-blue5 #3333FF</div>
+		<div class="bg-blue6 text-white">bg-blue6 #0D47A1</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta purple:</div>
+		<div class="bg-purple1">bg-purple1 #D1C4E9</div>
+		<div class="bg-purple2">bg-purple2 #9575CD</div>
+		<div class="bg-purple3 text-white">bg-purple3 #44148C</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta red:</div>
+		<div class="bg-red1">bg-red1 #FF3333</div>
+		<div class="bg-red2">bg-red2 #B90000</div>
+		<div class="bg-red3 text-white">bg-red3 #830B0B</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta orange:</div>
+		<div class="bg-orange1">bg-orange1 #FF6F00</div>
+		<div class="bg-orange2">bg-orange2 #FF4E00</div>
+		<div class="bg-orange3">bg-orange3 #DD5500</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta ocher:</div>
+		<div class="bg-ocher1">bg-ocher1 #FFAA11</div>
+		<div class="bg-ocher2">bg-ocher2 #C56800</div>
+		<div class="bg-ocher3">bg-ocher3 #B54D16</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta yellow:</div>
+		<div class="bg-yellow1">bg-yellow1 #FFFF88</div>
+		<div class="bg-yellow2">bg-yellow2 #FFFF00</div>
+		<div class="bg-yellow3">bg-yellow3 #FFD600</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta green:</div>
+		<div class="bg-green1">bg-green1 #76F313</div>
+		<div class="bg-green2">bg-green2 #82C82D</div>
+		<div class="bg-green3">bg-green3 #5F9B0A</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta lightblue:</div>
+		<div class="bg-blue1">bg-blue0 #00FFFF</div>
+		<div class="bg-blue2">bg-blue1 #00CAFE</div>
+		<div class="bg-blue3">bg-blue3 #2196F3</div>
+	</div>
+	<div class="row-content text-center">
+		<div class="text-blue">Paleta pink:</div>
+		<div class="bg-pink1">bg-pink1 #FF33FF</div>
+		<div class="bg-pink2">bg-pink2 #EE22BB</div>
+		<div class="bg-pink3">bg-pink3 #CC1188</div>
+	</div>
+</div>
+</article>
+</section>
+<section>
+<article>
+<h3 class="title">Título del artículo</h3>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sapiente accusamus earum, quo soluta dolorem odit eos dignissimos consequuntur. <abbr title="prueba">Tempora</abbr> earum itaque repellat vel modi id, rerum repellendus eveniet quisquam!</div>
+<div style="font-family: FiraSans;">Lorem ipsum <strong>duolor</strong> <em>suit</em> <strong><em>uamet</em></strong>, consectetur adipisicing elit. Aut id <a href="#">repellat</a>, et deleniti earum dolores culpa fugit sequi sint aspernatur hic autem, omnis quis maiores, recusandae assumenda voluptas quam corporis.</div>
+<div>
+	Lorem <a href="#" class="icon-file-pdf">ipsum</a> dolor sit amet, <a href="#" class="icon-libreoffice">consectetur adipisicing</a> elit. Quibusdam ducimus voluptatem veritatis voluptatum, accusantium at, dicta harum magnam asperiores repellat sunt dignissimos? Dolore nam sapiente deleniti, saepe ducimus excepturi nostrum. <a href="https://telegram.me/ishmilan" class="icon-telegram">ishmilan</a>.
+</div>
+	<h3 class="title">Normal table width 100%</h3>
+	<table>
+		<tr>
+			<th>celda</th>
+			<th>celda</th>
+			<th>celda</th>
+		</tr>
+		<tr>
+			<td>celda</td>
+			<td>celda</td>
+			<td>celda</td>
+		</tr>
+		<tr>
+			<td>celda</td>
+			<td>celda</td>
+			<td>celda</td>
+		</tr>
+	<caption>Normal table</caption>
+	</table>
+	<h3 class="title">Neat table width 100%</h3>
+	<table class="neat-table width-100">
+		<tr>
+			<th>celda</th>
+			<th>celda</th>
+			<th>celda</th>
+		</tr>
+		<tr>
+			<td>celda</td>
+			<td>celda</td>
+			<td>celda</td>
+		</tr>
+		<tr>
+			<td>celda</td>
+			<td>celda</td>
+			<td>celda</td>
+		</tr>
+	<caption>Neat table</caption>
+	</table>
+<!--	table[style=text-align:center]>tr>th{cabecera$}*10^tr*3>td{celda$}*10-->
+</article>
+</section>
+<section>
+	<p>Pruebas de formato semantico: subindice<sub>sub</sub>, superindice<sup>sup</sup></p>
+	<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi soluta suscipit nobis eius. Neque ea expedita quidem quam ratione ex consequuntur dolorem rem, error non quaerat tempore quod, facere temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto illo ducimus incidunt quis unde quibusdam at aut minima itaque, corporis quia aliquid dicta fugit, molestiae dolor numquam natus reprehenderit!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa asperiores atque, accusantium temporibus. Non sit ipsam autem ducimus consequuntur quia atque, illum, sunt, numquam ullam sed velit aliquid? Cumque, nisi!</blockquote>
+	<samp>Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>V</kbd>.</samp>
+	<div class="terminal">
+		<p>Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>V</kbd>.</p>
+	</div>
+</section>
+<section class="bg-warm-grey display-inline center text-center width-40">
+<table class="no-border text-left">
+	<tr>
+		<td class="no-border text-left">
+			<input id="checkbox"  type="checkbox"><label for="checkbox"> checkbox</label>
+		</td>
+		<td class="no-border text-left">
+			<input id="normal" type="checkbox" class="normal"><label for="normal"> normal </label>
+		</td>
+		<td class="no-border text-left">
+			<input id="alert" type="checkbox" class="alert"><label for="alert"> alert </label>
+		</td>
+		<td class="no-border text-left">
+			<input id="warn"  type="checkbox" class="danger"><label for="warn"> warning</label>
+		</td>
+	</tr>
+	<tr>
+		<td class="no-border text-left">
+			<input id="radio" type="radio"><label for="radio"> radio </label>
+		</td>
+		<td class="no-border text-left">
+			<input id="rnormal" type="radio" class="normal"><label for="rnormal"> normal </label>
+		</td>
+		<td class="no-border text-left">
+			<input id="ralert" type="radio" class="alert"><label for="ralert"> alert </label>
+		</td>
+		<td class="no-border text-left">
+			<input id="rwarn" type="radio" class="danger"><label for="rwarn"> warning</label>
+		</td>
+	</tr>
+</table>
+</section>
+<section>
+	<h3 class="title text-center">Slideshows</h3>
+	<br>
+	<div class="row-container space-around">
+		<div id="imgContainer01" class="bg-light-grey border-grey no-grow little-padding" style="margin: 0.5em;">
+			<img src="pics/ej1.jpg" alt="img1" style="margin:auto;">
+			<img src="pics/ej2.jpg" alt="img2" style="margin:auto;">
+			<img src="pics/ej3.jpg" alt="img3" style="margin:auto;">
+			<img src="pics/ej4.jpg" alt="img4" style="margin:auto;">
+		</div>
+		<div id="imgContainer02" class="bg-light-grey border-grey no-grow little-padding" style="margin: 0.5em;">
+			<img src="pics/ej4.jpg" alt="img4" style="margin:auto;">
+			<img src="pics/ej5.jpg" alt="img5" style="margin:auto;">
+			<img src="pics/ej6.jpg" alt="img6" style="margin:auto;">
+			<img src="pics/ej1.jpg" alt="img1" style="margin:auto;">
+			<img src="pics/ej2.jpg" alt="img2" style="margin:auto;">
+			<img src="pics/ej3.jpg" alt="img3" style="margin:auto;">
+		</div>
+	</div>
+</section>
+<section class="terminal">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad similique officiis ratione in distinctio iure quasi doloribus quae maiores! Voluptas eius, maxime reprehenderit est consequatur? Fuga blanditiis, obcaecati. Illo, nisi. 1234567890
+</section>
+<hr class="bg-orange2">
+<section>
+	<div>
+<form action="" class="text-center">
+	<label for="email">Suscríbete</label>
+	<input type="email" placeholder="e-mail" name="email" id="email" class="border-radius-lite">
+	<button type="submit">submit</button>
+</form>
+	<div class=" row-container">
+		<!--<input type="file" class="row-content">-->
+		<button class="row-content">standard button</button>
+		<button disabled="disabled" class="row-content">standard disabled button</button>
+		<button class="callBtn row-content">call button</button>
+		<button disabled="disabled" class="callBtn row-content">call disabled button</button>
+		<button class="recommendedBtn row-content">recommended button</button>
+		<button disabled="disabled" class="recommendedBtn row-content">recommended disabled button</button>
+		<button class="alertBtn row-content">alert button</button>
+		<button disabled="disabled" class="alertBtn row-content">alert disabled button</button>
+		<button class="dangerBtn row-content">danger button</button>
+		<button disabled="disabled" class="dangerBtn row-content">danger disabled button</button>
+	</div>
+</section>
+<footer class="bg-gray3" id="footer">
+<ol class="no-style row-container">
+	<li class="row-content text-center"><a href="https://twitter.com/ish-milan" class="icon-twitter"> @ish-milan</a></li>
+	<li class="row-content text-center"><a href="https://github.com/ishmilan" class="icon-github"> ishmilan</a></li>
+	<li class="row-content text-center"><a href="https://telegram.me/ishmilan" class="icon-telegram"> ishmilan</a></li>
+</ol>
+</footer>
+<script src="js/calls.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+button,[type="button"],[type=submit],[type=reset],::file-upload-button,::-webkit-file-upload-button{
+	-moz-appearance:button;
+	-o-appearance:button;
+	-webkit-appearance:button;
+	appearance:button;
+	cursor: pointer;
+}
+[role="button"],[type="button"],[type="submit"],[type="reset"],button,.display-like-button{cursor:pointer;}
+input{
+	padding: 0.3rem;
+	margin: 0.3em;
+}
+input,button{
+	border:.1rem solid #aaa;
+	border-radius:2px;
+}
+input[type="checkbox"],input[type="radio"]{
+	display:none;
+}
+input[type="checkbox"]+label:before,input[type="checkbox"]:checked+label:before,input[type="radio"]+label:before,input[type="radio"]:checked+label:before{
+	display:inline;
+	vertical-align:bottom;
+	cursor: pointer;
+	font-family:'icomoon' !important;
+}
+input[type="checkbox"]+label:before{content:"\e98d";}
+input[type="checkbox"]:checked+label:before{content:"\e98c";}
+input[type="radio"]+label:before{content:"\e990";}
+input[type="radio"]:checked+label:before{content:"\e98f";cursor:default;}
+fieldset{margin-bottom: 0.5rem;}
+legend{
+	text-align:left;
+	padding:.3rem;
+	margin-left:.5rem;
+}
+.normal,.normal+label:before{color:#00CAF2;}
+.alert,.alert+label:before{color:#F1C411;}
+.danger,.danger+label:before{color:#B70404;}
+input[type="button"]:disabled,button:disabled,.display-like-button:disabled{color:#444444;}
+input[type="button"],input[type="submit"],input[type="reset"],button,.display-like-button{
+	border:solid 1px #999999;
+	border-radius:3px;
+	padding:.3rem .8rem;
+	margin:.3em;
+	color:#101010;
+	font-weight:normal;
+	background:-moz-linear-gradient(top,#F7F7F7,#DDDDDD);
+	background:-o-linear-gradient(top,#F7F7F7,#DDDDDD);
+	background:-webkit-linear-gradient(top,#F7F7F7,#DDDDDD);
+	background:linear-gradient(top,#F7F7F7,#DDDDDD);
+}
+input[type="button"]:active,input[type="submit"]:active,input[type="reset"]:active,button:active,.display-like-button:active{
+	background:-moz-linear-gradient(bottom,#F7F7F7,#DDDDDD);
+	background:-o-linear-gradient(bottom,#F7F7F7,#DDDDDD);
+	background:-webkit-linear-gradient(bottom,#F7F7F7,#DDDDDD);
+	background:linear-gradient(bottom,#F7F7F7,#DDDDDD);
+}
+.callBtn{
+	background:-o-linear-gradient(top,#82C82D,#5F9B0A);
+	background:-moz-linear-gradient(top,#82C82D,#5F9B0A);
+	background:-webkit-linear-gradient(top,#82C82D,#5F9B0A);
+	background:linear-gradient(top,#82C82D,#5F9B0A);
+	color:#FBFBFB;
+}
+.callBtn:active{
+	background:-o-linear-gradient(bottom,#82C82D,#5F9B0A);
+	background:-moz-linear-gradient(bottom,#82C82D,#5F9B0A);
+	background:-webkit-linear-gradient(bottom,#82C82D,#5F9B0A);
+	background:linear-gradient(bottom,#82C82D,#5F9B0A);
+	color:#FBFBFB;
+}
+.recommendedBtn{
+	background:-o-linear-gradient(top,#00CAF2,#00AACC);
+	background:-moz-linear-gradient(top,#00CAF2,#00AACC);
+	background:-webkit-linear-gradient(top,#00CAF2,#00AACC);
+	background:linear-gradient(top,#00CAF2,#00AACC);
+	color:#FBFBFB;
+}
+.recommendedBtn:active{
+	background:-o-linear-gradient(bottom,#00CAF2,#00AACC);
+	background:-moz-linear-gradient(bottom,#00CAF2,#00AACC);
+	background:-webkit-linear-gradient(bottom,#00CAF2,#00AACC);
+	background:linear-gradient(bottom,#00CAF2,#00AACC);
+	color:#FBFBFB;
+}
+.alertBtn{
+	background:-o-linear-gradient(top,#F1C411,#F1AA11);
+	background:-moz-linear-gradient(top,#F1C411,#F1AA11);
+	background:-webkit-linear-gradient(top,#F1C411,#F1AA11);
+	background:linear-gradient(top,#F1C411,#F1AA11);
+}
+.alertBtn:active{
+	background:-o-linear-gradient(bottom,#F1C411,#F1AA11);
+	background:-moz-linear-gradient(bottom,#F1C411,#F1AA11);
+	background:-webkit-linear-gradient(bottom,#F1C411,#F1AA11);
+	background:linear-gradient(bottom,#F1C411,#F1AA11);
+}
+
+.dangerBtn{
+	background:-o-linear-gradient(top,#B90000,#830B0B);
+	background:-moz-linear-gradient(top,#B90000,#830B0B);
+	background:-webkit-linear-gradient(top,#B90000,#830B0B);
+	background:linear-gradient(top,#B90000,#830B0B);
+	color:#FFFFFF;
+}
+.dangerBtn:active{
+	background:-o-linear-gradient(bottom,#B90000,#830B0B);
+	background:-moz-linear-gradient(bottom,#B90000,#830B0B);
+	background:-webkit-linear-gradient(bottom,#B90000,#830B0B);
+	background:linear-gradient(bottom,#B90000,#830B0B);
+	color:#FFFFFF;
+}
+::-webkit-file-upload-button,::file-upload-button {
+	-webkit-appearance: button;
+    font-family: inherit;
+	content:"\e92a";
+	color:white;
+}
+:focus{outline:none;}
+input:invalid,input:-moz-ui-invalid{
+	-webkit-box-shadow: 0px 0px 1px 1px #FF3333;
+	-moz-box-shadow: 0px 0px 1px 1px #FF3333;
+	box-shadow: 0px 0px 1px 1px #FF3333;
+}

@@ -1,0 +1,1221 @@
+1	/*
+2	 * The default style sheet used to render HTML.
+3	 *
+4	 * Copyright (C) 2000 Lars Knoll (knoll@kde.org)
+5	 * Copyright (C) 2003-2011, 2014 Apple Inc. All rights reserved.
+6	 *
+7	 * This library is free software; you can redistribute it and/or
+8	 * modify it under the terms of the GNU Library General Public
+9	 * License as published by the Free Software Foundation; either
+10	 * version 2 of the License, or (at your option) any later version.
+11	 *
+12	 * This library is distributed in the hope that it will be useful,
+13	 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+14	 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+15	 * Library General Public License for more details.
+16	 *
+17	 * You should have received a copy of the GNU Library General Public License
+18	 * along with this library; see the file COPYING.LIB.  If not, write to
+19	 * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+20	 * Boston, MA 02110-1301, USA.
+21	 *
+22	 */
+23	
+24	@namespace "http://www.w3.org/1999/xhtml";
+25	
+26	html {
+27	    display: block;
+28	}
+29	
+30	/* children of the <head> element all have display:none */
+31	head, link, meta, script, style, title {
+32	    display: none;
+33	}
+34	
+35	/* generic block-level elements */
+36	
+37	body {
+38	    display: block;
+39	    margin: 8px;
+40	}
+41	
+42	p {
+43	    display: block;
+44	    -webkit-margin-before: 1__qem;
+45	    -webkit-margin-after: 1__qem;
+46	    -webkit-margin-start: 0;
+47	    -webkit-margin-end: 0;
+48	}
+49	
+50	address, article, aside, div, footer, header, hgroup, layer, main, nav, section {
+51	    display: block;
+52	}
+53	
+54	marquee {
+55	    display: inline-block;
+56	}
+57	
+58	blockquote {
+59	    display: block;
+60	    -webkit-margin-before: 1__qem;
+61	    -webkit-margin-after: 1em;
+62	    -webkit-margin-start: 40px;
+63	    -webkit-margin-end: 40px;
+64	}
+65	
+66	figcaption {
+67	    display: block;
+68	}
+69	
+70	figure {
+71	    display: block;
+72	    -webkit-margin-before: 1em;
+73	    -webkit-margin-after: 1em;
+74	    -webkit-margin-start: 40px;
+75	    -webkit-margin-end: 40px;
+76	}
+77	
+78	q {
+79	    display: inline;
+80	}
+81	
+82	q::before {
+83	    content: open-quote;
+84	}
+85	
+86	q::after {
+87	    content: close-quote;
+88	}
+89	
+90	center {
+91	    display: block;
+92	    /* special centering to be able to emulate the html4/netscape behaviour */
+93	    text-align: -webkit-center;
+94	}
+95	
+96	hr {
+97	    display: block;
+98	    -webkit-margin-before: 0.5em;
+99	    -webkit-margin-after: 0.5em;
+100	    -webkit-margin-start: auto;
+101	    -webkit-margin-end: auto;
+102	    border-style: inset;
+103	    border-width: 1px;
+104	}
+105	
+106	video {
+107	    object-fit: contain;
+108	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+109	    -webkit-tap-highlight-color: transparent;
+110	#endif
+111	}
+112	
+113	/* heading elements */
+114	
+115	h1 {
+116	    display: block;
+117	    font-size: 2em;
+118	    -webkit-margin-before: 0.67__qem;
+119	    -webkit-margin-after: 0.67em;
+120	    -webkit-margin-start: 0;
+121	    -webkit-margin-end: 0;
+122	    font-weight: bold;
+123	}
+124	
+125	:matches(article, aside, nav, section) h1 {
+126	    font-size: 1.5em;
+127	    -webkit-margin-before: 0.83__qem;
+128	    -webkit-margin-after: 0.83em;
+129	}
+130	
+131	:matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+132	    font-size: 1.17em;
+133	    -webkit-margin-before: 1__qem;
+134	    -webkit-margin-after: 1em;
+135	}
+136	
+137	:matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+138	    font-size: 1.00em;
+139	    -webkit-margin-before: 1.33__qem;
+140	    -webkit-margin-after: 1.33em;
+141	}
+142	
+143	:matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+144	    font-size: .83em;
+145	    -webkit-margin-before: 1.67__qem;
+146	    -webkit-margin-after: 1.67em;
+147	}
+148	
+149	:matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) :matches(article, aside, nav, section) h1 {
+150	    font-size: .67em;
+151	    -webkit-margin-before: 2.33__qem;
+152	    -webkit-margin-after: 2.33em;
+153	}
+154	
+155	h2 {
+156	    display: block;
+157	    font-size: 1.5em;
+158	    -webkit-margin-before: 0.83__qem;
+159	    -webkit-margin-after: 0.83em;
+160	    -webkit-margin-start: 0;
+161	    -webkit-margin-end: 0;
+162	    font-weight: bold;
+163	}
+164	
+165	h3 {
+166	    display: block;
+167	    font-size: 1.17em;
+168	    -webkit-margin-before: 1__qem;
+169	    -webkit-margin-after: 1em;
+170	    -webkit-margin-start: 0;
+171	    -webkit-margin-end: 0;
+172	    font-weight: bold;
+173	}
+174	
+175	h4 {
+176	    display: block;
+177	    -webkit-margin-before: 1.33__qem;
+178	    -webkit-margin-after: 1.33em;
+179	    -webkit-margin-start: 0;
+180	    -webkit-margin-end: 0;
+181	    font-weight: bold;
+182	}
+183	
+184	h5 {
+185	    display: block;
+186	    font-size: .83em;
+187	    -webkit-margin-before: 1.67__qem;
+188	    -webkit-margin-after: 1.67em;
+189	    -webkit-margin-start: 0;
+190	    -webkit-margin-end: 0;
+191	    font-weight: bold;
+192	}
+193	
+194	h6 {
+195	    display: block;
+196	    font-size: .67em;
+197	    -webkit-margin-before: 2.33__qem;
+198	    -webkit-margin-after: 2.33em;
+199	    -webkit-margin-start: 0;
+200	    -webkit-margin-end: 0;
+201	    font-weight: bold;
+202	}
+203	
+204	/* tables */
+205	
+206	table {
+207	    display: table;
+208	    border-collapse: separate;
+209	    border-spacing: 2px;
+210	    border-color: gray;
+211	}
+212	
+213	thead {
+214	    display: table-header-group;
+215	    vertical-align: middle;
+216	    border-color: inherit;
+217	}
+218	
+219	tbody {
+220	    display: table-row-group;
+221	    vertical-align: middle;
+222	    border-color: inherit;
+223	}
+224	
+225	tfoot {
+226	    display: table-footer-group;
+227	    vertical-align: middle;
+228	    border-color: inherit;
+229	}
+230	
+231	/* for tables without table section elements (can happen with XHTML or dynamically created tables) */
+232	table > tr {
+233	    vertical-align: middle;
+234	}
+235	
+236	col {
+237	    display: table-column;
+238	}
+239	
+240	colgroup {
+241	    display: table-column-group;
+242	}
+243	
+244	tr {
+245	    display: table-row;
+246	    vertical-align: inherit;
+247	    border-color: inherit;
+248	}
+249	
+250	td, th {
+251	    display: table-cell;
+252	    vertical-align: inherit;
+253	}
+254	
+255	th {
+256	    font-weight: bold;
+257	}
+258	
+259	caption {
+260	    display: table-caption;
+261	    text-align: -webkit-center;
+262	}
+263	
+264	/* lists */
+265	
+266	ul, menu, dir {
+267	    display: block;
+268	    list-style-type: disc;
+269	    -webkit-margin-before: 1__qem;
+270	    -webkit-margin-after: 1em;
+271	    -webkit-margin-start: 0;
+272	    -webkit-margin-end: 0;
+273	    -webkit-padding-start: 40px;
+274	}
+275	
+276	ol {
+277	    display: block;
+278	    list-style-type: decimal;
+279	    -webkit-margin-before: 1__qem;
+280	    -webkit-margin-after: 1em;
+281	    -webkit-margin-start: 0;
+282	    -webkit-margin-end: 0;
+283	    -webkit-padding-start: 40px;
+284	}
+285	
+286	li {
+287	    display: list-item;
+288	    text-align: -webkit-match-parent;
+289	}
+290	
+291	ul ul, ol ul {
+292	    list-style-type: circle;
+293	}
+294	
+295	ol ol ul, ol ul ul, ul ol ul, ul ul ul {
+296	    list-style-type: square;
+297	}
+298	
+299	dd {
+300	    display: block;
+301	    -webkit-margin-start: 40px;
+302	}
+303	
+304	dl {
+305	    display: block;
+306	    -webkit-margin-before: 1__qem;
+307	    -webkit-margin-after: 1em;
+308	    -webkit-margin-start: 0;
+309	    -webkit-margin-end: 0;
+310	}
+311	
+312	dt {
+313	    display: block;
+314	}
+315	
+316	ol ul, ul ol, ul ul, ol ol {
+317	    -webkit-margin-before: 0;
+318	    -webkit-margin-after: 0;
+319	}
+320	
+321	/* form elements */
+322	
+323	form {
+324	    display: block;
+325	    margin-top: 0__qem;
+326	}
+327	
+328	label {
+329	    cursor: default;
+330	}
+331	
+332	legend {
+333	    display: block;
+334	    -webkit-padding-start: 2px;
+335	    -webkit-padding-end: 2px;
+336	    border: none;
+337	}
+338	
+339	fieldset {
+340	    display: block;
+341	    -webkit-margin-start: 2px;
+342	    -webkit-margin-end: 2px;
+343	    -webkit-padding-before: 0.35em;
+344	    -webkit-padding-start: 0.75em;
+345	    -webkit-padding-end: 0.75em;
+346	    -webkit-padding-after: 0.625em;
+347	    border: 2px groove ThreeDFace;
+348	    min-width: -webkit-min-content;
+349	}
+350	
+351	button {
+352	    -webkit-appearance: button;
+353	}
+354	
+355	/* Form controls don't go vertical. */
+356	input, textarea, keygen, select, button, meter, progress {
+357	    -webkit-writing-mode: horizontal-tb !important;
+358	}
+359	
+360	input, textarea, keygen, select, button {
+361	    margin: 0__qem;
+362	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+363	    font: -webkit-small-control;
+364	#endif
+365	    color: initial;
+366	    letter-spacing: normal;
+367	    word-spacing: normal;
+368	    line-height: normal;
+369	    text-transform: none;
+370	    text-indent: 0;
+371	    text-shadow: none;
+372	    display: inline-block;
+373	    text-align: start;
+374	}
+375	
+376	input[type="hidden"] {
+377	    display: none;
+378	}
+379	
+380	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+381	textarea,
+382	input[type="range"],
+383	#endif
+384	input,
+385	input:matches([type="password"], [type="search"]) {
+386	    -webkit-appearance: textfield;
+387	    background-color: white;
+388	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+389	    border-radius: 5px;
+390	    font: 11px Helvetica, -webkit-pictograph;
+391	    border: 1px solid #4c4c4c;
+392	    padding: 0.2em 0.5em 0.3em 0.5em;
+393	#else
+394	    border: 2px inset;
+395	    padding: 1px;
+396	#endif
+397	    -webkit-rtl-ordering: logical;
+398	    -webkit-user-select: text;
+399	    cursor: auto;
+400	}
+401	
+402	input[type="search"] {
+403	    -webkit-appearance: searchfield;
+404	    box-sizing: border-box;
+405	}
+406	
+407	input::-webkit-textfield-decoration-container {
+408	    display: flex;
+409	    align-items: center;
+410	    content: none !important;
+411	}
+412	
+413	input::-webkit-clear-button {
+414	    -webkit-appearance: searchfield-cancel-button;
+415	    display: inline-block;
+416	    flex: none;
+417	    margin-left: 2px;
+418	}
+419	
+420	input[type="search"]::-webkit-search-cancel-button {
+421	    -webkit-appearance: searchfield-cancel-button;
+422	    display: block;
+423	    flex: none;
+424	    align-self: flex-start;
+425	    margin: auto 0;
+426	}
+427	
+428	input[type="search"]::-webkit-search-decoration {
+429	    -webkit-appearance: searchfield-decoration;
+430	    display: block;
+431	    flex: none;
+432	    align-self: flex-start;
+433	    margin: auto 0;
+434	}
+435	
+436	input[type="search"]::-webkit-search-results-decoration {
+437	    -webkit-appearance: searchfield-results-decoration;
+438	    display: block;
+439	    flex: none;
+440	    align-self: flex-start;
+441	    margin: auto 0;
+442	}
+443	
+444	input[type="search"]::-webkit-search-results-button {
+445	    -webkit-appearance: searchfield-results-button;
+446	    display: block;
+447	    flex: none;
+448	}
+449	
+450	#if defined(ENABLE_DATALIST_ELEMENT) && ENABLE_DATALIST_ELEMENT
+451	datalist {
+452	    display: none;
+453	}
+454	#endif
+455	
+456	#if defined(ENABLE_INPUT_TYPE_DATE) && ENABLE_INPUT_TYPE_DATE
+457	input[type="date"] {
+458	    align-items: center;
+459	    -webkit-appearance: menulist-button;
+460	    display: -webkit-inline-flex;
+461	    overflow: hidden;
+462	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+463	    width: 10em;
+464	#endif
+465	}
+466	#endif
+467	#if defined(ENABLE_INPUT_TYPE_DATETIME_INCOMPLETE) && ENABLE_INPUT_TYPE_DATETIME_INCOMPLETE
+468	input[type="datetime"] {
+469	    align-items: center;
+470	    -webkit-appearance: menulist-button;
+471	    display: -webkit-inline-flex;
+472	    overflow: hidden;
+473	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+474	    width: 10em;
+475	#endif
+476	}
+477	#endif
+478	#if defined(ENABLE_INPUT_TYPE_DATETIMELOCAL) && ENABLE_INPUT_TYPE_DATETIMELOCAL
+479	input[type="datetime-local"] {
+480	    align-items: center;
+481	    -webkit-appearance: menulist-button;
+482	    display: -webkit-inline-flex;
+483	    overflow: hidden;
+484	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+485	    width: 10em;
+486	#endif
+487	}
+488	#endif
+489	#if defined(ENABLE_INPUT_TYPE_MONTH) && ENABLE_INPUT_TYPE_MONTH
+490	input[type="month"] {
+491	    align-items: center;
+492	    -webkit-appearance: menulist-button;
+493	    display: -webkit-inline-flex;
+494	    overflow: hidden;
+495	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+496	    width: 10em;
+497	#endif
+498	}
+499	#endif
+500	#if defined(ENABLE_INPUT_TYPE_TIME) && ENABLE_INPUT_TYPE_TIME
+501	input[type="time"] {
+502	    align-items: center;
+503	    -webkit-appearance: menulist-button;
+504	    display: -webkit-inline-flex;
+505	    overflow: hidden;
+506	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+507	    width: 10em;
+508	#endif
+509	}
+510	#endif
+511	#if defined(ENABLE_INPUT_TYPE_WEEK) && ENABLE_INPUT_TYPE_WEEK
+512	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+513	input[type="week"] {
+514	    align-items: center;
+515	    -webkit-appearance: menulist-button;
+516	    display: -webkit-inline-flex;
+517	    overflow: hidden;
+518	    width: 10em;
+519	}
+520	#endif
+521	#endif
+522	
+523	input::-webkit-date-and-time-value {
+524	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+525	    margin-right: 18px;
+526	#else
+527	    margin: 1px 24px 1px 4px;
+528	    white-space: pre;
+529	#endif
+530	}
+531	
+532	input::-webkit-inner-spin-button {
+533	    -webkit-appearance: inner-spin-button;
+534	    display: block;
+535	    position: relative;
+536	    cursor: default;
+537	    /* This height property is ignored for input type "number" and others which
+538	     * use RenderTextControlSingleLine as renderer which sets height of spin
+539	     * button in layout(). */
+540	    height: 1.5em;
+541	    vertical-align: top;
+542	    flex: none;
+543	    -webkit-user-select: none;
+544	}
+545	
+546	input::-webkit-credentials-auto-fill-button {
+547	    -webkit-mask-image: -webkit-image-set(url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAMCAYAAAC9QufkAAAAAXNSR0IB2cksfwAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAADyWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE1LTA0LTAzVDE2OjA2OjI1PC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8eG1wOkNyZWF0ZURhdGU+MjAxNS0wNC0wM1QxNjowMzoxNjwveG1wOkNyZWF0ZURhdGU+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyPC90aWZmOllSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpSZXNvbHV0aW9uVW5pdD4yPC90aWZmOlJlc29sdXRpb25Vbml0PgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjwvdGlmZjpYUmVzb2x1dGlvbj4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT4xPC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4xNTwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4xMjwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgoz37ZdAAAA5ElEQVQoFY2RsQ5BQRBFd9EgEYXv8QlaEqVGpfUPao3oKXyEQiJI1ERESaGmwnPu2k2QJ2uS82Z2du7s7jyTJInBWnCABeygoXwM6kwN1GELFo7wgOo/4gmFEovzWzyMiTMUlyFYJQT4wlucGko8T90xZv0j/5EusVpCuLr8FPK6NraHPmT8Oks8gI2bKEEOZhAauEJf3PX5Eb4ImpEG2gni0NWJvwdFYRvuoIHeoOUa++56+wpSxb6myf4J6qG5VWCt1ckPvHsksf531HSiDJ1VV9n15eJfJ+YkvWcMF+jFZa+KJ554xIc+jempAAAAAElFTkSuQmCC") 1x, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAYCAYAAADtaU2/AAAAAXNSR0IB2cksfwAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAADyWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE1LTA0LTAzVDE2OjA2OjIxPC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoTWFjaW50b3NoKTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8eG1wOkNyZWF0ZURhdGU+MjAxNS0wNC0wM1QxNjowMzoyNTwveG1wOkNyZWF0ZURhdGU+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyPC90aWZmOllSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpSZXNvbHV0aW9uVW5pdD4yPC90aWZmOlJlc29sdXRpb25Vbml0PgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjwvdGlmZjpYUmVzb2x1dGlvbj4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT4xPC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4zMDwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4yNDwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpGMDB3AAAB8UlEQVRIDbVWO07DQBS0QSJUNJQcAloOQMEZ6InSUMEBkFJEQihQkQKJklQUlFBQQoH4SHAKJDokAgIz4+wLs5u15RjypOF9dvaN197dkCS/NodwC7gG3hxuXI1jUcuyLKkDa7aE4B7IHM7hCcs5Rs6Y1RHlHBpXo6JXeXX45xLOxB8QN2QsD+sKz2B2E1iRhqnEsxIvI96U/M8hv6mtyjxXehGpk+tZ3RVzdQOgcPN4KkPuvNbse2mtSsxXPYl9TkIu41L4rowQjD0Fee2UwqcTzA65/TRNB0CzSg/ygHegT34D4FGxjVXkHx0XbmQfiIzfKtto4LWEy3m58XLQs2zNzPPByAltGwXj0EfFUecbUd4O8pFxZ98CSrC4bNfvypxvxBu6cubAl3DaRSfBxNRjXtxckw5GjU+RXJweUNGOPRTqnrWRWQP1HkkTaRSK98CLioYr5vV4BqigxarlxSbsmu0XzO8qLxRmw/WCiRyLmjYEgTfhEWAPTM88VV4ozDP9HEyyBijHLdKQ4l2AR+YAGBMNhcFJVgETU8+xqIXCVXNtxm9cdJyU58VVhUKe/khwB+55XaeYqDC/zdoUtbzWFDPj7fQCLFjB+Vf4xaA2SvkK65iumLvwJNLkOFL79xJXfQhwlQTjsnu61r+2fEs/b4ZbzrEPMzEAAAAASUVORK5CYII=") 2x);
+548	    -webkit-mask-size: 15px 12px;
+549	    width: 15px;
+550	    height: 12px;
+551	    margin-left: 3px;
+552	    margin-right: 2px;
+553	    background-color: black;
+554	    flex: none;
+555	    -webkit-user-select: none;
+556	}
+557	
+558	input::-webkit-credentials-auto-fill-button:hover {
+559	    background-color: rgb(0, 122, 255);
+560	}
+561	
+562	input::-webkit-credentials-auto-fill-button:active {
+563	    background-color: rgb(0, 60, 219);
+564	}
+565	
+566	input::-webkit-contacts-auto-fill-button {
+567	    -webkit-mask-image: -webkit-image-set(url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAMCAYAAABm+U3GAAAAAXNSR0IArs4c6QAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAADzWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE2LTAzLTE2VDE0OjM4OjM5PC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8eG1wOkNyZWF0ZURhdGU+MjAxNS0wNC0wM1QxNjowMzoxNjwveG1wOkNyZWF0ZURhdGU+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyPC90aWZmOllSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpSZXNvbHV0aW9uVW5pdD4yPC90aWZmOlJlc29sdXRpb25Vbml0PgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjwvdGlmZjpYUmVzb2x1dGlvbj4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT42NTUzNTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MjI8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MTI8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KDsFf/AAAALpJREFUOMtjYMAEjECcAcTXgPgBEPcBMQ8DHvD//38MjA0UgtSi4UpqGDwdi8GTqGFwEz1dPJkaBttjMdgah5l3gHgKEDNBDWMG4plAfB2XI14hGfoEj2PLoWqWATE3EK8G4n9AnIdLwyQkg7sY8ANQ0vwLxK+B+A8QJ+MKCnUgPoZk8D4gFiVgeDQQPwficPQwFoCmhudYwheGQeHZAFVLVORpAPFLPAai4xdQXxE0eDYJhsLwNEIGAwBaGtf92KSJygAAAABJRU5ErkJggg==") 1x, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAYCAYAAACBbx+6AAAAAXNSR0IArs4c6QAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAADzWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE2LTAzLTE2VDE0OjM4OjQ5PC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKTwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8eG1wOkNyZWF0ZURhdGU+MjAxNS0wNC0wM1QxNjowMzoyNTwveG1wOkNyZWF0ZURhdGU+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjcyPC90aWZmOllSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpSZXNvbHV0aW9uVW5pdD4yPC90aWZmOlJlc29sdXRpb25Vbml0PgogICAgICAgICA8dGlmZjpYUmVzb2x1dGlvbj43MjwvdGlmZjpYUmVzb2x1dGlvbj4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT42NTUzNTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+NDQ8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MjQ8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KZQbeMQAAAZxJREFUWMPNlrFKA0EQhhMUBVErCy0ECxFUECzEWt9ALNMbDkv1AQSLgEhEEG0sBAsbEYKFj6AIVtoJQTClBALRmBjXf2AP1mNvM3vZizvwwR3szX0sszObyfBjFhyBV1AFJbAGBrkJhBB/npPAiT4QgBb9R8MbmPFJ+DhGVOXKF+F+UGcI130RHmbIhoz4UhJNhmxL1roXwmWG8IsvJTEEnhnCj77s8LRFDU9aCF+CL5BnSuZBQ35njCyoMGQrci1XWD0XQQfZQFnb5JTeBUP43LKGtyPfB4adVdftcP5D7erDIPsJRm0PHWJXyfEDchHZHGgra/a4XYLiwSB8l/QugSgoedqhtEa2YNPWKA4MwvvdXH400qdxsjbCEzFlUQNj3d7WDBtSTDI4KAbAtyZhg9MdGMKU4ySSm96zSYXnDSUx5eI+LKWLsnUd6mQ7CdPkWgAb4MkgfA/Wwfh/TbplOVFqFlNOvcyfgaVeCM+B6wSScdyAxbSEN+VsF46hg7rlWnhVThqREpR7xaXwbYqyISWXwtUeCL+7Ev4FRky1YsGhhMUAAAAASUVORK5CYII=") 2x);
+568	    -webkit-mask-size: 22px 12px;
+569	    width: 22px;
+570	    height: 12px;
+571	    margin-left: 3px;
+572	    margin-right: 2px;
+573	    background-color: black;
+574	    flex: none;
+575	    -webkit-user-select: none;
+576	}
+577	
+578	input::-webkit-contacts-auto-fill-button:hover {
+579	    background-color: rgb(0, 122, 255);
+580	}
+581	
+582	input::-webkit-contacts-auto-fill-button:active {
+583	    background-color: rgb(0, 60, 219);
+584	}
+585	
+586	input::-webkit-caps-lock-indicator {
+587	    -webkit-appearance: caps-lock-indicator;
+588	    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"><path fill="black" fill-opacity="0.4" d="M12.5 0.5A 4 4 0 0 1 16.5 4.5L 16.5 12.5A 4 4 0 0 1 12.5 16.5L 4.5 16.5A 4 4 0 0 1 0.5 12.5L 0.5 4.5A 4 4 0 0 1 4.5 0.5L 12.5 0.5M 8.5 2L 4 7L 6.25 7L 6.25 10.25L 10.75 10.25L 10.75 7L 13 7L 8.5 2M 10.75 12L 6.25 12L 6.25 14.25L 10.75 14.25L 10.75 12"/></svg>');
+589	    align-self: stretch;
+590	    flex: none;
+591	    -webkit-user-select: none;
+592	}
+593	
+594	keygen, select {
+595	    border-radius: 5px;
+596	}
+597	
+598	keygen::-webkit-keygen-select {
+599	    margin: 0px;
+600	}
+601	
+602	textarea {
+603	    -webkit-appearance: textarea;
+604	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+605	    background-color: white;
+606	    border: 1px solid;
+607	    -webkit-rtl-ordering: logical;
+608	    -webkit-user-select: text;
+609	#else
+610	    -webkit-nbsp-mode: space;
+611	    -webkit-line-break: after-white-space;
+612	#endif
+613	    flex-direction: column;
+614	    resize: auto;
+615	    cursor: auto;
+616	    padding: 2px;
+617	    white-space: pre-wrap;
+618	    word-wrap: break-word;
+619	}
+620	
+621	::placeholder {
+622	    -webkit-text-security: none;
+623	    color: darkGray;
+624	    pointer-events: none !important;
+625	}
+626	
+627	input::placeholder {
+628	    white-space: pre;
+629	    word-wrap: normal;
+630	    overflow: hidden;
+631	}
+632	
+633	input[type="password"] {
+634	    -webkit-text-security: disc !important;
+635	}
+636	
+637	input:matches([type="hidden"], [type="image"], [type="file"]) {
+638	    -webkit-appearance: initial;
+639	    padding: initial;
+640	    background-color: initial;
+641	    border: initial;
+642	}
+643	
+644	input[type="file"] {
+645	    align-items: baseline;
+646	    color: inherit;
+647	    text-align: start !important;
+648	}
+649	
+650	input:-webkit-autofill {
+651	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+652	    background-color: #F7EC87 !important;
+653	#else
+654	    background-color: #FAFFBD !important;
+655	#endif
+656	    background-image: none !important;
+657	    color: #000000 !important;
+658	}
+659	
+660	input:matches([type="radio"], [type="checkbox"]) {
+661	    margin: 3px 2px;
+662	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+663	    border: 1px solid #4c4c4c;
+664	    box-sizing: border-box;
+665	#else
+666	    padding: initial;
+667	    background-color: initial;
+668	    border: initial;
+669	#endif
+670	}
+671	
+672	input:matches([type="button"], [type="submit"], [type="reset"]) {
+673	    -webkit-appearance: push-button;
+674	    white-space: pre;
+675	}
+676	
+677	input[type="file"]::-webkit-file-upload-button {
+678	    -webkit-appearance: push-button;
+679	    white-space: nowrap;
+680	    margin: 0;
+681	    font-size: inherit;
+682	}
+683	
+684	input:matches([type="button"], [type="submit"], [type="reset"]), input[type="file"]::-webkit-file-upload-button, button {
+685	    align-items: flex-start;
+686	    text-align: center;
+687	    cursor: default;
+688	    color: ButtonText;
+689	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+690	    padding: 2px 6px 3px 6px;
+691	    border: 2px outset ButtonFace;
+692	    background-color: ButtonFace;
+693	#else
+694	    padding: 0 1.0em;
+695	    border: 1px solid #4c4c4c;
+696	    /* We want to be as close to background-color:transparent as possible without actually being transparent. */
+697	    background-color: rgba(255, 255, 255, 0.01);
+698	    font: 11px Helvetica;
+699	#endif
+700	    box-sizing: border-box;
+701	}
+702	
+703	input:matches([type="button"], [type="submit"], [type="reset"]):active, input[type="file"]::-webkit-file-upload-button:active, button:active {
+704	    color: ActiveButtonText;
+705	}
+706	
+707	input[type="range"] {
+708	    -webkit-appearance: slider-horizontal;
+709	    padding: initial;
+710	    border: initial;
+711	    margin: 2px;
+712	    color: #909090;
+713	}
+714	
+715	input[type="range"]::-webkit-slider-container, input[type="range"]::-webkit-media-slider-container {
+716	    flex: 1;
+717	    box-sizing: border-box;
+718	    display: flex;
+719	    align-contents: center;
+720	}
+721	
+722	input[type="range"]::-webkit-slider-runnable-track {
+723	    flex: 1;
+724	    align-self: center;
+725	
+726	    box-sizing: border-box;
+727	    display: block;
+728	}
+729	
+730	input[type="range"]::-webkit-slider-thumb, input[type="range"]::-webkit-media-slider-thumb {
+731	    -webkit-appearance: sliderthumb-horizontal;
+732	    box-sizing: border-box;
+733	    display: block;
+734	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+735	    background-color: white;
+736	    border: 1px solid rgb(66, 66, 66);
+737	    padding: 0px;
+738	#endif
+739	}
+740	
+741	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+742	input[type="range"]::-webkit-slider-thumb:active {
+743	    background-color: black;
+744	}
+745	
+746	input:disabled, textarea:disabled {
+747	    opacity: 0.4;
+748	}
+749	
+750	input[readonly], textarea[readonly] {
+751	    border-color: rgb(188, 188, 188);
+752	}
+753	
+754	textarea::placeholder {
+755	    text-indent: 2px;
+756	}
+757	#endif
+758	
+759	input:matches([type="button"], [type="submit"], [type="reset"]):disabled,
+760	input[type="file"]:disabled::-webkit-file-upload-button, button:disabled,
+761	select:disabled, keygen:disabled, optgroup:disabled, option:disabled,
+762	select[disabled]>option {
+763	    color: GrayText;
+764	}
+765	
+766	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+767	input:matches([type="button"], [type="submit"], [type="reset"]):active, input[type="file"]:active::-webkit-file-upload-button, button:active {
+768	    border-style: inset;
+769	}
+770	
+771	input:matches([type="button"], [type="submit"], [type="reset"]):active:disabled,
+772	input[type="file"]:active:disabled::-webkit-file-upload-button, button:active:disabled {
+773	    border-style: outset;
+774	}
+775	#endif
+776	
+777	area, param {
+778	    display: none;
+779	}
+780	
+781	input[type="checkbox"] {
+782	    -webkit-appearance: checkbox;
+783	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+784	    box-sizing: border-box;
+785	#else
+786	    border-radius: 5px;
+787	    width: 16px;
+788	    height: 16px;
+789	    padding: 0px;
+790	    /* We want to be as close to background:transparent as possible without actually being transparent */
+791	    background-color: rgba(255, 255, 255, 0.01);
+792	#endif
+793	}
+794	
+795	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+796	input[type="radio"] {
+797	    -webkit-appearance: radio;
+798	    border-radius: 8px;
+799	    width: 16px;
+800	    height: 16px;
+801	    padding: 0px;
+802	    /* We want to be as close to background:transparent as possible without actually being transparent */
+803	    background-color: rgba(255, 255, 255, 0.01);
+804	}
+805	
+806	input:matches([type="checkbox"], [type="radio"]):checked {
+807	    background: rgba(0, 0, 0, 0.8);
+808	    border-color: rgba(255, 255, 255, 0.0);
+809	}
+810	
+811	input:matches([type="checkbox"], [type="radio"]):checked:disabled {
+812	    opacity: 0.4;
+813	    background: rgba(0, 0, 0, 0.8);
+814	}
+815	#endif
+816	
+817	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+818	input[type="radio"] {
+819	    -webkit-appearance: radio;
+820	    box-sizing: border-box;
+821	}
+822	#endif
+823	
+824	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+825	select:focus {
+826	    border-color: rgb(17, 46, 135);
+827	}
+828	#endif
+829	
+830	#if defined(ENABLE_INPUT_TYPE_COLOR) && ENABLE_INPUT_TYPE_COLOR
+831	
+832	input[type="color"] {
+833	    -webkit-appearance: square-button;
+834	    width: 44px;
+835	    height: 23px;
+836	}
+837	
+838	input[type="color"]::-webkit-color-swatch-wrapper {
+839	    display: flex;
+840	    padding: 4px 2px;
+841	    box-sizing: border-box;
+842	    width: 100%;
+843	    height: 100%;
+844	}
+845	
+846	input[type="color"]::-webkit-color-swatch {
+847	    background-color: #000000;
+848	    border: 1px solid #777777;
+849	    flex: 1;
+850	}
+851	
+852	#if defined(ENABLE_DATALIST_ELEMENT) && ENABLE_DATALIST_ELEMENT
+853	
+854	input[type="color"][list] {
+855	    -webkit-appearance: menulist;
+856	    width: 88px;
+857	    height: 23px;
+858	}
+859	
+860	input[type="color"][list]::-webkit-color-swatch-wrapper {
+861	    padding-left: 8px;
+862	    padding-right: 24px;
+863	}
+864	
+865	input[type="color"][list]::-webkit-color-swatch {
+866	    border-color: #000000;
+867	}
+868	
+869	#endif // defined(ENABLE_DATALIST_ELEMENT) && ENABLE_DATALIST_ELEMENT
+870	
+871	#endif // defined(ENABLE_INPUT_TYPE_COLOR) && ENABLE_INPUT_TYPE_COLOR
+872	
+873	select {
+874	    box-sizing: border-box;
+875	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+876	    -webkit-appearance: menulist-button;
+877	    letter-spacing: normal;
+878	    word-spacing: normal;
+879	    line-height: normal;
+880	    border: 1px solid #4c4c4c;
+881	    /* We want to be as close to background:transparent as possible without actually being transparent */
+882	    background-color: rgba(255, 255, 255, 0.01);
+883	    font: 11px Helvetica;
+884	    padding: 0 0.4em 0 0.4em;
+885	#else
+886	    -webkit-appearance: menulist;
+887	    border: 1px solid;
+888	    color: black;
+889	    background-color: white;
+890	#endif
+891	    align-items: center;
+892	    white-space: pre;
+893	    -webkit-rtl-ordering: logical;
+894	    cursor: default;
+895	}
+896	
+897	#if !(defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS)
+898	select:matches([size], [multiple], [size][multiple]) {
+899	    -webkit-appearance: listbox;
+900	    align-items: flex-start;
+901	    border: 1px inset gray;
+902	    border-radius: initial;
+903	    white-space: initial;
+904	}
+905	
+906	select:matches([size="0"], [size="1"]) {
+907	    -webkit-appearance: menulist;
+908	    align-items: center;
+909	    border: 1px solid;
+910	    border-radius: 5px;
+911	    white-space: pre;
+912	}
+913	#endif
+914	
+915	optgroup {
+916	    font-weight: bolder;
+917	}
+918	
+919	option {
+920	    font-weight: normal;
+921	}
+922	
+923	output {
+924	    display: inline;
+925	}
+926	
+927	/* form validation message bubble */
+928	
+929	::-webkit-validation-bubble {
+930	    display: inline-block;
+931	    z-index: 2147483647;
+932	    position: absolute;
+933	    opacity: 0.95;
+934	    line-height: 0;
+935	    margin: 0;
+936	    -webkit-text-security: none;
+937	    transition: opacity 05.5s ease;
+938	}
+939	
+940	::-webkit-validation-bubble-message {
+941	    display: flex;
+942	    position: relative;
+943	    top: -4px;
+944	    font: message-box;
+945	    color: black;
+946	    min-width: 50px;
+947	    max-width: 200px;
+948	    border: solid 2px #400;
+949	    background: -webkit-gradient(linear, left top, left bottom, from(#f8ecec), to(#e8cccc));
+950	    padding: 8px;
+951	    border-radius: 8px;
+952	    -webkit-box-shadow: 4px 4px 4px rgba(100,100,100,0.6),
+953	        inset -2px -2px 1px #d0c4c4,
+954	        inset 2px 2px 1px white;
+955	    line-height: normal;
+956	    white-space: normal;
+957	    z-index: 2147483644;
+958	}
+959	
+960	::-webkit-validation-bubble-text-block {
+961	    flex: 1;
+962	}
+963	
+964	::-webkit-validation-bubble-heading {
+965	    font-weight: bold;
+966	}
+967	
+968	::-webkit-validation-bubble-arrow {
+969	    display: inline-block;
+970	    position: relative;
+971	    left: 32px;
+972	    width: 16px;
+973	    height: 16px;
+974	    background-color: #f8ecec;
+975	    border-width: 2px 0 0 2px;
+976	    border-style: solid;
+977	    border-color: #400;
+978	    box-shadow: inset 2px 2px 1px white;
+979	    -webkit-transform-origin: 0 0;
+980	    transform: rotate(45deg);
+981	    z-index: 2147483645;
+982	}
+983	
+984	::-webkit-validation-bubble-arrow-clipper {
+985	    display: block;
+986	    overflow: hidden;
+987	    height: 16px;
+988	}
+989	
+990	#if defined(ENABLE_METER_ELEMENT) && ENABLE_METER_ELEMENT
+991	/* meter */
+992	
+993	meter {
+994	    -webkit-appearance: meter;
+995	    box-sizing: border-box;
+996	    display: inline-block;
+997	    height: 1em;
+998	    width: 5em;
+999	    vertical-align: -0.2em;
+1000	}
+1001	
+1002	#endif
+1003	
+1004	/* progress */
+1005	
+1006	progress {
+1007	    -webkit-appearance: progress-bar;
+1008	    box-sizing: border-box;
+1009	    display: inline-block;
+1010	    height: 1em;
+1011	    width: 10em;
+1012	    vertical-align: -0.2em;
+1013	}
+1014	
+1015	progress::-webkit-progress-inner-element {
+1016	    -webkit-appearance: inherit;
+1017	    box-sizing: inherit;
+1018	    height: 100%;
+1019	    width: 100%;
+1020	}
+1021	
+1022	progress::-webkit-progress-bar {
+1023	    background-color: gray;
+1024	    height: 100%;
+1025	    width: 100%;
+1026	    box-sizing: border-box;
+1027	}
+1028	
+1029	progress::-webkit-progress-value {
+1030	    background-color: green;
+1031	    height: 100%;
+1032	    width: 50%; /* should be removed later */
+1033	    box-sizing: border-box;
+1034	}
+1035	
+1036	/* inline elements */
+1037	
+1038	u, ins {
+1039	    text-decoration: underline;
+1040	}
+1041	
+1042	strong, b {
+1043	    font-weight: bold;
+1044	}
+1045	
+1046	i, cite, em, var, address, dfn {
+1047	    font-style: italic;
+1048	}
+1049	
+1050	tt, code, kbd, samp {
+1051	    font-family: monospace;
+1052	}
+1053	
+1054	pre, xmp, plaintext, listing {
+1055	    display: block;
+1056	    font-family: monospace;
+1057	    white-space: pre;
+1058	    margin: 1__qem 0;
+1059	}
+1060	
+1061	mark {
+1062	    background-color: yellow;
+1063	    color: black;
+1064	}
+1065	
+1066	big {
+1067	    font-size: larger;
+1068	}
+1069	
+1070	small {
+1071	    font-size: smaller;
+1072	}
+1073	
+1074	s, strike, del {
+1075	    text-decoration: line-through;
+1076	}
+1077	
+1078	sub {
+1079	    vertical-align: sub;
+1080	    font-size: smaller;
+1081	}
+1082	
+1083	sup {
+1084	    vertical-align: super;
+1085	    font-size: smaller;
+1086	}
+1087	
+1088	nobr {
+1089	    white-space: nowrap;
+1090	}
+1091	
+1092	/* states */
+1093	
+1094	:focus {
+1095	    outline: auto 5px -webkit-focus-ring-color;
+1096	}
+1097	
+1098	/* Read-only text fields do not show a focus ring but do still receive focus */
+1099	html:focus, body:focus, input[readonly]:focus, applet:focus, embed:focus, iframe:focus, object:focus {
+1100	    outline: none;
+1101	}
+1102	
+1103	input:focus, textarea:focus, keygen:focus, select:focus {
+1104	    outline-offset: -2px;
+1105	}
+1106	
+1107	input:matches([type="button"], [type="checkbox"], [type="file"], [type="hidden"], [type="image"], [type="radio"], [type="reset"], [type="search"], [type="submit"]):focus,
+1108	input[type="file"]:focus::-webkit-file-upload-button {
+1109	    outline-offset: 0;
+1110	}
+1111	
+1112	a:any-link {
+1113	    color: -webkit-link;
+1114	    text-decoration: underline;
+1115	    cursor: auto;
+1116	}
+1117	
+1118	a:any-link:active {
+1119	    color: -webkit-activelink;
+1120	}
+1121	
+1122	/* HTML5 ruby elements */
+1123	
+1124	ruby, rt {
+1125	    text-indent: 0; /* blocks used for ruby rendering should not trigger this */
+1126	}
+1127	
+1128	rt {
+1129	    line-height: normal;
+1130	    -webkit-text-emphasis: none;
+1131	}
+1132	
+1133	ruby > rt {
+1134	    display: block;
+1135	    font-size: -webkit-ruby-text;
+1136	    text-align: start;
+1137	}
+1138	
+1139	ruby > rp {
+1140	    display: none;
+1141	}
+1142	
+1143	/* other elements */
+1144	
+1145	noframes {
+1146	    display: none;
+1147	}
+1148	
+1149	frameset, frame {
+1150	    display: block;
+1151	}
+1152	
+1153	frameset {
+1154	    border-color: inherit;
+1155	}
+1156	
+1157	iframe {
+1158	    border: 2px inset;
+1159	}
+1160	
+1161	details {
+1162	    display: block;
+1163	}
+1164	
+1165	summary {
+1166	    display: block;
+1167	}
+1168	
+1169	summary::-webkit-details-marker {
+1170	    display: inline-block;
+1171	    width: 0.66em;
+1172	    height: 0.66em;
+1173	    margin-right: 0.4em;
+1174	}
+1175	
+1176	template {
+1177	    display: none;
+1178	}
+1179	
+1180	bdi, output {
+1181	    unicode-bidi: -webkit-isolate;
+1182	}
+1183	
+1184	bdo {
+1185	    unicode-bidi: bidi-override;
+1186	}
+1187	
+1188	slot {
+1189	    display: contents;
+1190	}
+1191	
+1192	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+1193	applet, embed, object, img {
+1194	    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+1195	}
+1196	:any-link img {
+1197	    -webkit-tap-highlight-color: inherit;
+1198	}
+1199	#endif
+1200	
+1201	#if defined(ENABLE_ATTACHMENT_ELEMENT) && ENABLE_ATTACHMENT_ELEMENT
+1202	attachment {
+1203	    -webkit-appearance: attachment;
+1204	#if defined(WTF_PLATFORM_IOS) && WTF_PLATFORM_IOS
+1205	    color: -apple-system-blue;
+1206	#endif
+1207	}
+1208	#endif
+1209	
+1210	/* page */
+1211	
+1212	@page {
+1213	    /* FIXME: Define the right default values for page properties. */
+1214	    size: auto;
+1215	    margin: auto;
+1216	    padding: 0px;
+1217	    border-width: 0px;
+1218	}
+1219	
+1220	/* noscript is handled internally, as it depends on settings. */
+1221	

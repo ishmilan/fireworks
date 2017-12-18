@@ -1,0 +1,93 @@
+*,*:before,*:after{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	line-height:1.25;
+	background:transparent;
+	outline: none;
+}
+body{
+	color:$black;
+	font-family:"FiraSans",sans-serif;
+	font-size:16px;
+}
+head,link,meta,script,style,title,template,[hidden],[type=hidden]{
+	display:none;
+}
+header,nav,aside,section,footer{background:$white;}
+html,body,article,aside,footer,header,nav,section,pre,blockquote,address,audio,video,canvas,figure,figcaption,dd,details,ol,ul,main,menu,hgroup,h1,h2,h3,h4,h5,h6,noscript,div,p,hr,form,fieldset,output{
+	display:block;
+	word-break:break-all;
+	word-wrap:break-word;
+}
+dt,dd,li,summary{display:list-item;}
+body{
+	margin:0;
+	background:$white;
+}
+h1,h2,h3,h4,h5,h6{
+	line-height:1.25;
+	letter-spacing:0;
+	margin:0.1em 0;
+}
+h1{font-size:2.5em;}
+h2{font-size:1.8em;}
+h3{font-size:1.5em;}
+h4{font-size:1.25em;}
+h5{font-size:.95em;}
+h6{font-size:.8em;}
+figure{margin:1em;}
+img{border:none;}
+audio,canvas,progress,video{display:inline-block;}
+progress{vertical-align:baseline;}
+blockquote,dfn,cite{font-family:FiraSansBook,sans-serif;}
+.text-like-link,a{
+	text-decoration:none;
+	color: $normal-link;
+}
+a:visited{color: $visited-link;}
+a:hover,a:focus{color: $focused-link;text-decoration:underline;}
+a:active{color: $visited-link;}
+abbr[title],abbr[data-original-title],acronym[title],acronym[data-original-title]{
+	text-decoration:underline dotted;
+	cursor:help;
+}
+b,strong{font-weight:bolder;}
+em,i,dfn{font-style:italic;}
+mark,.mark{
+	background-color: $mark;
+	color:$black;
+	padding:.2em;
+}
+sub,sup{
+	font-size:75%;
+	line-height:0;
+	position:relative;
+	vertical-align:baseline;
+}
+sub{bottom:-0.25em;}
+sup{top:-0.5em;}
+blockquote:before{
+	font-family:'icomoon' !important;
+	content:"\e934";
+	padding-right:1em;
+}
+blockquote:after{
+	font-family:'icomoon' !important;
+	content:"\e935";
+	padding-left:1em;
+}
+hr{
+	border:none;
+	box-sizing:border-box;
+	overflow:hidden;
+	min-height:2px;
+	margin:1.5em 2%;
+	background: $darker-gray;
+}
+small,.small{font-size:80%;}
+address{
+	margin:1em;
+	font-style:normal;
+}
+p{margin-bottom:1em;}
