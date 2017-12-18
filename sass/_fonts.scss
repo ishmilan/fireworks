@@ -1,58 +1,55 @@
+/********************
+ *		FONTS 		*
+ ********************/
+/*		FiraSans & FiraMono		*/
+//normal
 @font-face{
 	font-family:'FiraSans';
 	src:url('../fonts/FiraSans/FiraSans-Regular.woff');
 	font-weight:normal;
 	font-style:normal;
 }
+//italic
 @font-face{
 	font-family:'FiraSans';
 	src:url('../fonts/FiraSans/FiraSans-Italic.woff');
 	font-weight:normal;
 	font-style:italic;
 }
+//bold
 @font-face{
 	font-family:'FiraSans';
 	src:url('../fonts/FiraSans/FiraSans-Bold.woff');
 	font-weight:bold;
 	font-style:normal;
 }
+//bold&italic
 @font-face{
 	font-family:'FiraSans';
 	src:url('../fonts/FiraSans/FiraSans-Bold-Italic.woff');
 	font-weight:bold;
 	font-style:italic;
 }
+//lighter
 @font-face{
 	font-family:'FiraSansBook';
 	src:url('../fonts/FiraSans/FiraSans-BookItalic.otf');
-	font-weight:normal;
+	font-weight:lighter;
 	font-style:normal;
 }
+$sans:'FiraSans',Helvetica,sans-serif;
+//mono&normal
 @font-face{
-	font-family:'Ubuntu';
-	src:url('../fonts/ubuntu/Ubuntu-R.woff');
+	font-family:'FiraMono';
+	src:url('../fonts/FiraMono/FiraMono-Regular.otf');
 	font-weight:normal;
-	font-style:normal;
 }
+//mono&bold
 @font-face{
-	font-family:'Ubuntu';
-	src:url('../fonts/ubuntu/Ubuntu-RI.woff');
-	font-weight:normal;
-	font-style:italic;
-}
-@font-face{
-	font-family:'Ubuntu';
-	src:url('../fonts/ubuntu/Ubuntu-B.woff');
+	font-family:'FiraMono';
+	src:url('../fonts/FiraMono/FiraMono-Bold.otf');
 	font-weight:bold;
-	font-style:normal;
 }
-@font-face{
-	font-family:'Ubuntu';
-	src:url('../fonts/ubuntu/Ubuntu-BI.woff');
-	font-weight:bold;
-	font-style:italic;
-}
-@font-face{
-	font-family:'Ubuntu-Mono';
-	src:url('../fonts/ubuntu/UbuntuMono-R.woff');
-}
+$mono:'FiraMono',Courier, monospace;
+@import "fonts_ubuntu";
+@import "fonts_aleo";

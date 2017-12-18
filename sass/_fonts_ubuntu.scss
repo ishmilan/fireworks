@@ -1,0 +1,43 @@
+/*		Ubuntu		*/
+//normal
+@font-face{
+	font-family:'Ubuntu';
+	src:url('../fonts/ubuntu/Ubuntu-R.woff');
+	font-weight:normal;
+	font-style:normal;
+}
+//italic
+@font-face{
+	font-family:'Ubuntu';
+	src:url('../fonts/ubuntu/Ubuntu-RI.woff');
+	font-weight:normal;
+	font-style:italic;
+}
+//bold
+@font-face{
+	font-family:'Ubuntu';
+	src:url('../fonts/ubuntu/Ubuntu-B.woff');
+	font-weight:bold;
+	font-style:normal;
+}
+//bold&italic
+@font-face{
+	font-family:'Ubuntu';
+	src:url('../fonts/ubuntu/Ubuntu-BI.woff');
+	font-weight:bold;
+	font-style:italic;
+}
+$ubuntu:'Ubuntu',$sans;
+//mono&normal
+@font-face{
+	font-family:'Ubuntu-Mono';
+	src:url('../fonts/ubuntu/UbuntuMono-R.woff');
+	font-weight:normal;
+}
+//mono&bold
+@font-face{
+	font-family:'Ubuntu-Mono';
+	src:url('../fonts/ubuntu/UbuntuMono-B.woff');
+	font-weight:bold;
+}
+$ubuntuMono:'Ubuntu-Mono',$mono;

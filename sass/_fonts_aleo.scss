@@ -1,0 +1,37 @@
+/*		Ubuntu		*/
+//normal
+@font-face{
+	font-family:'Aleo';
+	src:url('../fonts/Aleo/Aleo-Regular.otf');
+	font-weight:normal;
+	font-style:normal;
+}
+//italic
+@font-face{
+	font-family:'Aleo';
+	src:url('../fonts/Aleo/Aleo-Italic.otf');
+	font-weight:normal;
+	font-style:italic;
+}
+//bold
+@font-face{
+	font-family:'Aleo';
+	src:url('../fonts/Aleo/Aleo-Bold.otf');
+	font-weight:bold;
+	font-style:normal;
+}
+//bold&italic
+@font-face{
+	font-family:'Aleo';
+	src:url('../fonts/Aleo/Aleo-BoldItalic.otf');
+	font-weight:bold;
+	font-style:italic;
+}
+//lighter
+@font-face{
+	font-family:'FiraSansBook';
+	src:url('../fonts/Aleo/Aleo-Light.otf');
+	font-weight:lighter;
+	font-style:normal;
+}
+$aleo:'Aleo',Georgia, serif;
