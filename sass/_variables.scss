@@ -1,11 +1,63 @@
-$black: #101010;
-$darker-gray: #232323;
-$dark-gray: ;
-$gray: ;
-$light-gray: ;
-$lighter-gray: ;
-$white: #FDFDFD;
-$normal-link: #3498C8;
-$focused-link: #00CAFE;
-$visited-link: #c8344e;
+// COLORS
+$black: #121212;
+$darker-gray: #323232;
+$dark-gray: #444444;
+$gray: #999999;
+$light-gray: #DCDCDC;
+$lighter-gray: #FCFCFC;
+$white: #FEFEFE;
+
+$normal-link: #1EAEDB;
+$active-link: #00CAFE;
+$error: #B90000;
 $mark: #FFFF33;
+
+//DEFAULT THEME
+$primary:#FF8F00;
+$primary-dark:#DD3B00;
+$primary-light:#FF8F22;
+$contrasting:#FCFCFC;
+//THEME
+
+$border-radius-lite: 2px;
+$border-radius-normal: 4px;
+$border-radius-big: 10px;
+$border-radius-circle: 50%;
+$soft:33.333333%;
+$normal:66.666666%;
+$full:100%;
+//a{color:#1EAEDB;}
+//a:hover{color:#0FA0CE;}
+
+$icomoon:"icomoon" !important;
+
+$small: 480px;
+$medium: 768px;
+$large: 992px;
+$xl: 1200px;
+//MIXINS
+@mixin s {
+	@media (min-width: #{$small}){
+		@content;
+	}
+}
+@mixin m {
+	@media (min-width: #{$medium}){
+		@content;
+	}
+}
+@mixin l {
+	@media (min-width: #{$large}){
+		@content;
+	}
+}
+@mixin xl {
+	@media (min-width: #{$xl}){
+		@content;
+	}
+}
+@mixin print {
+	@media print{
+		@content;
+	}
+}
