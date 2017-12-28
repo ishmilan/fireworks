@@ -38,6 +38,7 @@
 	font-style:normal;
 }
 $sans:'FiraSans',Helvetica,sans-serif;
+$book:'FiraSansBook',$sans;
 //mono&normal
 @font-face{
 	font-family:'FiraMono';
@@ -51,5 +52,10 @@ $sans:'FiraSans',Helvetica,sans-serif;
 	font-weight:bold;
 }
 $mono:'FiraMono',Courier, monospace;
-@import "fonts_ubuntu";
-@import "fonts_aleo";
+.font-fira-sans{font-family: $sans;}
+.font-fira-book{font-family: $book;}
+.font-fira-code{font-family: $mono;}
+@import "fonts/fonts_ubuntu";
+@import "fonts/fonts_aleo";
+@import "fonts/fonts_raleway";
+//TODO HelveticaNeue

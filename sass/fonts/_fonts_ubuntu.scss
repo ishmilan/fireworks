@@ -41,3 +41,5 @@ $ubuntu:'Ubuntu',$sans;
 	font-weight:bold;
 }
 $ubuntuMono:'Ubuntu-Mono',$mono;
+.font-ubuntu-sans{font-family: $ubuntu;}
+.font-ubuntu-code{font-family: $ubuntuMono;}

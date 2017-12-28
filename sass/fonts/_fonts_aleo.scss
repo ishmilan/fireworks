@@ -29,9 +29,10 @@
 }
 //lighter
 @font-face{
-	font-family:'FiraSansBook';
+	font-family:'Aleo';
 	src:url('../fonts/Aleo/Aleo-Light.otf');
 	font-weight:lighter;
 	font-style:normal;
 }
 $aleo:'Aleo',Georgia, serif;
+.font-aleo{font-family: $aleo;}

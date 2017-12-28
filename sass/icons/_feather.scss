@@ -1,23 +1,13 @@
 @font-face {
 	font-family: "feather";
-	src:url('../fonts/feather/feather.woff')
+	src:url('../fonts/feather/feather.woff');
 	font-weight: normal;
 	font-style: normal;
 }
-[data-icon]:before {
-	display: inline-block;
-	font-family: "feather";
-	content: attr(data-icon);
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	speak: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-[class^="fi-"],[class*=" fi-"]{
+[data-icon]:before{content: attr(data-icon);}
+[data-icon]:before,
+[class^="fi-"]:before,
+[class*=" fi-"]:before{
 	display: inline-block;
 	font-family: "feather";
 	font-style: normal;
@@ -161,3 +151,5 @@
 .fi-help:before			{content:"\e127";}
 .fi-open:before			{content:"\e128";}
 .fi-ellipsis:before		{content:"\e129";}
+
+$feather:"feather" !important;

@@ -2,9 +2,11 @@
 	font-family:'icomoon';
 	src:url('../fonts/icomoon/icomoon.woff?bi8pro') format('woff')
 }
-[class^="icon-"],[class*="icon-"]{
+[class^="icon-"]:before,
+[class*="icon-"]:before{
 	font-family:'icomoon' !important;
 	speak:none;
+	color:inherit;
 	text-transform:none;
 	line-height:1;
 }
