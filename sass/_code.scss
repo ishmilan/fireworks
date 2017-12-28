@@ -1,0 +1,47 @@
+/*====CODE====*/
+.code,
+.code-block,
+.code-line,
+.terminal,
+code,
+kbd,
+pre,
+samp {
+	max-width:100%;
+	font-family: $mono;
+	font-size: 95%;
+	overflow-x: auto;
+	white-space: pre;
+	word-wrap: break-word;
+	padding:4px;
+	@include print{
+		color:$black;
+		background: $white;
+		border-color: $gray;
+	}
+}
+
+pre,.terminal{
+	color:$light-gray;
+	border-radius:$border-radius-normal;
+	border-left:solid 5px $primary;
+	background:$dark-gray;
+	margin:1em;
+	padding:1em;
+	width:auto;
+	box-shadow: inset 0 -1px 0 $primary;
+}
+
+kbd,code{
+	color:$primary;
+	border-radius:$border-radius-normal;
+	border-left:4px solid $primary;
+	background-color:$light-gray;
+	padding:2px 8px 2px 8px;
+	& code, & pre{
+		padding:0;
+		font-size:100%;
+		font-weight:bold;
+		box-shadow:none;
+	}
+}
