@@ -1,0 +1,115 @@
+/*TABLE*/
+.table,
+table {
+	margin: auto;
+	overflow: auto;
+	border-collapse: separate;
+	border-spacing: 1px;
+	display: table;
+	&,
+	.tr, tr,
+	.thead, thead,
+	.tbody, tbody,
+	.tfoot, tfoot,
+	.th, th,
+	.td, td{
+		vertical-align: middle;
+		text-align: center;
+	}
+	&.table-left *,	& *.table-left,
+	& *.table-left *{text-align:left;}
+	&.table-center *,	& *.table-center,
+	& *.table-center *{text-align:center;}
+	&.table-right *,	& *.table-right,
+	& *.table-right *{text-align:right;}
+	&.table-justify *,	& *.table-justify,
+	& *.table-justify *{text-align:justify;}
+
+
+	&.table-top *,	& *.table-top,
+	& *.table-top *{vertical-align:top;}
+	&.table-middle *,	& *.table-middle,
+	& *.table-middle *{vertical-align:middle;}
+	&.table-bottom *,	& *.table-bottom,
+	& *.table-bottom *{vertical-align:bottom;}
+	&.collapsed{
+		border-spacing:0;
+		border-collapse:collapse;
+	}
+	&.bordered{
+		border: solid 1px $dark-gray;
+		& td, & .td,
+		& tr, & .tr{
+			border: solid 1px $dark-gray;
+		}
+	}
+	&.striped tr:nth-child(even),
+	&.striped .tr:nth-child(even) {
+		background-color: $lighter-gray;
+	}
+	&.hovered tr:hover td,
+	&.hovered tr:hover .td,
+	&.hovered .tr:hover td,
+	&.hovered .tr:hover .td{
+		background-color: $light-gray;
+	}
+}
+
+.tr,tr {
+	display: table-row;
+}
+
+.thead,thead {
+	display: table-header-group;
+}
+.tbody,tbody {
+	display: table-row-group;
+}
+.tfoot,tfoot {
+	display: table-footer-group;
+}
+.tcol,col {
+	display: table-column;
+}
+colgroup {
+	display: table-column-group;
+}
+
+th, .th, td, .td{
+	display:table-cell;
+	padding:8px 16px;
+	text-align:left;
+	border:none;
+	border-bottom:1px solid $dark-gray;
+}
+.th,th{font-weight:bold;}
+
+.caption,
+caption {
+	margin:0px;
+	display: table-caption;
+	text-align: center;
+	font-weight: bold;
+	color: $gray;
+}
+
+
+td, .td,
+th, .th {
+	padding: 4px;
+	border: solid 1px $dark-gray;
+}
+
+.neat-table{
+	&,& *{
+		border: none;
+		border-collapse: collapse;
+		border-spacing:8px;
+	}
+	& td, & th{
+		padding:8px;
+		text-align: left;
+		margin: 0;
+		border-bottom: solid 1px $gray;
+	}
+}
