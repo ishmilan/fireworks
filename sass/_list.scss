@@ -1,0 +1,49 @@
+
+/****************************
+ *			Lists			*
+ ****************************/
+ .no-list-style{list-style:none;}
+.ul,
+ul {
+	list-style: disc inside;
+}
+
+.ol,
+ol {
+	list-style: decimal inside;
+}
+
+.ol,
+.ul,
+ol,
+ul {
+	padding-left: 0;
+	margin-top: 0;
+
+	& .ul,
+	& ul {
+		list-style: circle inside;
+	}
+
+	& .ol,
+	& .ul,
+	& ol,
+	& ul {
+		margin: 1rem 0 1rem 1.5rem;
+		font-size: 90%;
+
+		& .ul,
+		& ul {
+			list-style: square inside;
+		}
+	}
+}
+
+li {
+	margin:0 0 1em 1em;
+	text-align: -webkit-match-parent;
+	text-align: -moz-match-parent;
+	text-align: -ms-match-parent;
+	text-align: -o-match-parent;
+	text-align: match-parent;
+}
