@@ -8,8 +8,9 @@
 [data-icon]:before,
 [class^="fi-"]:before,
 [class*=" fi-"]:before{
-	display: inline-block;
-	font-family: "feather";
+	display:inline-block;
+	font-family:"feather";
+	font-size: inherit;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
