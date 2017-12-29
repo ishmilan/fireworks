@@ -1,25 +1,27 @@
-@import "fonts";
-@import "variables";
-@import "reset";
 
-/*TODO separar el fonts*/
 /*TODO sistema de rejillas*/
 
 // Table of contents
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
-// - Variables
-// - Reset
-// - Mixins
+// - Fonts - Typography
+@import "icons/icomoon";
+@import "icons/feather";
+@import "icons/fontawesome";
+@import "fonts";
+// - Variables - Mixins
+@import "variables";
+// - Reset - Base Styles
+@import "reset";
 // - Grid
-// - Base Styles
-// - Typography
-// - Links
-// - Buttons
-// - Forms
+@import "grid";
+@import "flexgrid";
+// - Forms - Buttons - Links
+@import "form";
 // - Lists
+@import "list";
 // - Code
+@import "code";
 // - Tables
-// - Spacing
-// - Utilities
-// - Clearing
-// - Media Queries
+@import "table";
+// - Miscellanea - Spacing - Utilities
+@import "miscellanea";

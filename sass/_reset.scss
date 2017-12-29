@@ -25,6 +25,13 @@ html {
 			box-shadow: 0px 0px 1px 1px #FF3333;
 		}
 		&:focus{outline:none;}
+		@include print{
+			color: $black !important;
+			text-shadow: none !important;
+			background: transparent !important;
+			-webkit-box-shadow: none !important;
+			box-shadow: none !important;
+		}
 	}
 }
 //DISPLAY: NONE
@@ -45,16 +52,17 @@ dd,details,div,dl,fieldset,figcaption,figure,footer,form,
 h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,layer,legend,main,menu,
 nav,noscript,ol,output,p,pre,section,ul{
 	display: block;
-	word-break: break-all;
+	word-break: normal;
 	word-wrap: break-word;
 	margin-bottom: 1rem;
 }
+section{padding:16px;}
 
 .list-item,dt,li,summary{display:list-item;}
 .center,[center],center{text-align:center;}
 h1,h2,h3,h4,h5,h6{
 	letter-spacing:0;
-	margin:0.1em 0;
+	margin:0.2em 0;
 }
 
 h1{font-size: 2.5em;}
@@ -63,25 +71,11 @@ h3{font-size: 1.5em;}
 h4{font-size: 1.25em;}
 h5{font-size: 0.95em;}
 h6{font-size: 0.8em;}
-figure{margin:1em;}
-img{
-	border:none;
-	vertical-align:middle;
-}
 .inline-block,audio,button,canvas,input,keygen,label,
 marquee,progress,samp,select,textarea,video{
 	display: inline-block;
 }
 progress{vertical-align:baseline;}
-video{
-	object-fit: contain;
-	-webkit-tap-highlight-color: transparent;
-}
-audio:not([controls]),
-video:not([controls]){
-	display: none;
-	height: 0;
-}
 blockquote,cite,dfn{font-family:$book;}
 
 blockquote,cite,q{
@@ -128,12 +122,12 @@ acronym[title] {
 	text-decoration: underline dotted;
 	cursor: help;
 }
-
+.bold,
 b,
-strong {
+strong, {
 	font-weight: bolder;
 }
-
+.italic,
 dfn,
 em,
 i {
@@ -166,9 +160,11 @@ sup {
 	position: relative;
 	vertical-align: baseline;
 }
+.sub,
 sub {
 	bottom: -0.25em;
 }
+.sup,
 sup {
 	top: -0.5em;
 }
@@ -177,18 +173,8 @@ address {
 	margin: 1em;
 	font-style: normal;
 }
-
-img {
-	border-style: none;
-	vertical-align: middle;
-	max-width: 100%;
-	height: auto;
-}
-
-svg:not(:root) {
-	overflow: hidden;
-}
 ::selection{
 	background:$primary;
 	color:$contrasting;
 }
+@import "media";

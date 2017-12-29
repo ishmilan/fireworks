@@ -1,0 +1,21 @@
+
+figure{margin:1em;}
+img{
+	border:none;
+	vertical-align:middle;
+	max-width: 100%;
+	height: auto;
+}
+audio,
+video{
+	object-fit: contain;
+	-webkit-tap-highlight-color: transparent;
+
+	&:not([controls]){
+		display: none;
+		height: 0;
+	}
+}
+svg:not(:root) {
+	overflow: hidden;
+}

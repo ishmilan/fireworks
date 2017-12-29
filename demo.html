@@ -3,34 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Demo</title>
-	<link rel="stylesheet" href="style/main.css">
-	<link rel=icon href=img/favicon.png sizes="16x16" type="image/png">
-	<link rel=icon href=img/icon.png sizes="128x128" type="image/png">
+	<title>Demo FireWorks</title>
+	<link rel=icon href=img/favicon.png type="image/png">
+<!--<link rel="stylesheet" href="style/main.css">-->
+	<link rel="stylesheet" href="style/fireworks.min.css">
 	<script src="js/main.js"></script>
 </head>
 <body>
-<header class="bg-gradient-ocher">
-	<h1 class="icon-menu text-white icon" id="menuButton"></h1>
-	<h1 class="text-white text-center banner" style="font-family: 'Ubuntu'">Título principal</h1>
-	<h1 class="icon-user icon text-white" id="footerButton"></h1>
+<header>
+	<h1 class="icon-menu icon" id="menuButton"></h1>
+	<h1 class="text-center banner" style="font-family: 'Ubuntu'">FireWorks</h1>
+	<h1 class="icon-user icon" id="footerButton"></h1>
 </header>
 <nav id="menu" class="sidebar">
 <fieldset class="lista border-orange bg-dark-grey"><legend class="border border-orange text-blue bg-dark-grey">Lista de enlaces:</legend>
-    <ul class="row-container no-style">
-        <li class="row-content text-center"><a href="#">elemento ul 1</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 2</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 3</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 4</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 5</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 6</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 7</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 8</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 9</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 10</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 11</a></li>
-        <li class="row-content text-center"><a href="#">elemento ul 12</a></li>
-    </ul>
+	<ul class="row-container no-list-style">
+		<li class="row-content align-center"><a href="#">elemento ul 1</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 2</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 3</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 4</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 5</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 6</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 7</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 8</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 9</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 10</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 11</a></li>
+		<li class="row-content align-center"><a href="#">elemento ul 12</a></li>
+	</ul>
 </fieldset>
 </nav>
 <section>
@@ -40,7 +40,7 @@
 		<h3>header 3</h3>
 		<h4>header 4</h4>
 		<h5>header 5</h5>
-		<h6>header 6</h6>		
+		<h6>header 6</h6>
 	</article>
 </section>
 <section>
@@ -89,11 +89,11 @@
 					<li>item2</li>
 				</ol>
 			</li>
-		</ol>	
+		</ol>
 	</article>
 </section>
 <section>
-	<div style="border:solid 1px #333;overflow:scroll;white-space:nowrap;">
+	<div style="border:solid 1px #333;overflow:auto;white-space:nowrap;">
 		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
 		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
 		<div style="min-width:300px;background:#333;height:100px;margin:10px;display:inline-block;"></div>
@@ -111,31 +111,17 @@
 		<form action="">
 			<fieldset>
 			<legend>demo</legend>
-				<label class="icon-user"></label>
-				<input type="text" placeholder="user">
-				<label class="icon-lock"></label>
-				<input type="password" placeholder="password">
-				<label class="icon-envelop"></label>
-				<input type="email" placeholder="email">
-				<label class="icon-mobile"></label>
-				<input type="tel" placeholder="phone number">
+				<label class="icon-user" for="user"></label>
+				<input type="text" placeholder="user"  id="user">
+				<label class="icon-lock" for="pass"></label>
+				<input type="password" placeholder="password"  id="pass">
+				<label class="icon-envelop"  for="mail"></label>
+				<input type="email" placeholder="email"  for="mail">
+				<label class="icon-mobile"  for="phone"></label>
+				<input type="tel" placeholder="phone number"  id="phone">
 			</fieldset>
 		</form>
 	</article>
-</section>
-<section>
-<article>
-	<h3 class="title">Paleta de gradientes</h3>
-	<div class="row-container">
-		<div class="row-content text-center bg-gradient-orange" style="height: 30px">orange1</div>
-		<div class="row-content text-center bg-gradient-gray" style="height: 30px">gray</div>
-		<div class="row-content text-center bg-gradient-ocher" style="height: 30px">ocher</div>
-		<div class="row-content text-center bg-gradient-blue" style="height: 30px">blue</div>
-		<div class="row-content text-center alertBtn" style="height: 30px">yellow</div>
-		<div class="row-content text-center callBtn" style="height: 30px">green</div>
-		<div class="row-content text-center dangerBtn" style="height: 30px">red</div>
-	</div>
-</article>
 </section>
 <style>
 	.colores, .colores *{
@@ -190,9 +176,9 @@
 	</div>
 	<div class="row-content text-center">
 		<div class="text-blue">Paleta orange:</div>
-		<div class="bg-orange1">bg-orange1 #FF6F00</div>
-		<div class="bg-orange2">bg-orange2 #FF4E00</div>
-		<div class="bg-orange3">bg-orange3 #DD5500</div>
+		<div class="bg-orange1">bg-orange1 #FF8F00</div>
+		<div class="bg-orange2">bg-orange2 #FF4D09</div>
+		<div class="bg-orange3">bg-orange3 #DD3B00</div>
 	</div>
 	<div class="row-content text-center">
 		<div class="text-blue">Paleta ocher:</div>
@@ -235,8 +221,141 @@
 <div>
 	Lorem <a href="#" class="icon-file-pdf">ipsum</a> dolor sit amet, <a href="#" class="icon-libreoffice">consectetur adipisicing</a> elit. Quibusdam ducimus voluptatem veritatis voluptatum, accusantium at, dicta harum magnam asperiores repellat sunt dignissimos? Dolore nam sapiente deleniti, saepe ducimus excepturi nostrum. <a href="https://telegram.me/ishmilan" class="icon-telegram">ishmilan</a>.
 </div>
-	<h3 class="title">Normal table width 100%</h3>
-	<table>
+	<h3 class="title">Tables</h3>
+	<div class="table no-border width-100">
+		<div class="tr">
+			<div class="td no-border">
+				<table class="size-xs">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+				<caption>Normal table</caption>
+				</table>
+			</div>
+			<div class="td no-border">
+				<div class="table size-xs">
+					<div class="caption">Fake table (class caption)</div>
+					<div class="tr">
+						<div class="th">(class th)</div>
+						<div class="th">this table</div>
+					</div>
+					<div class="tr">
+						<div class="td">(class td)</div>
+						<div class="td">is a div group with classes</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tr">
+			<div class="td no-border">
+				<table class="bordered size-xs">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+				<caption>border table</caption>
+				</table>
+			</div>
+			<div class="td no-border">
+				<table class="striped collapsed size-xs">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+				<caption>striped & collapsed table</caption>
+				</table>
+			</div>
+		</div>
+		<div class="tr">
+			<div class="td no-border no-padding-x">
+				<table class="striped collapsed hovered size-xs">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+				<caption>striped & hovered table</caption>
+				</table>
+			</div>
+			<div class="td no-border no-padding-x">
+				<table class="width-100">
+					<tbody class="size-xxs">
+						<tr>
+							<td class="table-top table-left" style="width:100px;height:50px">table-top table-left</td>
+							<td class="table-top table-center" style="width:100px;height:50px">table-top table-center</td>
+							<td class="table-top table-right" style="width:100px;height:50px">table-top table-right</td>
+						</tr>
+						<tr>
+							<td class="table-middle table-left" style="width:100px;height:50px">table-middle table-left</td>
+							<td class="table-middle table-center" style="width:100px;height:50px">table-middle table-center</td>
+							<td class="table-middle table-right" style="width:100px;height:50px">table-middle table-right</td>
+						</tr>
+						<tr>
+							<td class="table-bottom table-left" style="width:100px;height:50px">table-bottom table-left</td>
+							<td class="table-bottom table-center" style="width:100px;height:50px">table-bottom table-center</td>
+							<td class="table-bottom table-right" style="width:100px;height:50px">table-bottom table-right</td>
+						</tr>
+					</tbody>
+				<caption>Align table</caption>
+				</table>
+			</div>
+		</div>
+	</div>
+	<table class="width-100 size-xs">
 		<tr>
 			<th>celda</th>
 			<th>celda</th>
@@ -247,15 +366,9 @@
 			<td>celda</td>
 			<td>celda</td>
 		</tr>
-		<tr>
-			<td>celda</td>
-			<td>celda</td>
-			<td>celda</td>
-		</tr>
-	<caption>Normal table</caption>
+	<caption>Normal table width 100%</caption>
 	</table>
-	<h3 class="title">Neat table width 100%</h3>
-	<table class="neat-table width-100">
+	<table class="neat-table width-100 size-xs">
 		<tr>
 			<th>celda</th>
 			<th>celda</th>
@@ -277,40 +390,44 @@
 </article>
 </section>
 <section>
-	<p>Pruebas de formato semantico: subindice<sub>sub</sub>, superindice<sup>sup</sup></p>
-	<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi soluta suscipit nobis eius. Neque ea expedita quidem quam ratione ex consequuntur dolorem rem, error non quaerat tempore quod, facere temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto illo ducimus incidunt quis unde quibusdam at aut minima itaque, corporis quia aliquid dicta fugit, molestiae dolor numquam natus reprehenderit!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa asperiores atque, accusantium temporibus. Non sit ipsam autem ducimus consequuntur quia atque, illum, sunt, numquam ullam sed velit aliquid? Cumque, nisi!</blockquote>
-	<samp>Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>V</kbd>.</samp>
-	<div class="terminal">
-		<p>Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>V</kbd>.</p>
-	</div>
+<p>Pruebas de formato semantico: subindice<sub>sub</sub>, superindice<sup>sup</sup></p>
+<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi soluta suscipit nobis eius. Neque ea expedita quidem quam ratione ex consequuntur dolorem rem, error non quaerat tempore quod, facere temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto illo ducimus incidunt quis unde quibusdam at aut minima itaque, corporis quia aliquid dicta fugit, molestiae dolor numquam natus reprehenderit!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa asperiores atque, accusantium temporibus.</blockquote>
+<samp>Presiona <kbd>Ctrl</kbd> y mantenla presionada
+mientras presionas <kbd>C</kbd>.
+Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd>
+y mantenla presionada mientras presionas <kbd>V</kbd>.</samp>
+<div class="terminal">
+Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>V</kbd>.
+</div>
 </section>
-<section class="bg-warm-grey display-inline center text-center width-40">
-<table class="no-border text-left">
+
+<section class="bg-warm-grey no-padding-x">
+<table class="no-border table-left">
 	<tr>
-		<td class="no-border text-left">
+		<td class="no-border no-padding-x">
 			<input id="checkbox"  type="checkbox"><label for="checkbox"> checkbox</label>
 		</td>
-		<td class="no-border text-left">
+		<td class="no-border no-padding-x">
 			<input id="normal" type="checkbox" class="normal"><label for="normal"> normal </label>
 		</td>
-		<td class="no-border text-left">
+		<td class="no-border no-padding-x">
 			<input id="alert" type="checkbox" class="alert"><label for="alert"> alert </label>
 		</td>
-		<td class="no-border text-left">
+		<td class="no-border no-padding-x">
 			<input id="warn"  type="checkbox" class="danger"><label for="warn"> warning</label>
 		</td>
 	</tr>
 	<tr>
-		<td class="no-border text-left">
+		<td class="no-border align-left no-padding-x">
 			<input id="radio" type="radio"><label for="radio"> radio </label>
 		</td>
-		<td class="no-border text-left">
+		<td class="no-border align-left no-padding-x">
 			<input id="rnormal" type="radio" class="normal"><label for="rnormal"> normal </label>
 		</td>
-		<td class="no-border text-left">
+		<td class="no-border align-left no-padding-x">
 			<input id="ralert" type="radio" class="alert"><label for="ralert"> alert </label>
 		</td>
-		<td class="no-border text-left">
+		<td class="no-border align-left no-padding-x">
 			<input id="rwarn" type="radio" class="danger"><label for="rwarn"> warning</label>
 		</td>
 	</tr>
@@ -336,9 +453,6 @@
 		</div>
 	</div>
 </section>
-<section class="terminal">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad similique officiis ratione in distinctio iure quasi doloribus quae maiores! Voluptas eius, maxime reprehenderit est consequatur? Fuga blanditiis, obcaecati. Illo, nisi. 1234567890
-</section>
 <hr class="bg-orange2">
 <section>
 	<div>
@@ -349,20 +463,20 @@
 </form>
 	<div class=" row-container">
 		<!--<input type="file" class="row-content">-->
-		<button class="row-content">standard button</button>
-		<button disabled="disabled" class="row-content">standard disabled button</button>
-		<button class="callBtn row-content">call button</button>
-		<button disabled="disabled" class="callBtn row-content">call disabled button</button>
-		<button class="recommendedBtn row-content">recommended button</button>
-		<button disabled="disabled" class="recommendedBtn row-content">recommended disabled button</button>
-		<button class="alertBtn row-content">alert button</button>
-		<button disabled="disabled" class="alertBtn row-content">alert disabled button</button>
-		<button class="dangerBtn row-content">danger button</button>
-		<button disabled="disabled" class="dangerBtn row-content">danger disabled button</button>
+		<button class="row-content btn-3d-default">standard button</button>
+		<button disabled="disabled" class="row-content btn-3d-default">standard disabled button</button>
+		<button class="row-content btn btn-3d-success">success button</button>
+		<button disabled="disabled" class="row-content btn btn-3d-success">success disabled button</button>
+		<button class="btn btn-3d-primary row-content">primary button</button>
+		<button disabled="disabled" class="btn btn-3d-primary row-content">primary disabled button</button>
+		<button class="btn btn-3d-warning row-content">warning button</button>
+		<button disabled="disabled" class="btn btn-3d-warning row-content">warning disabled button</button>
+		<button class="btn btn-3d-danger row-content">danger button</button>
+		<button disabled="disabled" class="btn btn-3d-danger row-content">danger disabled button</button>
 	</div>
 </section>
 <footer class="bg-gray3" id="footer">
-<ol class="no-style row-container">
+<ol class="no-list-style row-container">
 	<li class="row-content text-center"><a href="https://twitter.com/ish-milan" class="icon-twitter"> @ish-milan</a></li>
 	<li class="row-content text-center"><a href="https://github.com/ishmilan" class="icon-github"> ishmilan</a></li>
 	<li class="row-content text-center"><a href="https://telegram.me/ishmilan" class="icon-telegram"> ishmilan</a></li>

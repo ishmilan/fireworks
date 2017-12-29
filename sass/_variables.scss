@@ -3,8 +3,8 @@ $black: #121212;
 $darker-gray: #323232;
 $dark-gray: #444444;
 $gray: #999999;
-$light-gray: #DCDCDC;
-$lighter-gray: #FCFCFC;
+$light-gray: #CDCDCD;
+$lighter-gray: #EEEEEE;
 $white: #FEFEFE;
 
 $normal-link: #1EAEDB;
@@ -19,10 +19,10 @@ $primary-light:#FF8F22;
 $contrasting:#FCFCFC;
 //THEME
 
-$border-radius-lite: 2px;
-$border-radius-normal: 4px;
-$border-radius-big: 10px;
-$border-radius-circle: 50%;
+$border-radius-lite:2px;
+$border-radius-normal:4px;
+$border-radius-big:10px;
+$border-radius-circle:50%;
 $soft:33.333333%;
 $normal:66.666666%;
 $full:100%;
@@ -31,10 +31,10 @@ $full:100%;
 
 $icomoon:"icomoon" !important;
 
-$small: 480px;
-$medium: 768px;
-$large: 992px;
-$xl: 1200px;
+$small:480px;
+$medium:768px;
+$large:992px;
+$xl:1200px;
 //MIXINS
 @mixin s {
 	@media (min-width: #{$small}){

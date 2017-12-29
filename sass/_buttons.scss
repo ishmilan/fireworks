@@ -1,0 +1,61 @@
+.btn,
+[role="button"],
+[type="button"],
+[type="reset"],
+[type="submit"],
+::-webkit-file-upload-button,
+button {
+	-webkit-appearance: button;
+	cursor: pointer;
+	padding:4px 8px;
+	&:-moz-focusring,
+	&::-moz-focus-inner {
+		outline: none;
+		border-style: none;
+	}
+	&:disabled{color:$dark-gray;}
+}
+::-webkit-file-upload-button,
+::file-upload-button {
+	font-family:$icomoon;
+	content:"\e92a";
+}
+[class*="btn-3d"],.btn-3d-default{
+	border:solid 1px $dark-gray;
+	color:$black;
+	font-weight:normal;
+	background-color: $light-gray;
+	background:linear-gradient(#F7F7F7,#DDDDDD);
+	&:hover:not(:disabled){cursor:pointer;}
+	&:active,&:disabled{
+		background:linear-gradient(#DDDDDD,#F7F7F7);
+	}
+}
+.btn-3d-success{
+	background-color: $light-gray;
+	background:linear-gradient(#82C82D,#5F9B0A);
+	color:#FBFBFB;
+	&:active,&:disabled{
+		background:linear-gradient(#5F9B0A,#82C82D);
+	}
+}
+.btn-3d-primary{
+	background:linear-gradient(#00CAF2,#00AACC);
+	color:#FBFBFB;
+	&:active,&:disabled{
+		background:linear-gradient(#00AACC,#00CAF2);
+	}
+}
+.btn-3d-warning{
+	background:linear-gradient(#F1C411,#F1AA11);
+	&:active,&:disabled{
+		background:linear-gradient(#F1AA11,#F1C411);
+	}
+}
+.btn-3d-danger{
+	background:linear-gradient(#B90000,#830B0B);
+	color:#FFFFFF;
+	&:active,&:disabled{
+		background:linear-gradient(#830B0B,#B90000);
+	}
+}
