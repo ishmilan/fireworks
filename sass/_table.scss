@@ -53,8 +53,28 @@ table {
 	&.hovered .tr:hover .td{
 		background-color: $light-gray;
 	}
+	&.condensed th, &.condensed td{
+		padding:2px;
+	}
+	& col[class*="col"],
+	& th[class*="col"],
+	,& td[class*="col"]{
+		position: static;
+		float: none;
+	}
 }
-
+.table-responsive{
+	height:auto;
+	overflow-x: auto;
+	width:100%;
+	max-width:100%;
+	& td,& th{
+		white-space: nowrap;
+	}
+	@include m{
+		width: auto;
+	}
+}
 .tr,tr {
 	display: table-row;
 }
