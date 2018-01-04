@@ -2,6 +2,8 @@
  *		 Miscellanea		 *
  ****************************/
  .scrollable{overflow:auto;}
+ .scrollable-x{overflow-x: scroll;}
+ .scrollable-y{overflow-y: scroll;}
 /*SIZING*/
 .width-10	{width:10%;}
 .width-20	{width:20%;}
@@ -119,14 +121,15 @@
 }
 /**/
 /*TEXT FORMAT*/
-.align-left		 {text-align:left !important;}
-.align-right	{text-align:right !important;}
-.align-justify{text-align:justify !important;}
-.align-center {text-align: center !important;}
+.align-left,.text-left		{text-align:left !important;}
+.align-right,.text-right	{text-align:right !important;}
+.align-justify,.text-justify{text-align:justify !important;}
+.align-center,.text-center	{text-align: center !important;}
 .text-nowrap{white-space:nowrap;}
 .text-lowercase{text-transform:lowercase;}
 .text-uppercase{text-transform:uppercase;}
 .text-capitalize{text-transform:capitalize;}
+.text-small-caps{font-variant:small-caps;}
 /**/
 /*MARGIN*/
 .no-margin		{margin:0	!important;}
@@ -243,7 +246,7 @@
 .padding-right-xxl				{padding-right:64px	!important;}
 /**/
 /*BORDERS*/
-.border-*,.border-solid{border-style:solid;}
+[class*="border"],.border-solid{border-style:solid;}
 .border-dashed	{border-style:dashed	!important;}
 .border-dotted	{border-style:dotted	!important;}
 .border-double	{border-style:double	!important;}
@@ -272,12 +275,6 @@
 .border-right-m{border-right:2px solid $primary !important;}
 .border-right-l{border-right:4px solid $primary !important;}
 
-.radius-xs{border-radius:2px;}
-.radius,.radius-s{border-radius:4px;}
-.radius-m{border-radius:8px;}
-.radius-l{border-radius:16px;}
-.radius-xl{border-radius:32px;}
-.circle{border-radius:50%;}
 /**/
 /*ANIMATIONS*/
 .spin{animation:spin 2s infinite linear;}

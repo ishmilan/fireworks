@@ -1,5 +1,5 @@
 /*====FLEX-GRID====*/
-.row-container{
+.container-flex{
 	display:flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -8,5 +8,5 @@
 
 	&.space-around{justify-content:space-around;}
 	& .row-content{flex:1 1 auto;}
-	& .no-grow{flex:0;}
+	& .no-grow{flex:1;}
 }

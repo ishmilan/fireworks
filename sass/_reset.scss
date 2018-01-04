@@ -47,9 +47,9 @@ small,span,strong,sub,sup,time,tt,var{
 	display: inline;
 }
 //DISPLAY: BLOCK
-.block,address,article,aside,blockquote,body,center,
-dd,details,div,dl,fieldset,figcaption,figure,footer,form,
-h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,layer,legend,main,menu,
+.block,address,article,aside,blockquote,body,center,dd,details,
+div,dl,fieldset,figcaption,figure,footer,form,h1,.h1,h2,.h2,h3,.h3,
+h4,.h4,h5,.h5,h6,.h6,header,hgroup,hr,html,.lead,layer,legend,main,menu,
 nav,noscript,ol,output,p,pre,section,ul{
 	display: block;
 	word-break: normal;
@@ -60,17 +60,17 @@ section{padding:16px;}
 
 .list-item,dt,li,summary{display:list-item;}
 .center,[center],center{text-align:center;}
-h1,h2,h3,h4,h5,h6{
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.lead{
 	letter-spacing:0;
 	margin:0.2em 0;
 }
 
-h1{font-size: 2.5em;}
-h2{font-size: 1.8em;}
-h3{font-size: 1.5em;}
-h4{font-size: 1.25em;}
-h5{font-size: 0.95em;}
-h6{font-size: 0.8em;}
+h1,.h1,.lead{font-size: 2.5em;}
+h2,.h2{font-size: 2.1em;}
+h3,.h3{font-size: 1.8em;}
+h4,.h4{font-size: 1.4em;}
+h5,.h5{font-size: 1.1em;}
+h6,.h6{font-size: 0.9em;}
 .inline-block,audio,button,canvas,input,keygen,label,
 marquee,progress,samp,select,textarea,video{
 	display: inline-block;
@@ -88,6 +88,45 @@ blockquote,cite,q{
 		font-family: $icomoon;
 		content: "\e935";
 		padding-left: 0.5em;
+	}
+	& .footer{
+		color:$dark-gray;
+		font-style:italic;
+		&:before{
+			color:$dark-gray;
+			content: "—";
+		}
+	}
+	&.reverse{
+		text-align: right;
+		& .footer{
+			text-align: right;
+			&:before{
+				content: "";
+			}
+			&:after{
+				color:$dark-gray;
+				content: "—";
+			}
+		}
+	}
+}
+blockquote.blockquote{
+	&:before,&:after{
+		content: "";
+		padding:0;
+	}
+	border-left: 4px solid $primary;
+	padding-left: 8px;
+	margin-left: 8px;
+	&.reverse{
+		border-left: none;
+		border-right: 4px solid $primary;
+		padding-left: 0px;
+		margin-left: 0px;
+		padding-right: 8px;
+		margin-right: 8px;
+		text-align: right;
 	}
 }
 .link,
@@ -178,3 +217,17 @@ address {
 	color:$contrasting;
 }
 @import "media";
+//TODO complete flexgrid
+//TODO navbar
+//TODO modal
+//TODO badge
+//TODO nav tab
+//TODO alerts
+//TODO dropdown
+//TODO switches button
+//TODO pagination
+//TODO tooltip
+//TODO popover
+//TODO scrollspy
+//TODO affix
+//TODO breadcrumb

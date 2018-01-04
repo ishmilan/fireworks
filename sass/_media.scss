@@ -19,3 +19,27 @@ video{
 svg:not(:root) {
 	overflow: hidden;
 }
+
+.radius-xs{border-radius:2px;}
+.radius,.radius-s{border-radius:4px;}
+.radius-m{border-radius:8px;}
+.radius-l{border-radius:16px;}
+.radius-xl{border-radius:32px;}
+.circle{border-radius:50%;}
+
+.img-responsive,
+img.thumbnail,
+a.thumbnail > img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+.thumbnail{
+	display:inline-block;
+	max-width:100%;
+	height:auto;
+	padding:4px;
+	background-color:$white;
+	border:solid 1px $dark-gray;
+	border-radius:$border-radius-normal;
+}
