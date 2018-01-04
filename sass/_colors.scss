@@ -7,12 +7,19 @@ $light-gray: #DCDCDC;
 $lighter-gray: #EEEEEE;
 $white: #FEFEFE;
 .bg-black{background:$black;}
+.fg-black{color:$black;}
 .bg-gray-darker{background:$darker-gray;}
+.fg-gray-darker{color:$darker-gray;}
 .bg-gray-dark{background:$dark-gray;}
+.fg-gray-dark{color:$dark-gray;}
 .bg-gray{background:$gray;}
+.fg-gray{color:$gray;}
 .bg-gray-light{background:$light-gray;}
+.fg-gray-light{color:$light-gray;}
 .bg-gray-lighter{background:$lighter-gray;}
+.fg-gray-lighter{color:$lighter-gray;}
 .bg-white{background:$white;}
+.fg-white{color:$white;}
 
 $normal-link: #0077DD;
 $recommend-3d:#00539A;
