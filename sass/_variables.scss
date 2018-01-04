@@ -1,28 +1,8 @@
-// COLORS
-$black: #121212;
-$darker-gray: #323232;
-$dark-gray: #444444;
-$gray: #999999;
-$light-gray: #CDCDCD;
-$lighter-gray: #EEEEEE;
-$white: #FEFEFE;
-
-$normal-link: #1EAEDB;
-$active-link: #00CAFE;
-$error: #B90000;
-$mark: #FFFF33;
-
-//DEFAULT THEME
-$primary:#FF8F00;
-$primary-dark:#DD3B00;
-$primary-light:#FF8F22;
-$contrasting:#FCFCFC;
-//THEME
-
 $border-radius-lite:2px;
 $border-radius-normal:4px;
 $border-radius-big:10px;
 $border-radius-circle:50%;
+
 $none:0%;
 $soft:33.333333%;
 $normal:66.666666%;
@@ -62,3 +42,4 @@ $xl:1200px;
 		@content;
 	}
 }
+@import "colors";
