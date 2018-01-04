@@ -11,6 +11,8 @@
 	color:inherit;
 	text-transform:none;
 	line-height:1;
+	position: relative;
+	top:1px;
 }
 .icon-home:before				{content:"\e900";}
 .icon-pencil:before				{content:"\e901";}
