@@ -1,9 +1,13 @@
 /****************************
  *		FORMS & BUTTONS		*
  ****************************/
-[placeholder],:-webkit-input-placeholder,
-:-ms-input-placeholder,:-moz-placeholder{color: $gray;}
-button,
+:-moz-placeholder,
+:-ms-input-placeholder,
+:-webkit-input-placeholder,
+[placeholder] {
+	color: $gray;
+}
+
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -11,39 +15,42 @@ input[type="text"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],
-textarea,
-select{
-	-webkit-appearance:textfield;
-	-moz-appearance:textfield;
-	appearance:textfield;
-	border: 1px solid $gray;
+textarea{
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+	border: 1px solid $dark-gray;
 	box-shadow: none;
-	line-height:1;
-	margin:0;
-	height:38px;
-	&, optgroup,
-	[type="range"]{
+	line-height: 1;
+	margin: 0;
+	height: 38px;
+	color:$darker-gray;
+	&,
+	[type="range"],
+	optgroup {
 		font-size: 95%;
-		max-width:100%;
+		max-width: 100%;
 		box-shadow: none;
-		font-family:$sans;
-		background:inherit;
-		color:inherit;
+		font-family: $sans;
+		background: inherit;
 		overflow: visible;
 		padding: 6px 12px;
-		text-transform:none;
+		text-transform: none;
 	}
+
 	&:focus {
-		border:1px solid $active-link;
-		outline:0;
+		border: 1px solid $active-link;
+		outline: 0;
 	}
 }
+
 [type=search] {
 	-webkit-appearance: textfield;
 	outline-offset: -2px;
+
 	&::-webkit-search-cancel-button,
 	&::-webkit-search-decoration {
-		-webkit-appearance: none
+		-webkit-appearance: none;
 	}
 }
 
@@ -52,78 +59,345 @@ select{
 	height: auto;
 }
 
-fieldset{
-	border:0;
-	min-width:0;
-	padding:1em;
-	margin:1em;
+fieldset {
+	min-width: 0;
+	padding: 1em;
+	margin: 1em;
 	border: 1px solid $light-gray;
 }
 //TODO check label
-label{
-	cursor:default;
-	display:inline-block;
-	max-width:100%;
+
+label {
+	cursor: default;
+	display: inline-block;
+	max-width: 100%;
 
 	&[for] {
-		cursor:pointer;
+		cursor: pointer;
 	}
-	&[class*="icon-"]{
+
+	&[class*="icon-"] {
 		display: block;
 		position: absolute;
-		&:before{
-			color:$gray;
+
+		&:before {
+			color: $gray;
 			font-size: 20px;
 			display: block;
 			text-align: center;
 			position: relative;
 			width: 30px;
-			top: 6px;
-			cursor:pointer;
+			top: 8px;
+			cursor: pointer;
 		}
-		&+input{
-			width:100%;
-			height:38px;
-			padding:.5em 2em;
-			margin-bottom:1em;
+
+		&+input {
+			width: 100%;
+			height: 38px;
+			padding: 0.5em 2em;
+			margin-bottom: 1em;
 		}
 	}
 }
-legend{
-	color:inherit;
-	display:table;
-	max-width:100%;
-	padding:4px;
-	border:0;
-	margin:0;
-	white-space:normal;
-	font-size:inherit;
-	line-height:inherit;
+
+legend {
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 4px;
+	border: 0;
+	margin: 0;
+	white-space: normal;
+	font-size: inherit;
+	line-height: inherit;
+	color: $darker-gray;
 }
-optgroup{font-weight: bold;}
-output{padding:8px;}
+
+select[multiple],
+select[size] {
+	height: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+output {
+	padding: 8px;
+}
+
 textarea {
 	overflow: auto;
 	padding: 8px;
 }
-[type="checkbox"],
-[type="radio"]{
-	display:none;
-	&+label:before,&:checked+label:before{
-		display:inline;
-		vertical-align:bottom;
-		font-weight: normal;
-		color: $black;
-		cursor: pointer;
-		font-family:'icomoon' !important;
-	}
-	&.normal+label:before{color:#00CAF2;}
-	&.alert+label:before{color:#F1C411;}
-	&.danger+label:before{color:#B70404;}
+
+[type="file"] {
+	display: none;
 }
-[type="checkbox"]+label:before{content:"\e98d";}
-[type="checkbox"]:checked+label:before{content:"\e98c";}
-[type="radio"]+label:before{content:"\e990";}
-[type="radio"]:checked+label:before{content:"\e98f";cursor:default;}
-[disabled]{cursor:not-allowed;}
+
+[type="checkbox"],
+[type="radio"] {
+	display: none;
+
+	&+label:before,
+	&:checked+label:before {
+		display: inline;
+		vertical-align: bottom;
+		font-weight: normal;
+		color: $darker-gray;
+		cursor: pointer;
+		font-family: 'icomoon' !important;
+	}
+
+	&.normal+label:before {
+		color: $normal-link;
+	}
+
+	&.alert+label:before {
+		color: $mark;
+	}
+
+	&.danger+label:before {
+		color: $error;
+	}
+}
+
+[type="checkbox"]+label:before {
+	content: "\e98d";
+}
+
+[type="checkbox"]:checked+label:before {
+	content: "\e98c";
+}
+
+[type="radio"]+label:before {
+	content: "\e990";
+}
+
+[type="radio"]:checked+label:before {
+	content: "\e98f";
+	cursor: default;
+}
+
+.disabled,
+[disabled] {
+	cursor: not-allowed;
+}
+
+.form-control {
+	position: relative;
+	display: flex;
+	flex: 1 1 auto;
+	background: transparent;
+	padding: 0;
+	font-size: 1em;
+	min-height: 16px;
+	width:100%;
+
+	&>* {
+		width: 100%;
+		display: flex;
+		border:1px solid $dark-gray;
+		height: 38px;
+		&.addon {
+			white-space: nowrap;
+			vertical-align: middle;
+			width:auto;
+			padding: 8px;
+			background: $light-gray;
+			&+*{
+				border-left:none;
+			}
+		}
+	}
+	&.recommend .addon,& *.addon.recommend,{
+		&,& *{
+			color:$normal-link;
+			border-color:$normal-link;
+		}
+		background-color:$info-alpha;
+	}
+	&.info .addon,& *.addon.info{
+		&,& *{
+			color:$active-link;
+			border-color:$active-link;
+		}
+		background-color:$info-alpha;
+	}
+	&.success .addon,& *.addon.success{
+		&,& *{
+			color:$success;
+			border-color:$success;
+		}
+		background-color:$success-alpha;
+	}
+	&.alert .addon,& *.addon.alert{
+		&,& *{
+			color:$mark;
+			border-color:$mark;
+		}
+		background-color:$alert-alpha;
+	}
+	&.warning .addon,& *.addon.warning{
+		&,& *{
+			color:$warning;
+			border-color:$warning;
+		}
+		background-color:$warning-alpha;
+	}
+	&.error .addon,& *.addon.error{
+		&,& *{
+			color:$error;
+			border-color:$error;
+		}
+		background-color:$error-alpha;
+	}
+}
+
+.form-control-feedback {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-size: 1em;
+	min-height: 16px;
+
+	& input,
+	& select,
+	& textarea,
+	.form-control {
+		width: 100%;
+		margin: 0;
+		display: table;
+		border-color: $dark-gray;
+
+		&:active,
+		&:hover {
+			border-color: $normal-link;
+		}
+
+		&.disabled,
+		&[disabled] {
+			cursor: not-allowed;
+			color: $gray;
+			border-color: $gray;
+		}
+
+		& input,
+		& select,
+		& textarea {
+			width: 100%;
+			margin: 0;
+			display: table-cell;
+			border-color: $dark-gray;
+
+			&:active,
+			&:hover {
+				border-color: $normal-link;
+			}
+
+			&.disabled,
+			&[disabled] {
+				cursor: not-allowed;
+				color: $gray;
+				border-color: $gray;
+			}
+		}
+	}
+	& .feedback-message {
+		display: block;
+		color: $dark-gray;
+		max-width: 100%;
+		margin: 4px 0;
+		overflow: none;
+		height: auto;
+	}
+
+	&.success {
+		& input,
+		& select,
+		& textarea {
+			border-color: $success;
+		}
+
+		& .feedback-message,
+		& .feedback-message:after,
+		& .feedback-message:before {
+			color: $success;
+		}
+	}
+
+	&.recommend {
+		& input,
+		& select,
+		& textarea {
+			border-color: $normal-link;
+		}
+
+		& .feedback-message,
+		& .feedback-message:after,
+		& .feedback-message:before {
+			color: $normal-link;
+		}
+	}
+
+	&.info {
+		& input,
+		& select,
+		& textarea {
+			border-color: $active-link;
+		}
+
+		& .feedback-message,
+		& .feedback-message:after,
+		& .feedback-message:before {
+			color: $active-link;
+		}
+	}
+
+	&.alert {
+		& input,
+		& select,
+		& textarea {
+			border-color: $mark;
+		}
+
+		& .feedback-message,
+		& .feedback-message:after,
+		& .feedback-message:before {
+			color: $mark;
+		}
+	}
+
+	&.warning {
+		& input,
+		& select,
+		& textarea {
+			border-color: $warning;
+		}
+
+		& .feedback-message,
+		& .feedback-message:after,
+		& .feedback-message:before {
+			color: $warning;
+		}
+	}
+
+	&.error {
+		& input,
+		& select,
+		& textarea {
+			border-color: $error;
+		}
+
+		& .feedback-message,
+		& .feedback-message:after,
+		& .feedback-message:before {
+			color: $error;
+		}
+	}
+}
 @import "buttons";
+//TODO form xs & xl
