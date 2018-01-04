@@ -7,24 +7,29 @@ code,
 kbd,
 pre,
 samp {
+	border-radius:$border-radius-normal;
+	border:solid 1px $primary;
+	border-left:4px solid $primary;
+	border-left:solid 5px $primary;
 	max-width:100%;
 	font-family: $mono;
 	font-size: 95%;
 	overflow-x: auto;
 	white-space: pre;
 	word-wrap: break-word;
-	padding:4px;
+	padding:2px 4px;
+	line-height:1.4;
 	@include print{
 		color:$black;
 		background: $white;
 		border-color: $gray;
+		page-break-inside: avoid;
 	}
 }
 
 pre,.terminal{
 	color:$light-gray;
 	border-radius:$border-radius-normal;
-	border-left:solid 5px $primary;
 	background:$dark-gray;
 	margin:1em;
 	padding:1em;
@@ -34,10 +39,8 @@ pre,.terminal{
 
 kbd,code{
 	color:$primary;
-	border-radius:$border-radius-normal;
-	border-left:4px solid $primary;
 	background-color:$light-gray;
-	padding:2px 8px 2px 8px;
+	padding:0px 8px;
 	& code, & pre{
 		padding:0;
 		font-size:100%;
