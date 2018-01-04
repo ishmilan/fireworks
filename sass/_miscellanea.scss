@@ -338,4 +338,116 @@
 @keyframes animatezoom {
 	0%{transform:scale(0);}
 	100%{transform:scale(1);}
-}/**/
+}
+/**/
+/*CARD*/
+/**/
+/*ALERT*/
+.panel{
+	max-width: calc(100vw - 4px);
+	max-height: calc(100vh - 4px);
+	margin:auto;
+	padding: 0;
+	border:none;
+	box-shadow: 0 2px 2px 0 $darker-gray;
+	&.notice{
+		border-left-style:solid;
+		border-left-width: 4px;
+	}
+
+	&.recommend{
+		background:$recommend-alpha;
+		border-color: $normal-link;
+		&:hover{
+			background:$normal-link;
+			border-color: $recommend-3d;
+		}
+	}
+	&.info{
+		background:$info-alpha;
+		border-color: $active-link;
+		&:hover{
+			background:$active-link;
+			border-color: $recommend-3d;
+		}
+	}
+	&.success{
+		background:$success-alpha;
+		border-color: $success;
+		&:hover{
+			background:$success;
+			border-color: $success-3d;
+		}
+	}
+	&.alert{
+		background:$alert-alpha;
+		border-color: $mark;
+		&:hover{
+			background:$mark;
+			border-color: $alert-3d;
+		}
+	}
+	&.warning{
+		background:$warning-alpha;
+		border-color: $warning;
+		&:hover{
+			background:$warning;
+			border-color: $warning-3d;
+		}
+	}
+	&.error{
+		background:$error-alpha;
+		border-color: $error;
+		&:hover{
+			background:$error;
+			border-color: $error-3d;
+		}
+	}
+	& .panel-body{
+		padding: 8px;
+	}
+}
+/**/
+/*MODAL*/
+.modal {
+	z-index: 99998;
+	display: none;
+	padding:0;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background: $darker-gray;
+	background: rgba(0, 0, 0, 0.4);
+	&.show{display:block;}
+	& .modal-content {
+		margin: auto;
+		background-color: $white;
+		position: relative;
+		top:15vh;
+		padding: 0;
+		outline: 0;
+		width:96%;
+		max-width: 600px;
+		& .modal-header{
+			min-height:3rem;
+			font-size:2rem;
+			padding: 0.25rem 1.5rem;
+			background:$dark-gray;
+			position:relative;
+			&:after{
+				content:"×";
+				display:block;
+				position:absolute;
+				top:0px;
+				right:0px;
+				margin: 0.25rem 1rem;
+				font-size: 2rem;
+				width: 2rem;
+				text-align: center;
+			}
+		}
+	}
+}
