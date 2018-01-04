@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Demo FireWorks</title>
 	<link rel=icon href=img/favicon.png type="image/png">
-<!--<link rel="stylesheet" href="style/main.css">-->
+	<!--<link rel="stylesheet" href="style/fireworks.css">-->
 	<link rel="stylesheet" href="style/fireworks.min.css">
 	<script src="js/main.js"></script>
 </head>
@@ -19,8 +19,8 @@
 <nav id="menu" class="sidebar"  style="display:none;">
 <fieldset><legend>Lista de enlaces:</legend>
 	<ul class="container-flex no-list-style">
-		<li class="row-content align-center"><a href="#">elemento ul 1</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 2</a></li>
+		<li class="row-content align-center"><a href="#intro">Introducción</a></li>
+		<li class="row-content align-center"><a href="#fonts">fuentes e iconos</a></li>
 		<li class="row-content align-center"><a href="#">elemento ul 3</a></li>
 		<li class="row-content align-center"><a href="#">elemento ul 4</a></li>
 		<li class="row-content align-center"><a href="#">elemento ul 5</a></li>
@@ -34,6 +34,49 @@
 	</ul>
 </fieldset>
 </nav>
+<section id="intro">
+	<h2 class="text-center">Introducción</h2>
+	<p>Comience a usar FireWorks, el framework de desarrollo frontend modular ideal para crear sitios web adaptativos a dispositivos móviles sin esfuerzo y ajustandose a lo que necesites. Al ser modular tienes opción de elegir qué elementos quieres tener y reducir el peso y tiempos de carga de tu web.</p>
+	<div class="h3">Inicio rápido</div>
+	<p>¿Desea agregar FireWorks rápidamente a su proyecto? <strong>Utilice nuestro CDN</strong>.</p>
+	<p>¿Necesita descargar los archivos fuente o desea elegir los componentes que necesita? <strong>Diríjase a la página de descargas</strong>.</p>
+	<div class="h3">CSS</div>
+	<p>Copie y pegue la hoja de estilo <code>&lt;link&gt;</code> en su <code>&lt;head&gt;</code> antes que el resto de hojas de estilo para cargar nuestro CSS. Ejemplo:</p>
+	<div class="terminal">
+&lt;link rel= "stylesheet" href= "style/fireworks.min.css"&gt;
+	</div>
+	<div class="h3">JS</div>
+	<p>Algunos de nuestros componentes requieren el uso de JavaScript para funcionar. Además hay utilidades que hacen del proceso de desarrollo de una aplicación una tarea mas cómoda. A diferencia de otros frameworks, FireWorks no requiere de librerías externas, mejorando así la facilidad de implementación y la carga de ejecución. Para importarlo sólo tiene que bajarlo desde <a href="#">aquí</a> y guardarlo en su proyecto. Ejemplo:</p>
+	<div class="terminal">
+&lt;script src="js/fireworks.js"&gt;
+	</div>
+	<div class="h3">Configuraciones globales importantes</div>
+	<p>FireWorks emplea una serie de estilos y configuraciones globales importantes que deberá tener en cuenta al usarlo, los cuales están orientados mayormente a la normalización de estilos entre navegadores pero no exclusivamente.</p>
+	<p>FireWorks recomienda el uso del estándar HTML5 empezando por  el doctype HTML5. Es, hasta la fecha, el doctype más cómodo de implementar y el primer paso para el uso del mencionado estándar:</p>
+	<div class="terminal">
+&lt;!doctype html&gt;
+&lt;html lang= "es"&gt;
+	...
+&lt;/html&gt;
+	</div>
+	<div class="h3">Maquetación responsiva</div>
+	<p>FireWorks se desarrolla bajo la metodología mobile-first, una estrategia en la que  se optimiza el código para dispositivos móviles primero y luego se escalan componentes según sea necesario usando mediaqueries en CSS. Para garantizar una reproducción adecuada y un zoom táctil para todos los dispositivos, agregue la metaetiqueta de la ventana sensible a su <code>&lt;head&gt;</code>:</p>
+	<div class="terminal">
+&lt;meta name= "viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+	</div>
+	<div class="h3">Tamaño de caja</div>
+	<p>Para una mejor adaptación del CSS concerniente al tamaño de los elementos y su distribución se ha optado por el valor global de <em>box-sizing</em> a <em>border-box</em> en lugar de <em>content-box</em>. Puede causar confictos con software de terceros como Google Maps y Google Custom Search Engine por tanto, si fuese necesario, se pueden cambiar los componentes que se deseen usando la clase <code>content-box</code> o creando una clase en su CSS:</p>
+	<div class="terminal">
+.some-element { box-sizing : content-box ; }
+	</div>
+	<p>Obtenga más información sobre el modelo de caja y el tamaño en <a href="https://css-tricks.com/box-sizing/" target="_blank">CSS Tricks</a>.</p>
+</section>
+<section id="fonts">
+	<h2 class="text-center">Fuentes e iconos</h2>
+	<p>FireWorks implementa una serie de tipografías para personalizar sus sitios web. Puede implementar todas o reducir a las que crea conveniente. Lo mismo ocurre con los iconos.</p>
+	<div class="panel notice alert"><div class="panel-body"><strong>Aviso:</strong> pese a que se puedan elegir qué fuentes descargar (tanto en iconos como tipografías), a menos que se descarguen componentes de forma individual como el sistema de rejillas, vienen por defecto para una mejor experiencia de usuario Fira-Sans e Icomoon, con licencias SIL Open Font License v1.10 y CC BY 4.0 respectivamente.</div></div>
+	<p>Como puede apreciar, Fira-Sans es la tipografía por defecto pero no la única. Aleo(SIL Open Font License v1.10) para la letra con serifa y Ubuntu(Ubuntu Font Licence Version 1.0) o Raleway(SIL Open Font License v1.10) como alternativas a la sans-serif. Fira-Mono(SIL Open Font License v1.10) y Ubuntu-Mono(Ubuntu Font Licence Version 1.0) como fuentes monoespaciadas y como alternativas a Icomoon se puede usar Feather(MIT License), Glyphicon(CC BY 3.0) o FontAwesome(SIL Open Font License v1.1).</p>
+</section>
 <section>
 	<article class="text-center">
 		<h1>header 1</h1>
@@ -202,6 +245,7 @@
 <h3 class="title">Paleta de colores</h3>
 <style>
 	.pallete{
+		flex-grow: 1;
 		min-width:120px;
 		width: auto;
 		min-height: 120px;
@@ -216,6 +260,9 @@
 		width:100%;
 		text-align:center;
 		font-family: monospace;
+	}
+	.pallete *.fg-gray-darker{
+		color:#222;
 	}
 	.circle-test{
 		width:100px;
@@ -233,7 +280,7 @@
 		<div class="circle-test circle bg-recommend">recommen<br>-dation/link</div>
 	</div>
 	<div>
-		<div class="circle-test circle bg-info">informatión</div>
+		<div class="circle-test circle bg-info">information</div>
 	</div>
 	<div>
 		<div class="circle-test circle bg-error">error</div>
@@ -250,64 +297,64 @@
 </div>
 <div class="container-flex">
 	<div class="pallete">
-		<div class="bg-m-green-dark title">GREEN</div>
-		<div class="bg-m-green-primary"></div>
-		<div class="bg-m-green-light"></div>
+		<div class="bg-m-green-dark title">green-dark</div>
+		<div class="bg-m-green-primary">green-primary</div>
+		<div class="bg-m-green-light">green-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-yellow-dark">YELLOW</div>
-		<div class="bg-m-yellow-primary"></div>
-		<div class="bg-m-yellow-light"></div>
+		<div class="bg-m-yellow-dark">yellow-dark</div>
+		<div class="bg-m-yellow-primary">yellow-primary</div>
+		<div class="bg-m-yellow-light fg-gray-darker">yellow-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-orange-dark">ORANGE</div>
-		<div class="bg-m-orange-primary"></div>
-		<div class="bg-m-orange-light"></div>
+		<div class="bg-m-orange-dark">orange-dark</div>
+		<div class="bg-m-orange-primary">orange-primary</div>
+		<div class="bg-m-orange-light fg-gray-darker">orange-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-red-dark">RED</div>
-		<div class="bg-m-red-primary"></div>
-		<div class="bg-m-red-light"></div>
+		<div class="bg-m-red-dark">red-dark</div>
+		<div class="bg-m-red-primary">red-primary</div>
+		<div class="bg-m-red-light">red-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-pink-dark">PINK</div>
-		<div class="bg-m-pink-primary"></div>
-		<div class="bg-m-pink-light"></div>
+		<div class="bg-m-pink-dark">pink-dark</div>
+		<div class="bg-m-pink-primary">pink-priamry</div>
+		<div class="bg-m-pink-light">pink-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-purple-dark">PURPLE</div>
-		<div class="bg-m-purple-primary"></div>
-		<div class="bg-m-purple-light"></div>
+		<div class="bg-m-purple-dark">purple-dark</div>
+		<div class="bg-m-purple-primary">purple-prmary</div>
+		<div class="bg-m-purple-light">purple-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-indigo-dark">INDIGO</div>
-		<div class="bg-m-indigo-primary"></div>
-		<div class="bg-m-indigo-light"></div>
+		<div class="bg-m-indigo-dark">indigo-dark</div>
+		<div class="bg-m-indigo-primary">indigo-primary</div>
+		<div class="bg-m-indigo-light fg-gray-darker">indigo-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-blue-dark">BLUE</div>
-		<div class="bg-m-blue-primary"></div>
-		<div class="bg-m-blue-light"></div>
+		<div class="bg-m-blue-dark">blue-dark</div>
+		<div class="bg-m-blue-primary">blue-primary</div>
+		<div class="bg-m-blue-light fg-gray-darker">blue-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-teal-dark">TEAL</div>
-		<div class="bg-m-teal-primary"></div>
-		<div class="bg-m-teal-light"></div>
+		<div class="bg-m-teal-dark">teal-dark</div>
+		<div class="bg-m-teal-primary">teal-primary</div>
+		<div class="bg-m-teal-light fg-gray-darker">teal-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-m-bluegray-dark">BLUEGRAY</div>
-		<div class="bg-m-bluegray-primary"></div>
-		<div class="bg-m-bluegray-light"></div>
+		<div class="bg-m-bluegray-dark">bluegray-dark</div>
+		<div class="bg-m-bluegray-primary">bluegray-primary</div>
+		<div class="bg-m-bluegray-light fg-gray-darker">bluegray-light</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-black"></div>
-		<div class="bg-gray-darker"></div>
-		<div class="bg-gray-dark"></div>
+		<div class="bg-black">black</div>
+		<div class="bg-gray-darker">gray-darker</div>
+		<div class="bg-gray-dark">gray-dark</div>
 	</div>
 	<div class="pallete">
-		<div class="bg-gray"></div>
-		<div class="bg-gray-light"></div>
-		<div class="bg-gray-lighter"></div>
+		<div class="bg-gray">gray</div>
+		<div class="bg-gray-light fg-gray-darker">gray-light</div>
+		<div class="bg-gray-lighter fg-gray-darker">gray-lighter</div>
 	</div>
 </div>
 </article>
@@ -773,6 +820,14 @@ Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. 
 		<button disabled="disabled" class="margin-1px btn btn-3d danger">danger disabled</button>
 	</div>
 </section>
+<button class="btn-2d success rounded" onclick="document.querySelector('#myModal').classList.add('show')">show modal</button>
+<div class="modal" id="myModal">
+	<div class="modal-content">
+		<div class="modal-header">Cabecera del modal</div>
+		<div class="modal-body">Cuerpo del modal</div>
+		<div class="modal-footer">Pie del modal</div>
+	</div>
+</div>
 <footer class="bg-gray3" id="footer">
 <ol class="no-list-style container-flex">
 	<li class="row-content text-center"><a href="https://twitter.com/ish-milan" class="icon-twitter"> @ish-milan</a></li>
