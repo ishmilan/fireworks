@@ -29,7 +29,7 @@ ul {
 	& .ul,
 	& ol,
 	& ul {
-		margin: 1rem 0 1rem 1.5rem;
+		margin: 1rem 0 0.5rem 1.5rem;
 		font-size: 90%;
 
 		& .ul,
@@ -46,4 +46,24 @@ li {
 	text-align: -ms-match-parent;
 	text-align: -o-match-parent;
 	text-align: match-parent;
+}
+
+.list-inline{
+	padding-left:0;
+	margin:0;
+	list-style:none;
+	&>li{
+		display:inline-block;
+		padding-right:5px;
+		padding-left:5px;
+	}
+}
+dl,.dl{
+	& dt,& .dt{
+		font-weight:bold;
+	}
+	& dd, & .dd{
+		margin:0;
+		padding-left:8px;
+	}
 }
