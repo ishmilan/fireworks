@@ -1,0 +1,153 @@
+/*====COLORS====*/
+$black: #222222;
+$darker-gray: #444444;
+$dark-gray: #666666;
+$gray: #999999;
+$light-gray: #DCDCDC;
+$lighter-gray: #EEEEEE;
+$white: #FEFEFE;
+.bg-black{background:$black;}
+.bg-gray-darker{background:$darker-gray;}
+.bg-gray-dark{background:$dark-gray;}
+.bg-gray{background:$gray;}
+.bg-gray-light{background:$light-gray;}
+.bg-gray-lighter{background:$lighter-gray;}
+.bg-white{background:$white;}
+
+$normal-link: #0077DD;
+$recommend-3d:#00539A;
+$recommend-alpha:rgba(0, 119, 221,0.2);
+.recommend{color:$normal-link;}
+.bg-recommend{
+	background:$normal-link;
+	&.recommend{
+		color:$white;
+	}
+}
+$active-link: #66CCFF;
+$info-3d:#478EB2;
+$info-alpha:rgba(102, 204, 255,0.2);
+.info{color:$active-link;}
+.bg-info{
+	background:$active-link;
+	&.info{
+		color:$white;
+	}
+}
+$warning: #FF9900;
+$warning-3d:#B26B00;
+$warning-alpha:rgba(255, 153, 0,0.2);
+.warning{color:$warning;}
+.bg-warning{
+	background:$warning;
+	&.warning{
+		color:$white;
+	}
+}
+$error: #EE3322;
+$error-3d: #A62317;
+$error-alpha:rgba(238, 51, 34,0.2);
+.error{color:$error;}
+.bg-error{
+	background:$error;
+	&.error{
+		color:$white;
+	}
+}
+$mark: #FFDD22;
+$alert-3d: #B29A17;
+$alert-alpha:rgba(255, 221, 34,0.2);
+.alert{color:$mark;}
+.bg-alert{
+	background:$mark;
+	&.alert{
+		color:$darker-gray;
+	}
+}
+$success:#44DD55;
+$success-3d:#2F9A3B;
+$success-alpha:rgba(68, 221, 85,0.2);
+.success{color:$success;}
+.bg-success{
+	background:$success;
+	&.success{
+		color:$white;
+	}
+}
+
+//DEFAULT THEME
+$primary-dark:#DD4400;
+$primary:#FF8811;
+$primary-light:#FFAA22;
+$contrasting:$white;
+//THEME
+
+$material-red-dark:#B71C1C;
+$material-red-primary:#D32F2F;
+$material-red-light:#FF8A80;
+.bg-m-red-dark{background:$material-red-dark;}
+.bg-m-red-primary{background:$material-red-primary;}
+.bg-m-red-light{background:$material-red-light;}
+
+$material-pink-dark:#881155;//#880E4F;
+$material-pink-primary:#CC2277;//#C2185B;
+$material-pink-light:#FF4499;//#FF4081;
+.bg-m-pink-dark{background:$material-pink-dark;}
+.bg-m-pink-primary{background:$material-pink-primary;}
+.bg-m-pink-light{background:$material-pink-light;}
+
+$material-purple-dark:#551188;//#4A148C;
+$material-purple-primary:#8822AA;//#7B1FA2;
+$material-purple-light:#CC77EE;//#EA80FC;
+.bg-m-purple-dark{background:$material-purple-dark;}
+.bg-m-purple-primary{background:$material-purple-primary;}
+.bg-m-purple-light{background:$material-purple-light;}
+
+$material-indigo-dark:#222288;//#1A237E;
+$material-indigo-primary:#5555FF;//#3F51B5;
+$material-indigo-light:#9999FF;//#8C9EFF;
+.bg-m-indigo-dark{background:$material-indigo-dark;}
+.bg-m-indigo-primary{background:$material-indigo-primary;}
+.bg-m-indigo-light{background:$material-indigo-light;}
+
+$material-blue-dark:#114499;//#0D47A1;
+$material-blue-primary:#2277EE;//#1976D2;
+$material-blue-light:#88AAFF;//#82B1FF;
+.bg-m-blue-dark{background:$material-blue-dark;}
+.bg-m-blue-primary{background:$material-blue-primary;}
+.bg-m-blue-light{background:$material-blue-light;}
+
+$material-teal-dark:#004D40;
+$material-teal-primary:#009688;
+$material-teal-light:#80CBC4;
+.bg-m-teal-dark{background:$material-teal-dark;}
+.bg-m-teal-primary{background:$material-teal-primary;}
+.bg-m-teal-light{background:$material-teal-light;}
+
+$material-green-dark:#226622;//#479900;
+$material-green-primary:#449944;//#6be500;
+$material-green-light:#66CC66;//#9fff4c;
+.bg-m-green-dark{background:#1B5E20;}
+.bg-m-green-primary{background:#388E3C;}
+.bg-m-green-light{background:#4CAF50;}
+
+$material-yellow-dark:#F9A825;
+$material-yellow-primary:#FFEB3B;
+$material-yellow-light:#FFF59D;
+.bg-m-yellow-dark{background:$material-yellow-dark;}
+.bg-m-yellow-primary{background:$material-yellow-primary;}
+.bg-m-yellow-light{background:$material-yellow-light;}
+
+$material-orange-dark:#FF6D00;
+$material-orange-primary:#FF9800;
+$material-orange-light:#FFD180;
+.bg-m-orange-dark{background:$material-orange-dark;}
+.bg-m-orange-primary{background:$material-orange-primary;}
+.bg-m-orange-light{background:$material-orange-light;}
+
+$material-bluegray-dark:#263238;
+$material-bluegray-primary:#607D8B;
+$material-bluegray-light:#CFD8DC;
+.bg-m-bluegray-dark{background:$material-bluegray-dark;}
+.bg-m-bluegray-primary{background:$material-bluegray-primary;}
+.bg-m-bluegray-light{background:$material-bluegray-light;}
