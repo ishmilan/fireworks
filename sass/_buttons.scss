@@ -1,61 +1,190 @@
-.btn,
+/*====BUTTONS====*/
+//TODO buttons with the new colors
+//TODO flat buttons
+//TODO empty buttons
+[class*="btn"],
+input[type="file"]+label,
 [role="button"],
 [type="button"],
 [type="reset"],
 [type="submit"],
-::-webkit-file-upload-button,
-button {
+button{
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
 	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	border: 1px solid $dark-gray;
+	box-shadow: none;
+	line-height: 1;
+	margin: 0;
+	height: 38px;
+	color:$darker-gray;
+	background-color:transparent;
 	cursor: pointer;
 	padding:4px 8px;
-	&:-moz-focusring,
-	&::-moz-focus-inner {
-		outline: none;
-		border-style: none;
-	}
 	&:disabled{color:$dark-gray;}
 }
-::-webkit-file-upload-button,
-::file-upload-button {
-	font-family:$icomoon;
-	content:"\e92a";
-}
-[class*="btn-3d"],.btn-3d-default{
-	border:solid 1px $dark-gray;
-	color:$black;
+.btn-hovered{
 	font-weight:normal;
-	background-color: $light-gray;
-	background:linear-gradient(#F7F7F7,#DDDDDD);
-	&:hover:not(:disabled){cursor:pointer;}
+	background:transparent;
+	border: 2px solid $dark-gray;
+	color:$dark-gray;
+	&:hover{background:$dark-gray;color:$white;}
 	&:active,&:disabled{
-		background:linear-gradient(#DDDDDD,#F7F7F7);
+		&,&:hover{background:$light-gray;border-color: $light-gray;color:$dark-gray;}
+	}
+	&.success{
+		border-color: $success;
+		color: $success;
+		&:hover{
+			background:$success;
+			color:$white;
+		}
+		&:active,&:disabled{
+			border-color: $success-3d;
+			background:$success-3d;
+		}
+	}
+	&.primary,&.recommend{
+		border-color: $normal-link;
+		color: $normal-link;
+		&:hover{
+			background:$normal-link;
+			color:$white;
+		}
+		&:active,&:disabled{
+			border-color: $recommend-3d;
+			background: $recommend-3d;
+		}
+	}
+	&.info{
+		border-color: $active-link;
+		color: $active-link;
+		&:hover{
+			background:$active-link;
+			color:$white;
+		}
+		&:active,&:disabled{
+			border-color: $info-3d;
+			background: $info-3d;
+		}
+	}
+	&.alert{
+		border-color: $mark;
+		color: $mark;
+		&:hover{
+			background:$mark;
+			color:$white;
+		}
+		&:active,&:disabled{
+			border-color: $alert-3d;
+			background: $alert-3d;
+		}
+	}
+	&.warning{
+		border-color: $warning;
+		color: $warning;
+		&:hover{
+			background:$warning;
+			color:$white;
+		}
+		&:active,&:disabled{
+			border-color: $warning-3d;
+			background: $warning-3d;
+		}
+	}
+	&.danger{
+		border-color: $error;
+		color: $error;
+		&:hover{
+			background:$error;
+			color:$white;
+		}
+		&:active,&:disabled{
+			border-color: $error-3d;
+			background: $error-3d;
+		}
+	}
+	&.success,&.primary,&.recommend,&.info,&.alert,&.warning,&.danger{
+		&:active,&:disabled{
+			&,&:hover{color:$light-gray;}
+		}
 	}
 }
-.btn-3d-success{
-	background-color: $light-gray;
-	background:linear-gradient(#82C82D,#5F9B0A);
-	color:#FBFBFB;
-	&:active,&:disabled{
-		background:linear-gradient(#5F9B0A,#82C82D);
+.btn-2d,.btn-3d{
+	&,&.default{
+		font-weight:normal;
+		border-color: $dark-gray;
+		background: $lighter-gray;
+		&:active,&:disabled{background:$light-gray;}
+	}
+	&.white{
+		background:$white;
+		&:active,&:disabled{background:$lighter-gray;}
+	}
+	&.success,&.primary,&.recommend,&.info,&.alert,&.warning,&.danger{
+		color:$white;
+		&:active,&:disabled{color:$light-gray;}
+	}
+	&.success{
+		background: $success;
+		border-color: $success-3d;
+		&:active,&:disabled{background:$success-3d;}
+	}
+	&.primary,&.recommend{
+		background: $normal-link;
+		border-color: $recommend-3d;
+		&:active,&:disabled{background:$recommend-3d;}
+	}
+	&.info{
+		background: $active-link;
+		border-color: $info-3d;
+		&:active,&:disabled{background:$info-3d;}
+	}
+	&.alert{
+		background: $mark;
+		border-color: $alert-3d;
+		&:active,&:disabled{background:$alert-3d;}
+	}
+	&.warning{
+		background: $warning;
+		border-color: $warning-3d;
+		&:active,&:disabled{background:$warning-3d;}
+	}
+	&.danger{
+		background: $error;
+		border-color: $error-3d;
+		&:active,&:disabled{background:$error-3d;}
 	}
 }
-.btn-3d-primary{
-	background:linear-gradient(#00CAF2,#00AACC);
-	color:#FBFBFB;
-	&:active,&:disabled{
-		background:linear-gradient(#00AACC,#00CAF2);
+.btn-3d{
+	&,&.default{
+		background:linear-gradient($white,$light-gray);
+		&:active,&:disabled{background:linear-gradient($light-gray,$white);}
 	}
-}
-.btn-3d-warning{
-	background:linear-gradient(#F1C411,#F1AA11);
-	&:active,&:disabled{
-		background:linear-gradient(#F1AA11,#F1C411);
+	&.success{
+		background:linear-gradient($success,$success-3d);
+		&:active,&:disabled{background:linear-gradient($success-3d,$success);}
 	}
-}
-.btn-3d-danger{
-	background:linear-gradient(#B90000,#830B0B);
-	color:#FFFFFF;
-	&:active,&:disabled{
-		background:linear-gradient(#830B0B,#B90000);
+	&.primary,&.recommend{
+		background:linear-gradient($normal-link,$recommend-3d);
+		&:active,&:disabled{background:linear-gradient($recommend-3d,$normal-link);}
+	}
+	&.info{
+		background:linear-gradient($active-link,$info-3d);
+		&:active,&:disabled{background:linear-gradient($info-3d,$active-link);}
+	}
+	&.alert{
+		background:linear-gradient($mark,$alert-3d);
+		&:active,&:disabled{background:linear-gradient($alert-3d,$mark);}
+	}
+	&.warning{
+		background:linear-gradient($warning,$warning-3d);
+		&:active,&:disabled{background:linear-gradient($warning-3d,$warning);}
+	}
+	&.danger{
+		background:linear-gradient($error,$error-3d);
+		&:active,&:disabled{background:linear-gradient($error-3d,$error);}
 	}
 }
