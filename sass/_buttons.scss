@@ -25,6 +25,15 @@ button{
 	padding:4px 8px;
 	&:disabled{color:$dark-gray;}
 }
+.btn-link{
+	border:none;
+	background:transparent;
+	color:$normal-link;
+	&:hover{color:$active-link;}
+	&:active,&:disabled{
+		&,&:hover{color:$dark-gray;}
+	}
+}
 .btn-hovered{
 	font-weight:normal;
 	background:transparent;
