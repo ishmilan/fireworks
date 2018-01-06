@@ -40,7 +40,7 @@ ul {
 }
 
 li {
-	margin:0 0 1em 1em;
+	margin:0 0 .5rem 1rem;
 	text-align: -webkit-match-parent;
 	text-align: -moz-match-parent;
 	text-align: -ms-match-parent;
@@ -60,10 +60,12 @@ li {
 }
 dl,.dl{
 	& dt,& .dt{
-		font-weight:bold;
+		margin:0 0 .5rem .5rem;
+		font-weight: bold;
+		list-style: none;
 	}
 	& dd, & .dd{
-		margin:0;
-		padding-left:8px;
+		margin:0 0 .5rem 1.5rem;
+		padding-left:1rem;
 	}
 }

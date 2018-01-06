@@ -6,20 +6,42 @@ $gray: #999999;
 $light-gray: #DCDCDC;
 $lighter-gray: #EEEEEE;
 $white: #FEFEFE;
-.bg-black{background:$black;}
+
 .fg-black{color:$black;}
-.bg-gray-darker{background:$darker-gray;}
+.bg-black{
+	background:$black;
+	&.fg-black{color:$white;}
+}
 .fg-gray-darker{color:$darker-gray;}
-.bg-gray-dark{background:$dark-gray;}
+.bg-gray-darker{
+	background:$darker-gray;
+	&.fg-gray-darker{color:$white;}
+}
 .fg-gray-dark{color:$dark-gray;}
-.bg-gray{background:$gray;}
+.bg-gray-dark{
+	background:$dark-gray;
+	&.fg-gray-dark{color:$white;}
+}
 .fg-gray{color:$gray;}
-.bg-gray-light{background:$light-gray;}
+.bg-gray{
+	background:$gray;
+	&.fg-gray{color:$white;}
+}
 .fg-gray-light{color:$light-gray;}
-.bg-gray-lighter{background:$lighter-gray;}
+.bg-gray-light{
+	background:$light-gray;
+	&.fg-gray-light{color:$black;}
+}
 .fg-gray-lighter{color:$lighter-gray;}
-.bg-white{background:$white;}
+.bg-gray-lighter{
+	background:$lighter-gray;
+	&.fg-gray-lighter{color:$lighter-gray;}
+}
 .fg-white{color:$white;}
+.bg-white{
+	background:$white;
+	&.fg-white{color:$white;}
+}
 
 $normal-link: #0077DD;
 $recommend-3d:#00539A;
@@ -27,68 +49,61 @@ $recommend-alpha:rgba(0, 119, 221,0.2);
 .recommend{color:$normal-link;}
 .bg-recommend{
 	background:$normal-link;
-	&.recommend{
-		color:$white;
-	}
+	&.recommend{color:$white;}
 }
+
 $active-link: #66CCFF;
 $info-3d:#478EB2;
 $info-alpha:rgba(102, 204, 255,0.2);
 .info{color:$active-link;}
 .bg-info{
 	background:$active-link;
-	&.info{
-		color:$white;
-	}
+	&.info{color:$white;}
 }
+
 $warning: #FF9900;
 $warning-3d:#B26B00;
 $warning-alpha:rgba(255, 153, 0,0.2);
 .warning{color:$warning;}
 .bg-warning{
 	background:$warning;
-	&.warning{
-		color:$white;
-	}
+	&.warning{color:$white;}
 }
+
 $error: #EE3322;
 $error-3d: #A62317;
 $error-alpha:rgba(238, 51, 34,0.2);
 .error{color:$error;}
 .bg-error{
 	background:$error;
-	&.error{
-		color:$white;
-	}
+	&.error{color:$white;}
 }
+
 $mark: #FFDD22;
 $alert-3d: #B29A17;
 $alert-alpha:rgba(255, 221, 34,0.2);
 .alert{color:$mark;}
 .bg-alert{
 	background:$mark;
-	&.alert{
-		color:$darker-gray;
-	}
+	&.alert{color:$darker-gray;}
 }
+
 $success:#44DD55;
 $success-3d:#2F9A3B;
 $success-alpha:rgba(68, 221, 85,0.2);
 .success{color:$success;}
 .bg-success{
 	background:$success;
-	&.success{
-		color:$white;
-	}
+	&.success{color:$white;}
 }
 
 //DEFAULT THEME
-$primary-dark:#DD4400;
-$primary:#FF8811;
-$primary-light:#FFAA22;
+$primary-dark:$darker-gray;
+$primary:$gray;
+$primary-light:$lighter-gray;
 $contrasting:$white;
-//THEME
 
+//THEME
 $material-red-dark:#B71C1C;
 $material-red-primary:#D32F2F;
 $material-red-light:#FF8A80;

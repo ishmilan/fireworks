@@ -1,6 +1,7 @@
 @font-face{
 	font-family:'glyphicon';
-	src:url('../fonts/glyphicon/glyphicon.woff?bi8pro') format('woff')
+	src:url('../fonts/glyphicons/glyphicons.eot');
+	src:url('../fonts/glyphicons/glyphicons.woff?bi8pro') format('woff');
 }
 [class^="glyphicon-"]:before,
 [class*="glyphicon-"]:before{

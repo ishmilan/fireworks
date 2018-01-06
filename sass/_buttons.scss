@@ -22,7 +22,10 @@ button{
 	color:$darker-gray;
 	background-color:transparent;
 	cursor: pointer;
-	padding:4px 8px;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 16px;
 	&:disabled{color:$dark-gray;}
 }
 .btn-link{

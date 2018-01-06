@@ -129,7 +129,7 @@
 .text-lowercase{text-transform:lowercase;}
 .text-uppercase{text-transform:uppercase;}
 .text-capitalize{text-transform:capitalize;}
-.text-small-caps{font-variant:small-caps;}
+.initialism,.text-small-caps{font-variant:small-caps;}
 /**/
 /*MARGIN*/
 .no-margin		{margin:0	!important;}
@@ -340,21 +340,47 @@
 	100%{transform:scale(1);}
 }
 /**/
-/*CARD*/
-/**/
-/*ALERT*/
-.panel{
+/*CARDS, CALLOUTS & ALERTS*/
+.highlight{
+	width:100%;
+	margin:0px;
+	padding:8px;
+	background:$lighter-gray;
+}
+[data-close]{
+	&:before{
+		content:"×";
+		position:absolute;
+		display:block;
+		top: -0.3rem;
+		right: 0;
+		font-size: 1.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
+		text-align: center;
+		color: inherit;
+		font-family: $icomoon;
+	}
+	width: 1.5rem;
+	height: 1.5rem;
+	position:absolute;
+	display:block;
+	top:0;
+	right:0;
+	cursor:pointer;
+	color:rgba(0,0,0,.7);
+	&:hover{color:rgba(0,0,0,.4);}
+	&+.body{margin-right:8px;}
+}
+.card{
 	max-width: calc(100vw - 4px);
-	max-height: calc(100vh - 4px);
 	margin:auto;
 	padding: 0;
+	position:relative;
 	border:none;
 	box-shadow: 0 2px 2px 0 $darker-gray;
-	&.notice{
-		border-left-style:solid;
-		border-left-width: 4px;
-	}
-
+	&.callout{border-left-width: 4px;border-left-style: solid;}
+	&.no-shadow{box-shadow:none;}
 	&.recommend{
 		background:$recommend-alpha;
 		border-color: $normal-link;
@@ -403,9 +429,22 @@
 			border-color: $error-3d;
 		}
 	}
-	& .panel-body{
-		padding: 8px;
-	}
+	& .body{padding: 8px;}
+}
+/**/
+/*ALERT*/
+.callout:not(.card){
+	max-width: calc(100vw - 4px);
+	border: solid 1px $light-gray !important;
+	border-left-width: 4px !important;
+	background: $white;
+	& .body{padding: 8px;}
+	&.recommend{border-left-color: $normal-link !important;}
+	&.info{border-left-color: $active-link !important;}
+	&.success{border-left-color: $success !important;}
+	&.alert{border-left-color: $mark !important;}
+	&.warning{border-left-color: $warning !important;}
+	&.error{border-left-color: $error !important;}
 }
 /**/
 /*MODAL*/
@@ -431,12 +470,13 @@
 		outline: 0;
 		width:96%;
 		max-width: 600px;
-		& .modal-header{
+		& .header{
 			min-height:3rem;
 			font-size:2rem;
 			padding: 0.25rem 1.5rem;
 			background:$dark-gray;
 			position:relative;
+			//TODO Make button like card
 			&:after{
 				content:"×";
 				display:block;
