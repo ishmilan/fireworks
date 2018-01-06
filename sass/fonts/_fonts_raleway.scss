@@ -27,11 +27,5 @@
 	font-weight:bold;
 	font-style:italic;
 }
-//lighter
-@font-face{
-	font-family:'Raleway';
-	src:url('../fonts/Raleway/Raleway-Light.ttf');
-	font-weight:lighter;
-	font-style:normal;
-}
 $raleway:'Raleway',Helvetica,sans-serif;
+.font-raleway-sans{font-family:$raleway;}

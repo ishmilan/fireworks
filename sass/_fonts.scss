@@ -29,16 +29,7 @@
 	src:url('../fonts/FiraSans/FiraSans-Bold-Italic.woff');
 	font-weight:bold;
 	font-style:italic;
-}
-//lighter
-@font-face{
-	font-family:'FiraSansBook';
-	src:url('../fonts/FiraSans/FiraSans-BookItalic.otf');
-	font-weight:lighter;
-	font-style:normal;
-}
-$sans:'FiraSans',Helvetica,sans-serif;
-$book:'FiraSansBook',$sans;
+}$sans:'FiraSans',Helvetica,sans-serif;
 //mono&normal
 @font-face{
 	font-family:'FiraMono';
@@ -53,7 +44,6 @@ $book:'FiraSansBook',$sans;
 }
 $mono:'FiraMono',Courier, monospace;
 .font-fira-sans{font-family: $sans;}
-.font-fira-book{font-family: $book;}
 .font-fira-code{font-family: $mono;}
 @import "fonts/fonts_ubuntu";
 @import "fonts/fonts_aleo";
