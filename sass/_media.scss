@@ -20,6 +20,7 @@ svg:not(:root) {
 	overflow: hidden;
 }
 
+.no-radius{border-radius:0px;}
 .radius-xs{border-radius:2px;}
 .radius,.radius-s{border-radius:4px;}
 .radius-m{border-radius:8px;}

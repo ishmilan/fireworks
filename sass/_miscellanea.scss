@@ -130,6 +130,11 @@
 .text-uppercase{text-transform:uppercase;}
 .text-capitalize{text-transform:capitalize;}
 .initialism,.text-small-caps{font-variant:small-caps;}
+.text-muted{color:$gray;}
+.text-hidden{
+	text-shadow:none;
+	color:transparent;
+}
 /**/
 /*MARGIN*/
 .no-margin		{margin:0	!important;}
@@ -340,12 +345,29 @@
 	100%{transform:scale(1);}
 }
 /**/
+/*BADGE*/
+.badge{
+	border-radius:50%;
+	min-width:1.3em;
+	min-height:1.3em;
+	display:inline-block;
+	background:$primary;
+	color:$contrasting;
+	vertical-align: bottom;
+	text-align:center;
+	font-size:0.9em;
+	padding-top:0.1em;
+}
+/**/
 /*CARDS, CALLOUTS & ALERTS*/
 .highlight{
-	width:100%;
+	display:block;
+	border: solid 1px $gray;
 	margin:0px;
 	padding:8px;
 	background:$lighter-gray;
+	position: relative;
+	top: 0px;
 }
 [data-close]{
 	&:before{
@@ -439,12 +461,37 @@
 	border-left-width: 4px !important;
 	background: $white;
 	& .body{padding: 8px;}
-	&.recommend{border-left-color: $normal-link !important;}
-	&.info{border-left-color: $active-link !important;}
-	&.success{border-left-color: $success !important;}
-	&.alert{border-left-color: $mark !important;}
-	&.warning{border-left-color: $warning !important;}
-	&.error{border-left-color: $error !important;}
+	&.recommend{
+		border-left-color: $normal-link !important;
+		background:$recommend-alpha;
+	}
+	&.info{
+		border-left-color: $active-link !important;
+		background:$info-alpha;
+	}
+	&.success{
+		border-left-color: $success !important;
+		background:$success-alpha;
+	}
+	&.alert{
+		border-left-color: $mark !important;
+		background:$alert-alpha;
+	}
+	&.warning{
+		border-left-color: $warning !important;
+		background:$warning-alpha;
+	}
+	&.error{
+		border-left-color: $error !important;
+		background:$error-alpha;
+	}
+	& .highlight{
+		position:relative;
+		top:0px;
+		border:none;
+		border:none;
+		border-top: solid 1px $light-gray !important;
+	}
 }
 /**/
 /*MODAL*/
@@ -470,24 +517,79 @@
 		outline: 0;
 		width:96%;
 		max-width: 600px;
+		& [data-close]:before{
+			z-index:99999;
+			color:$contrasting;
+			right: 0.3rem;
+			font-size: 2rem;
+		}
+		& .header,& .footer{
+			background:$primary-dark;
+			color:$contrasting;
+			position:relative;
+		}
 		& .header{
 			min-height:3rem;
 			font-size:2rem;
 			padding: 0.25rem 1.5rem;
-			background:$dark-gray;
-			position:relative;
-			//TODO Make button like card
-			&:after{
-				content:"×";
-				display:block;
-				position:absolute;
-				top:0px;
-				right:0px;
-				margin: 0.25rem 1rem;
-				font-size: 2rem;
-				width: 2rem;
-				text-align: center;
-			}
+		}
+		& .body{
+			padding: .5em;
+		}
+		& .footer{
+			min-height:2rem;
+			font-size:1.4rem;
+			padding: 0.25rem 1.5rem;
+		}
+	}
+	&.recommend ,& .modal-content.recommend{
+		& .header,& .footer{
+			background:$normal-link;
+			color:$white;
+		}
+	}
+	&.info ,& .modal-content.info{
+		& .header,& .footer{
+			background:$active-link;
+			color:$white;
+		}
+	}
+	&.success ,& .modal-content.success{
+		& .header,& .footer{
+			background:$success;
+			color:$white;
+		}
+	}
+	&.alert ,& .modal-content.alert{
+		& [data-close]:before{color:$black;}
+		& .header,& .footer{
+			background:$mark;
+			color:$black;
+		}
+	}
+	&.warning ,& .modal-content.warning{
+		& .header,& .footer{
+			background:$warning;
+			color:$white;
+		}
+	}
+	&.error ,& .modal-content.error{
+		& .header,& .footer{
+			background:$error;
+			color:$white;
 		}
 	}
 }
+.fade {
+	opacity: 0;
+	-webkit-transition: opacity .3s linear;
+	-o-transition: opacity .3s linear;
+	transition: opacity .3s linear;
+	&.in {opacity: 1;}
+}
+.collapse {
+	display:none;
+	&.in {display: block;}
+}
+tr.collapse.in {display:table-row;}
+tbody.collapse.in {display:table-row-group;}

@@ -29,7 +29,7 @@ ul {
 	& .ul,
 	& ol,
 	& ul {
-		margin: 1rem 0 0.5rem 1.5rem;
+		margin:0 0 0.5rem 1.5rem;
 		font-size: 90%;
 
 		& .ul,
@@ -51,11 +51,25 @@ li {
 .list-inline{
 	padding-left:0;
 	margin:0;
-	list-style:none;
 	&>li{
 		display:inline-block;
 		padding-right:5px;
 		padding-left:5px;
+	}
+	&>dt,&>.dt{
+		float: left;
+		width: 160px;
+		overflow: hidden;
+		clear: left;
+		text-align: right;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		position: relative;
+		margin-top: -2px;
+	}
+	&>dd,&>.dd{
+		margin-left: 180px;
+		&:after{clear:both;}
 	}
 }
 dl,.dl{
