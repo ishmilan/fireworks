@@ -13,33 +13,21 @@ $full:100%;
 $icomoon:"icomoon" !important;
 
 $small:480px;
-$medium:768px;
+$to-small:479px;
+$medium:769px;
+$to-medium:768px;
 $large:992px;
+$to-large:991px;
 $xl:1200px;
+$to-xl:1199px;
 //MIXINS
-@mixin s {
-	@media (min-width: #{$small}){
-		@content;
-	}
-}
-@mixin m {
-	@media (min-width: #{$medium}){
-		@content;
-	}
-}
-@mixin l {
-	@media (min-width: #{$large}){
-		@content;
-	}
-}
-@mixin xl {
-	@media (min-width: #{$xl}){
-		@content;
-	}
-}
-@mixin print {
-	@media print{
-		@content;
-	}
-}
+@mixin to-s{@media (max-width: #{$to-small}){@content;}}
+@mixin s {@media (min-width: #{$small}){@content;}}
+@mixin to-m{@media (max-width: #{$to-medium}){@content;}}
+@mixin m {@media (min-width: #{$medium}){@content;}}
+@mixin to-l{@media (max-width: #{$to-large}){@content;}}
+@mixin l {@media (min-width: #{$large}){@content;}}
+@mixin to-xl{@media (max-width: #{$to-xl}){@content;}}
+@mixin xl {@media (min-width: #{$xl}){@content;}}
+@mixin print {@media print{@content;}}
 @import "colors";
