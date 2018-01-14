@@ -1,0 +1,61 @@
+
+$material-orange-dark:#FF6D00;
+$material-orange-primary:#FF9800;
+$material-orange-light:#FFD180;
+.fg-orange-dark{color:$material-orange-dark;}
+.bg-orange-dark{
+	background:$material-orange-dark;
+	&.fg-orange-dark{color:$white;}
+}
+.border-orange-dark{border-color:$material-orange-dark;}
+.border-y-orange-dark{
+	border-top-color:$material-orange-dark;
+	border-bottom-color:$material-orange-dark;
+}
+.border-x-orange-dark{
+	border-left-color:$material-orange-dark;
+	border-right-color:$material-orange-dark;
+}
+.border-top-orange-dark{border-top-color:$material-orange-dark;}
+.border-left-orange-dark{border-left-color:$material-orange-dark;}
+.border-bottom-orange-dark{border-bottom-color:$material-orange-dark;}
+.border-right-orange-dark{border-right-color:$material-orange-dark;}
+
+.fg-orange-primary{color:$material-orange-primary;}
+.bg-orange-primary{
+	background:$material-orange-primary;
+	&.fg-orange-primary{color:$white;}
+}
+.border-orange{border-color:$material-orange-primary;}
+.border-y-orange{
+	border-top-color:$material-orange-primary;
+	border-bottom-color:$material-orange-primary;
+}
+.border-x-orange{
+	border-left-color:$material-orange-primary;
+	border-right-color:$material-orange-primary;
+}
+.border-top-orange{border-top-color:$material-orange-primary;}
+.border-left-orange{border-left-color:$material-orange-primary;}
+.border-bottom-orange{border-bottom-color:$material-orange-primary;}
+.border-right-orange{border-right-color:$material-orange-primary;}
+
+
+.fg-orange-light{color:$material-orange-primary;}
+.bg-orange-light{
+	background:$material-orange-light;
+	&.fg-orange-light{color:$white;}
+}
+.border-orange-light{border-color:$material-orange-light;}
+.border-y-orange-light{
+	border-top-color:$material-orange-light;
+	border-bottom-color:$material-orange-light;
+}
+.border-x-orange-light{
+	border-left-color:$material-orange-light;
+	border-right-color:$material-orange-light;
+}
+.border-top-orange-light{border-top-color:$material-orange-light;}
+.border-left-orange-light{border-left-color:$material-orange-light;}
+.border-bottom-orange-light{border-bottom-color:$material-orange-light;}
+.border-right-orange-light{border-right-color:$material-orange-light;}

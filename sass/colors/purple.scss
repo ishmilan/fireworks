@@ -1,0 +1,61 @@
+
+$material-purple-dark:#551188;
+$material-purple-primary:#8822AA;
+$material-purple-light:#CC77EE;
+.fg-purple-dark{color:$material-purple-dark;}
+.bg-purple-dark{
+	background:$material-purple-dark;
+	&.fg-purple-dark{color:$white;}
+}
+.border-purple-dark{border-color:$material-purple-dark;}
+.border-y-purple-dark{
+	border-top-color:$material-purple-dark;
+	border-bottom-color:$material-purple-dark;
+}
+.border-x-purple-dark{
+	border-left-color:$material-purple-dark;
+	border-right-color:$material-purple-dark;
+}
+.border-top-purple-dark{border-top-color:$material-purple-dark;}
+.border-left-purple-dark{border-left-color:$material-purple-dark;}
+.border-bottom-purple-dark{border-bottom-color:$material-purple-dark;}
+.border-right-purple-dark{border-right-color:$material-purple-dark;}
+
+.fg-purple-primary{color:$material-purple-primary;}
+.bg-purple-primary{
+	background:$material-purple-primary;
+	&.fg-purple-primary{color:$white;}
+}
+.border-purple{border-color:$material-purple-primary;}
+.border-y-purple{
+	border-top-color:$material-purple-primary;
+	border-bottom-color:$material-purple-primary;
+}
+.border-x-purple{
+	border-left-color:$material-purple-primary;
+	border-right-color:$material-purple-primary;
+}
+.border-top-purple{border-top-color:$material-purple-primary;}
+.border-left-purple{border-left-color:$material-purple-primary;}
+.border-bottom-purple{border-bottom-color:$material-purple-primary;}
+.border-right-purple{border-right-color:$material-purple-primary;}
+
+
+.fg-purple-light{color:$material-purple-primary;}
+.bg-purple-light{
+	background:$material-purple-light;
+	&.fg-purple-light{color:$white;}
+}
+.border-purple-light{border-color:$material-purple-light;}
+.border-y-purple-light{
+	border-top-color:$material-purple-light;
+	border-bottom-color:$material-purple-light;
+}
+.border-x-purple-light{
+	border-left-color:$material-purple-light;
+	border-right-color:$material-purple-light;
+}
+.border-top-purple-light{border-top-color:$material-purple-light;}
+.border-left-purple-light{border-left-color:$material-purple-light;}
+.border-bottom-purple-light{border-bottom-color:$material-purple-light;}
+.border-right-purple-light{border-right-color:$material-purple-light;}

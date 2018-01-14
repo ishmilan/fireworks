@@ -1,0 +1,61 @@
+
+$material-red-dark:#B71C1C;
+$material-red-primary:#D32F2F;
+$material-red-light:#FF8A80;
+.fg-red-dark{color:$material-red-dark;}
+.bg-red-dark{
+	background:$material-red-dark;
+	&.fg-red-dark{color:$white;}
+}
+.border-red-dark{border-color:$material-red-dark;}
+.border-y-red-dark{
+	border-top-color:$material-red-dark;
+	border-bottom-color:$material-red-dark;
+}
+.border-x-red-dark{
+	border-left-color:$material-red-dark;
+	border-right-color:$material-red-dark;
+}
+.border-top-red-dark{border-top-color:$material-red-dark;}
+.border-left-red-dark{border-left-color:$material-red-dark;}
+.border-bottom-red-dark{border-bottom-color:$material-red-dark;}
+.border-right-red-dark{border-right-color:$material-red-dark;}
+
+.fg-red-primary{color:$material-red-primary;}
+.bg-red-primary{
+	background:$material-red-primary;
+	&.fg-red-primary{color:$white;}
+}
+.border-red{border-color:$material-red-primary;}
+.border-y-red{
+	border-top-color:$material-red-primary;
+	border-bottom-color:$material-red-primary;
+}
+.border-x-red{
+	border-left-color:$material-red-primary;
+	border-right-color:$material-red-primary;
+}
+.border-top-red{border-top-color:$material-red-primary;}
+.border-left-red{border-left-color:$material-red-primary;}
+.border-bottom-red{border-bottom-color:$material-red-primary;}
+.border-right-red{border-right-color:$material-red-primary;}
+
+
+.fg-red-light{color:$material-red-primary;}
+.bg-red-light{
+	background:$material-red-light;
+	&.fg-red-light{color:$white;}
+}
+.border-red-light{border-color:$material-red-light;}
+.border-y-red-light{
+	border-top-color:$material-red-light;
+	border-bottom-color:$material-red-light;
+}
+.border-x-red-light{
+	border-left-color:$material-red-light;
+	border-right-color:$material-red-light;
+}
+.border-top-red-light{border-top-color:$material-red-light;}
+.border-left-red-light{border-left-color:$material-red-light;}
+.border-bottom-red-light{border-bottom-color:$material-red-light;}
+.border-right-red-light{border-right-color:$material-red-light;}

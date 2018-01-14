@@ -1,0 +1,61 @@
+
+$material-teal-dark:#004D40;
+$material-teal-primary:#009688;
+$material-teal-light:#80CBC4;
+.fg-teal-dark{color:$material-teal-dark;}
+.bg-teal-dark{
+	background:$material-teal-dark;
+	&.fg-teal-dark{color:$white;}
+}
+.border-teal-dark{border-color:$material-teal-dark;}
+.border-y-teal-dark{
+	border-top-color:$material-teal-dark;
+	border-bottom-color:$material-teal-dark;
+}
+.border-x-teal-dark{
+	border-left-color:$material-teal-dark;
+	border-right-color:$material-teal-dark;
+}
+.border-top-teal-dark{border-top-color:$material-teal-dark;}
+.border-left-teal-dark{border-left-color:$material-teal-dark;}
+.border-bottom-teal-dark{border-bottom-color:$material-teal-dark;}
+.border-right-teal-dark{border-right-color:$material-teal-dark;}
+
+.fg-teal-primary{color:$material-teal-primary;}
+.bg-teal-primary{
+	background:$material-teal-primary;
+	&.fg-teal-primary{color:$white;}
+}
+.border-teal{border-color:$material-teal-primary;}
+.border-y-teal{
+	border-top-color:$material-teal-primary;
+	border-bottom-color:$material-teal-primary;
+}
+.border-x-teal{
+	border-left-color:$material-teal-primary;
+	border-right-color:$material-teal-primary;
+}
+.border-top-teal{border-top-color:$material-teal-primary;}
+.border-left-teal{border-left-color:$material-teal-primary;}
+.border-bottom-teal{border-bottom-color:$material-teal-primary;}
+.border-right-teal{border-right-color:$material-teal-primary;}
+
+
+.fg-teal-light{color:$material-teal-primary;}
+.bg-teal-light{
+	background:$material-teal-light;
+	&.fg-teal-light{color:$white;}
+}
+.border-teal-light{border-color:$material-teal-light;}
+.border-y-teal-light{
+	border-top-color:$material-teal-light;
+	border-bottom-color:$material-teal-light;
+}
+.border-x-teal-light{
+	border-left-color:$material-teal-light;
+	border-right-color:$material-teal-light;
+}
+.border-top-teal-light{border-top-color:$material-teal-light;}
+.border-left-teal-light{border-left-color:$material-teal-light;}
+.border-bottom-teal-light{border-bottom-color:$material-teal-light;}
+.border-right-teal-light{border-right-color:$material-teal-light;}
