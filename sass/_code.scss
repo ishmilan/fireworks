@@ -1,14 +1,15 @@
 /*====CODE====*/
 .code,
 .code-block,
-.code-line,
-.terminal,
 code,
 kbd,
 pre,
 samp {
+	display:inline-block;
+	position: relative;
 	border-radius:$border-radius-normal;
 	border:solid 1px $primary-dark;
+	color:$primary-dark;
 	border-left-width:4px;
 	max-width:100%;
 	font-family: $mono;
@@ -21,27 +22,31 @@ samp {
 	@include print{
 		color:$black;
 		background: $white;
-		border-color: $gray;
+		border-color: $black;
 		page-break-inside: avoid;
 	}
 }
 
-pre,.terminal{
-	color:$white;
+pre,.code-block{
 	border-radius:$border-radius-normal;
 	border-width:2px;
 	border-left-width:6px;
-	background:$gray;
+	background:$light-gray;
 	margin:1em;
 	padding: 0.5em 1em;
 	width:auto;
-	box-shadow: inset 0 -1px 0 $primary;
+	display:block;
+	&.code-scrollable{
+		overflow-y:auto;
+		max-height: 6em;
+	}
 }
 
-kbd,code{
+samp,kbd,code,.code{
 	color:$primary;
 	background-color:$light-gray;
 	padding:0px 4px;
+	top: 6px;
 	& code, & pre{
 		padding:0;
 		font-size:100%;

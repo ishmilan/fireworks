@@ -35,9 +35,17 @@ html {
 		}
 	}
 }
+
+::-moz-selection{
+	background:$primary;
+	color:$contrasting;
+}::selection{
+	background:$primary;
+	color:$contrasting;
+}
 .content-box{box-sizing:content-box;}
 //DISPLAY: NONE
-.hidden,[hidden],[type=hidden],head,link,
+.hidden,.hide,.invisible,[hidden],[type=hidden],head,link,
 meta,script,style,template,title{
 	display: none !important;
 }
@@ -61,7 +69,7 @@ nav,noscript,ol,output,p,pre,section,ul{
 	display: block;
 	word-break: normal;
 	word-wrap: break-word;
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 }
 section{padding:16px;}
 
@@ -70,7 +78,7 @@ section{padding:16px;}
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,.lead{
 	letter-spacing:0;
 	margin:0.2em 0;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 h1,.h1,.lead{font-size: 2.6em;}
@@ -91,33 +99,21 @@ blockquote,cite,q{
 		font-family: $icomoon;
 		content: "\e934";
 		padding-right: 0.5em;
+		font-size: 0.5em;
+		position: relative;
+		top:-1em;
+		right: -0.3em;
 	}
 	&:after{
 		font-family: $icomoon;
 		content: "\e935";
 		padding-left: 0.5em;
+		font-size: 0.5em;
+		position: relative;
+		top:-1em;
+		left: -0.3em;
 	}
-	& .footer{
-		color:$dark-gray;
-		font-style:italic;
-		&:before{
-			color:$dark-gray;
-			content: "—";
-		}
-	}
-	&.reverse{
-		text-align: right;
-		& .footer{
-			text-align: right;
-			&:before{
-				content: "";
-			}
-			&:after{
-				color:$dark-gray;
-				content: "—";
-			}
-		}
-	}
+	&.reverse{text-align: right;}
 }
 blockquote.blockquote{
 	&:before,&:after{
@@ -127,6 +123,8 @@ blockquote.blockquote{
 	border-left: 4px solid $primary;
 	padding-left: 8px;
 	margin-left: 8px;
+
+	& .footer:before{content: "— ";}
 	&.reverse{
 		border-left: none;
 		border-right: 4px solid $primary;
@@ -135,6 +133,16 @@ blockquote.blockquote{
 		padding-right: 8px;
 		margin-right: 8px;
 		text-align: right;
+		& .footer{
+			text-align: right;
+			&:before{
+				content: "";
+			}
+			&:after{
+				color:$dark-gray;
+				content: " —";
+			}
+		}
 	}
 }
 .link,
@@ -171,7 +179,7 @@ acronym[title] {
 	&:after{
 		content: " (" attr(title) ")";
 	}
-	@include l{
+	@include m{
 		&:after{
 			content: "";
 		}
@@ -248,17 +256,10 @@ address {
 	margin: 1em;
 	font-style: normal;
 }
-::selection{
-	background:$primary;
-	color:$contrasting;
-}
-@import "media";
 //TODO complete flexgrid
 //TODO navbar
 //TODO modal
-//TODO badge
 //TODO nav tab
-//TODO alerts
 //TODO dropdown
 //TODO switches button
 //TODO pagination
