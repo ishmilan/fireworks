@@ -7,38 +7,38 @@ $material-teal-light:#80CBC4;
 	background:$material-teal-dark;
 	&.fg-teal-dark{color:$white;}
 }
-.border-teal-dark{border-color:$material-teal-dark;}
+.border-teal-dark{border-color:$material-teal-dark !important;}
 .border-y-teal-dark{
-	border-top-color:$material-teal-dark;
-	border-bottom-color:$material-teal-dark;
+	border-top-color:$material-teal-dark !important;
+	border-bottom-color:$material-teal-dark !important;
 }
 .border-x-teal-dark{
-	border-left-color:$material-teal-dark;
-	border-right-color:$material-teal-dark;
+	border-left-color:$material-teal-dark !important;
+	border-right-color:$material-teal-dark !important;
 }
-.border-top-teal-dark{border-top-color:$material-teal-dark;}
-.border-left-teal-dark{border-left-color:$material-teal-dark;}
-.border-bottom-teal-dark{border-bottom-color:$material-teal-dark;}
-.border-right-teal-dark{border-right-color:$material-teal-dark;}
+.border-top-teal-dark{border-top-color:$material-teal-dark !important;}
+.border-left-teal-dark{border-left-color:$material-teal-dark !important;}
+.border-bottom-teal-dark{border-bottom-color:$material-teal-dark !important;}
+.border-right-teal-dark{border-right-color:$material-teal-dark !important;}
 
 .fg-teal-primary{color:$material-teal-primary;}
 .bg-teal-primary{
 	background:$material-teal-primary;
 	&.fg-teal-primary{color:$white;}
 }
-.border-teal{border-color:$material-teal-primary;}
-.border-y-teal{
-	border-top-color:$material-teal-primary;
-	border-bottom-color:$material-teal-primary;
+.border-teal-primary{border-color:$material-teal-primary !important;}
+.border-y-teal-primary{
+	border-top-color:$material-teal-primary !important;
+	border-bottom-color:$material-teal-primary !important;
 }
-.border-x-teal{
-	border-left-color:$material-teal-primary;
-	border-right-color:$material-teal-primary;
+.border-x-teal-primary{
+	border-left-color:$material-teal-primary !important;
+	border-right-color:$material-teal-primary !important;
 }
-.border-top-teal{border-top-color:$material-teal-primary;}
-.border-left-teal{border-left-color:$material-teal-primary;}
-.border-bottom-teal{border-bottom-color:$material-teal-primary;}
-.border-right-teal{border-right-color:$material-teal-primary;}
+.border-top-teal-primary{border-top-color:$material-teal-primary !important;}
+.border-left-teal-primary{border-left-color:$material-teal-primary !important;}
+.border-bottom-teal-primary{border-bottom-color:$material-teal-primary !important;}
+.border-right-teal-primary{border-right-color:$material-teal-primary !important;}
 
 
 .fg-teal-light{color:$material-teal-primary;}
@@ -46,16 +46,16 @@ $material-teal-light:#80CBC4;
 	background:$material-teal-light;
 	&.fg-teal-light{color:$white;}
 }
-.border-teal-light{border-color:$material-teal-light;}
+.border-teal-light{border-color:$material-teal-light !important;}
 .border-y-teal-light{
-	border-top-color:$material-teal-light;
-	border-bottom-color:$material-teal-light;
+	border-top-color:$material-teal-light !important;
+	border-bottom-color:$material-teal-light !important;
 }
 .border-x-teal-light{
-	border-left-color:$material-teal-light;
-	border-right-color:$material-teal-light;
+	border-left-color:$material-teal-light !important;
+	border-right-color:$material-teal-light !important;
 }
-.border-top-teal-light{border-top-color:$material-teal-light;}
-.border-left-teal-light{border-left-color:$material-teal-light;}
-.border-bottom-teal-light{border-bottom-color:$material-teal-light;}
-.border-right-teal-light{border-right-color:$material-teal-light;}
+.border-top-teal-light{border-top-color:$material-teal-light !important;}
+.border-left-teal-light{border-left-color:$material-teal-light !important;}
+.border-bottom-teal-light{border-bottom-color:$material-teal-light !important;}
+.border-right-teal-light{border-right-color:$material-teal-light !important;}
