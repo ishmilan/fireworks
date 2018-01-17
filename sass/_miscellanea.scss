@@ -112,14 +112,64 @@
 .clear-right{clear:right;}
 .container:after,.row:after,.clear,
 .clear-fix,.clear-both{clear:both;}
-.center-absolute{
+.display-top-left{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+}
+.display-top-center{
+	position: absolute;
+	left: 50%;
+	top: 0%;
+	transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%);
+}
+.display-top-right{
+	position: absolute;
+	right: 0%;
+	top: 0%;
+}
+.display-middle-left {
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(0%, -50%);
+	-ms-transform: translate(-0%, -50%);
+}
+.display-middle-center{
 	margin:0px;
 	position:absolute;
-	top: 50vh;
-	left:50vw;
+	top: 50%;
+	left:50%;
 	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+}
+.display-middle-right {
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%)
+}
+.display-bottom-left {
+	position: absolute;
+	left: 0%;
+	bottom: 0%;
+}
+.display-bottom-center {
+	position: absolute;
+	left: 50%;
+	bottom: 0%;
+	transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%)
+}
+.display-bottom-right {
+	position: absolute;
+	right: 0%;
+	bottom: 0%;
 }
 /**/
+
 /*TEXT FORMAT*/
 .align-left,.text-left		{text-align:left !important;}
 .align-right,.text-right	{text-align:right !important;}
@@ -136,6 +186,7 @@
 	color:transparent;
 }
 /**/
+
 /*MARGIN*/
 .no-margin		{margin:0	!important;}
 .margin-xs		{margin:1px		!important;}
@@ -279,7 +330,6 @@
 .border-right,.border-right-s{border-right:1px solid $primary !important;}
 .border-right-m{border-right:2px solid $primary !important;}
 .border-right-l{border-right:4px solid $primary !important;}
-
 /**/
 /*ANIMATIONS*/
 .spin{animation:spin 2s infinite linear;}
@@ -360,7 +410,7 @@
 }
 /**/
 /*CARDS, CALLOUTS & ALERTS*/
-.highlight{
+.highlight,.label{
 	display:block;
 	border: solid 1px $gray;
 	margin:0px;
@@ -368,6 +418,11 @@
 	background:$lighter-gray;
 	position: relative;
 	top: 0px;
+	&.dark{
+		background-color: $white;
+		background:$black;
+		color:$lighter-gray;
+	}
 }
 [data-close]{
 	&:before{
@@ -593,3 +648,222 @@
 }
 tr.collapse.in {display:table-row;}
 tbody.collapse.in {display:table-row-group;}
+/*DROPDOWN*/
+.dropdown, .dropdown-hover {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	min-width: 160px;
+	&>button:first-child{
+		width:100%;
+		position:relative;
+		&:not([data-dd-icon="false"]){
+			padding-right:2em;
+			padding-left:2em;
+			&:after{
+				position: absolute;
+				display:block;
+				font-family: $icomoon;
+				content: "\e98a";
+				color:inherit;
+				height: 1.2em;
+				top:0px;
+				bottom:0px;
+				right:0.5em;
+				margin:auto;
+			}
+		}
+	}
+	& .dropdown-menu{
+		cursor: auto;
+		color: $black;
+		background-color: $white;
+		display: none;
+		position: absolute;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border:solid 1px $black;
+		list-style: none;
+		z-index:8;
+		& li{
+			cursor:pointer;
+			margin:0px;
+			padding:0.3em 0.4em;
+			&:hover{background:$primary-light;}
+			&>a{
+				display: block;
+				margin: -0.3em -0.4em;
+				padding: 0.3em 0.4em;
+			}
+		}
+	}
+}
+.dropdown-hover:hover .dropdown-menu {
+	display: block;
+	z-index: 1;
+}
+/**/
+/*DROPUP*/
+.dropup, .dropup-hover {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	min-width: 160px;
+	&>button:last-child{
+		width:100%;
+		position:relative;
+		&:not([data-dd-icon="false"]){
+			padding-right:2em;
+			padding-left:2em;
+			&:after{
+				position: absolute;
+				display:block;
+				font-family: $icomoon;
+				content: "\e988";
+				color:inherit;
+				height: 1.2em;
+				top:0px;
+				bottom:0px;
+				right:0.5em;
+				margin:auto;
+			}
+		}
+	}
+	& .dropup-menu {
+		cursor: auto;
+		color: $black;
+		background-color: $white;
+		display: none;
+		position: absolute;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border:solid 1px $black;
+		list-style: none;
+		z-index:8;
+		& li{
+			cursor:pointer;
+			margin:0px;
+			padding:0.3em 0.4em;
+			&:hover{background:$primary-light;}
+			&>a{
+				display: block;
+				margin: -0.3em -0.4em;
+				padding: 0.3em 0.4em;
+			}
+		}
+	}
+}
+.dropup-hover:hover .dropup-menu {
+	display: block;
+	z-index: 1;
+}
+/**/
+/*NAVBAR*/
+.navbar{
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: row;
+	align-content:flex-start;
+	flex-grow: 0;
+	align-items: stretch;
+	flex-wrap:wrap;
+	margin: 0px;
+	width: 100%;
+	padding:0px;
+	&.affix{position:fixed;top:0px;z-index:100;}
+	&.light, &.light .navbar-brand,&.light .navbar-toggler,&.light .navbar-nav{
+		color:$primary-dark;
+		background: $primary-light;
+	}
+	&.dark, &.dark .navbar-brand,&.dark .navbar-toggler,&.dark .navbar-nav{
+		color:$primary-light;
+		background: $primary-dark;
+		&>.navbar-nav{@include to-m{&,&>.navbar-item{background:$primary-light;}}}
+	}
+	&.reverse{
+		flex-direction: row-reverse;
+		flex-wrap: wrap-reverse;
+		&>.navbar-brand{
+			order:4;
+			margin-left:0.2em !important;
+			margin-right: auto !important;
+		}
+		&>.navbar-toggler{
+			order:5;
+			margin-left:0.2em !important;
+			margin-right: 0 !important;
+		}
+	}
+	&.same-width, &.same-width>*{
+		flex-grow:1;
+	}
+	&>.navbar-nav{
+		display: flex;
+		order:3;
+		height:100%;
+		display: flex;
+		margin-bottom: 0;
+		align-items: stretch;
+		@include to-m{
+			display:none;
+			margin: 0;
+			width: 100%;
+			flex-grow: 3;
+			flex-wrap:wrap;
+			z-index:4;
+			&,&>.navbar-item{background:$primary-light;}
+			&>.navbar-item{
+				width:100%;
+				margin-bottom: 0.1em !important;
+			}
+			&>.navbar-item.dropdown{margin-right:0;}
+		}
+	}
+	&>.navbar-item.dropdown,&>.navbar-nav>.navbar-item.dropdown{
+		padding: 0;
+		margin-bottom: 0;
+		margin-right: 0.2em;
+	}
+	&>.navbar-item,&>.navbar-nav>.navbar-item{
+		order:3;
+		height:100%;
+		padding: 0.6em;
+		text-align: center;
+		vertical-align: middle;
+		font-size: 1em;
+		display:inline-block;
+	}
+	&>.navbar-toggler{
+		order:1;
+		font-size:2em;
+		margin-bottom:0px;
+		display: inline-block;
+		cursor:pointer;
+		@include m{display:none;}
+		&:before{
+			font-family:'icomoon' !important;
+			font-size: inherit;
+			font-weight:normal;
+			speak:none;
+			color:inherit;
+			text-transform:none;
+			line-height:1;
+			position: relative;
+			top: 0.1em;
+			padding: 0.1em;
+			content:"\e94c";
+		}
+	}
+	&>.navbar-brand{
+		order:2;
+		font-size:2em;
+		line-height:1.2;
+		font-weight:bolder;
+		margin: 0 0.5em;
+		display:inline-block;
+	}
+
+}
+/**/
