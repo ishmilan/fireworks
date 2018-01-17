@@ -65,7 +65,6 @@ fieldset {
 	margin: 8px;
 	border: 1px solid $light-gray;
 }
-//TODO check label
 
 label {
 	cursor: default;
@@ -467,4 +466,3 @@ textarea {
 	&[data-label="true"]>[type="checkbox"]:checked+.slider:after{content:"ON";}
 }
 @import "buttons";
-//TODO form xs & xl
