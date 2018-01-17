@@ -44,3 +44,183 @@ a.thumbnail > img{
 	border:solid 1px $dark-gray;
 	border-radius:$border-radius-normal;
 }
+/*SLIDESHOW*/
+.slideshow,.carousel-inner{
+	position:relative;
+	padding:0;
+	& .slide-item,& .carousel-item{
+		display:none;
+		position:relative;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		margin:auto;
+		max-width:100%;
+		height:auto;
+		&.active{display:block;}
+		& .label{
+			position: absolute;
+			width: 100%;
+			left: 50%;
+			bottom: 0px;
+			top: auto;
+			text-align: center;
+			transform: translate(-50%, 0%);
+			-ms-transform: translate(-50%, 0%);
+		}
+	}
+	& .control{
+		position: absolute;
+		z-index: 1;
+		opacity:0.8;
+		top: 50%;
+		cursor: pointer;
+		transform: translate(0%, -50%);
+		-ms-transform: translate(0%, -50%);
+		&.prev,&.next,&.play{
+			&:before{
+				font-family: $icomoon;
+				font-size:2em;
+				min-width:2em;
+				min-height: 2em;
+				padding:0.5em;
+				color:$primary;
+			}
+		}
+		&.play{
+			font-size: 3em;
+			left:50%;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			display: none;
+			&:before{
+				content:"\e96c";
+			}
+		}
+		&.prev{
+			left: 0%;
+			&:before{content: "\e98b";}
+		}
+		&.next{
+			right: 0%;
+			&:before{content: "\e989";}
+		}
+	}
+	&:hover .control.play{display:block;}
+	& .carousel-indicators, & .slide-indicators{
+		position:absolute;
+		bottom:0px;
+		left: 50%;
+		transform: translate(-50%, 0%);
+		-ms-transform: translate(-50%, 0%);
+		padding:1em;
+		display:flex;
+		justify-content:space-around;
+		& .indicator{
+			display:inline-block;
+			cursor: pointer;
+			background:transparent;
+			margin:auto .5em;
+			padding:0.5em;
+			border: solid 2px $primary;
+			width:1em;
+			height:1em;
+			border-radius:50%;
+			content: "";
+			&.active{
+				background: $primary;
+			}
+		}
+	}
+}
+/**/
+
+
+.visible {display: block !important;}
+table.visible {display: table !important;}
+tr.visible {display: table-row !important;}
+th.visible,td.visible {display: table-cell !important;}
+.visible-block {display: block !important;}
+.visible-inline {display: inline !important;}
+.visible-inline-block {display: inline-block !important;}
+
+.visible-xs,.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block,
+.visible-s,.visible-s-block,.visible-s-inline,.visible-s-inline-block,
+.visible-m,.visible-m-block,.visible-m-inline,.visible-m-inline-block,
+.visible-l,.visible-l-block,.visible-l-inline,.visible-l-inline-block,
+.visible-xl,.visible-xl-block,.visible-xl-inline,.visible-xl-inline-block {
+	display: none !important;
+}
+@media (max-width: $to-small) {
+	.visible-xs {display: block !important;}
+	table.visible-xs {display: table !important;}
+	tr.visible-xs {display: table-row !important;}
+	th.visible-xs,td.visible-xs {display: table-cell !important;}
+	.visible-xs-block {display: block !important;}
+	.visible-xs-inline {display: inline !important;}
+	.visible-xs-inline-block {display: inline-block !important;}
+	.hidden-xs {display: none !important;}
+}
+@media (min-width: $small) and (max-width: $to-medium) {
+	.visible-s {display: block !important;}
+	table.visible-s {display: table !important;}
+	tr.visible-s {display: table-row !important;}
+	th.visible-s,td.visible-s {display: table-cell !important;}
+	.visible-s-block {display: block !important;}
+	.visible-s-inline {display: inline !important;}
+	.visible-s-inline-block {display: inline-block !important;}
+	.hidden-s {display: none !important;}
+}
+@media (min-width: $medium) and (max-width: $to-large) {
+	.visible-m {display: block !important;}
+	table.visible-m {display: table !important;}
+	tr.visible-m {display: table-row !important;}
+	th.visible-m,td.visible-m {display: table-cell !important;}
+	.visible-m-block {display: block !important;}
+	.visible-m-inline {display: inline !important;}
+	.visible-m-inline-block {display: inline-block !important;}
+	.hidden-m {display: none !important;}
+}
+@media (min-width: $large) and (max-width: $to-xl) {
+	.visible-l {display: block !important;}
+	table.visible-l {display: table !important;}
+	tr.visible-l {display: table-row !important;}
+	th.visible-l,td.visible-l {display: table-cell !important;}
+	.visible-l-block {display: block !important;}
+	.visible-l-inline {display: inline !important;}
+	.visible-l-inline-block {display: inline-block !important;}
+	.hidden-l {display: none !important;}
+}
+@media (min-width: $xl) {
+	.visible-xl {display: block !important;}
+	table.visible-xl{display: table !important;}
+	tr.visible-xl{display: table-row !important;}
+	th.visible-xl,td.visible-xl {display: table-cell !important;}
+	.visible-xl-block {display: block !important;}
+	.visible-xl-inline {display: inline !important;}
+	.visible-xl-inline-block {display: inline-block !important;}
+	.hidden-xl {display: none !important;}
+}
+.visible-print {display: none !important;}
+@media print {
+	.visible-print {display: block !important;}
+	table.visible-print {display: table !important;}
+	tr.visible-print {display: table-row !important;}
+	th.visible-print,td.visible-print {display: table-cell !important;}
+}
+.visible-print-block {
+	display: none !important;
+	@include print {display: block !important;}
+}
+.visible-print-inline {
+	display: none !important;
+	@include print {display: inline !important;}
+}
+.visible-print-inline-block {
+	display: none !important;
+	@include print {display: inline-block !important;}
+}
+@media print {
+	.hidden-print{display: none !important;}
+}
