@@ -37,10 +37,10 @@ html {
 }
 
 ::-moz-selection{
-	background:$primary;
+	background:$default;
 	color:$contrasting;
 }::selection{
-	background:$primary;
+	background:$default;
 	color:$contrasting;
 }
 .content-box{box-sizing:content-box;}
@@ -119,14 +119,14 @@ blockquote.blockquote{
 		content: "";
 		padding:0;
 	}
-	border-left: 4px solid $primary;
+	border-left: 4px solid $default;
 	padding-left: 8px;
 	margin-left: 8px;
 
 	& .footer:before{content: "— ";}
 	&.reverse{
 		border-left: none;
-		border-right: 4px solid $primary;
+		border-right: 4px solid $default;
 		padding-left: 0px;
 		margin-left: 0px;
 		padding-right: 8px;
@@ -223,7 +223,7 @@ hr {
 	overflow: hidden;
 	min-height: 2px;
 	margin: 1.5em 2vw;
-	background: $primary;
+	background: $default;
 }
 .big,big{
 	font-size: 125%;

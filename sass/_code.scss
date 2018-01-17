@@ -8,8 +8,8 @@ samp {
 	display:inline-block;
 	position: relative;
 	border-radius:$border-radius-normal;
-	border:solid 1px $primary-dark;
-	color:$primary-dark;
+	border:solid 1px $default-dark;
+	color:$default-dark;
 	border-left-width:4px;
 	max-width:100%;
 	font-family: $mono;
@@ -43,7 +43,7 @@ pre,.code-block{
 }
 
 samp,kbd,code,.code{
-	color:$primary;
+	color:$default;
 	background-color:$light-gray;
 	padding:0px 4px;
 	top: 6px;

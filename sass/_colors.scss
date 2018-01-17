@@ -286,10 +286,68 @@ $success-alpha:rgba(68, 221, 85,0.2);
 
 
 //DEFAULT THEME
-$primary-dark:$black;
-$primary:$dark-gray;
-$primary-light:$lighter-gray;
+$default-dark:$black;
+$default:$dark-gray;
+$default-light:$lighter-gray;
 $contrasting:$white;
+
+.fg-default-dark{color:$default-dark;}
+.bg-default-dark{
+	background:$default-dark;
+	&.fg-default-dark{color:$white;}
+}
+.border-default-dark{border-color:$default-dark !important;}
+.border-y-default-dark{
+	border-top-color:$default-dark !important;
+	border-bottom-color:$default-dark !important;
+}
+.border-x-default-dark{
+	border-left-color:$default-dark !important;
+	border-right-color:$default-dark !important;
+}
+.border-top-default-dark{border-top-color:$default-dark !important;}
+.border-left-default-dark{border-left-color:$default-dark !important;}
+.border-bottom-default-dark{border-bottom-color:$default-dark !important;}
+.border-right-default-dark{border-right-color:$default-dark !important;}
+
+.fg-default-primary{color:$default-primary;}
+.bg-default-primary{
+	background:$default-primary;
+	&.fg-default-primary{color:$white;}
+}
+.border-default-primary{border-color:$default-primary !important;}
+.border-y-default-primary{
+	border-top-color:$default-primary !important;
+	border-bottom-color:$default-primary !important;
+}
+.border-x-default-primary{
+	border-left-color:$default-primary !important;
+	border-right-color:$default-primary !important;
+}
+.border-top-default-primary{border-top-color:$default-primary !important;}
+.border-left-default-primary{border-left-color:$default-primary !important;}
+.border-bottom-default-primary{border-bottom-color:$default-primary !important;}
+.border-right-default-primary{border-right-color:$default-primary !important;}
+
+
+.fg-default-light{color:$default-primary;}
+.bg-default-light{
+	background:$default-light;
+	&.fg-default-light{color:$darker-gray;}
+}
+.border-default-light{border-color:$default-light !important;}
+.border-y-default-light{
+	border-top-color:$default-light !important;
+	border-bottom-color:$default-light !important;
+}
+.border-x-default-light{
+	border-left-color:$default-light !important;
+	border-right-color:$default-light !important;
+}
+.border-top-default-light{border-top-color:$default-light !important;}
+.border-left-default-light{border-left-color:$default-light !important;}
+.border-bottom-default-light{border-bottom-color:$default-light !important;}
+.border-right-default-light{border-right-color:$default-light !important;}
 
 //THEME
 @import "colors/red";

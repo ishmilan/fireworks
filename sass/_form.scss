@@ -407,7 +407,7 @@ textarea {
 	height: 1.45em;
 	&>[type="checkbox"] {
 		display:none;
-		&:checked + .slider {background: $primary;}
+		&:checked + .slider {background: $default;}
 		&:checked + .slider:before {left:1.7em;}
 		&:checked + .slider:after {
 			font-size:inherit;

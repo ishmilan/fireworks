@@ -85,7 +85,7 @@ a.thumbnail > img{
 				min-width:2em;
 				min-height: 2em;
 				padding:0.5em;
-				color:$primary-light;
+				color:$default-light;
 			}
 		}
 		&.play{
@@ -124,13 +124,13 @@ a.thumbnail > img{
 			background:transparent;
 			margin:auto .5em;
 			padding:0.5em;
-			border: solid 2px $primary-light;
+			border: solid 2px $default-light;
 			width:1em;
 			height:1em;
 			border-radius:50%;
 			content: "";
 			&.active{
-				background: $primary-light;
+				background: $default-light;
 			}
 		}
 	}

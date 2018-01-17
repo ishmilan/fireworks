@@ -312,24 +312,24 @@
 .border-ridge	{border-style:ridge	!important;}
 .no-border{border:none !important;}
 .border,.border-s{border-width:1px !important;}
-.border-m{border:2px solid $primary !important;}
-.border-large,.border-l{border:4px solid $primary !important;}
+.border-m{border:2px solid $default !important;}
+.border-large,.border-l{border:4px solid $default !important;}
 
-.border-top,.border-top-s{border-top:1px solid $primary !important;}
-.border-top-m{border-top:2px solid $primary !important;}
-.border-top-l{border-top:4px solid $primary !important;}
+.border-top,.border-top-s{border-top:1px solid $default !important;}
+.border-top-m{border-top:2px solid $default !important;}
+.border-top-l{border-top:4px solid $default !important;}
 
-.border-bottom,.border-bottom-s{border-bottom:1px solid $primary !important;}
-.border-bottom-m{border-bottom:2px solid $primary !important;}
-.border-bottom-l{border-bottom:4px solid $primary !important;}
+.border-bottom,.border-bottom-s{border-bottom:1px solid $default !important;}
+.border-bottom-m{border-bottom:2px solid $default !important;}
+.border-bottom-l{border-bottom:4px solid $default !important;}
 
-.border-left,.border-left-s{border-left:1px solid $primary !important;}
-.border-left-m{border-left:2px solid $primary !important;}
-.border-left-l{border-left:4px solid $primary !important;}
+.border-left,.border-left-s{border-left:1px solid $default !important;}
+.border-left-m{border-left:2px solid $default !important;}
+.border-left-l{border-left:4px solid $default !important;}
 
-.border-right,.border-right-s{border-right:1px solid $primary !important;}
-.border-right-m{border-right:2px solid $primary !important;}
-.border-right-l{border-right:4px solid $primary !important;}
+.border-right,.border-right-s{border-right:1px solid $default !important;}
+.border-right-m{border-right:2px solid $default !important;}
+.border-right-l{border-right:4px solid $default !important;}
 /**/
 /*ANIMATIONS*/
 .spin{animation:spin 2s infinite linear;}
@@ -401,7 +401,7 @@
 	min-width:1.3em;
 	min-height:1.3em;
 	display:inline-block;
-	background:$primary;
+	background:$default;
 	color:$contrasting;
 	vertical-align: bottom;
 	text-align:center;
@@ -579,7 +579,7 @@
 			font-size: 2rem;
 		}
 		& .header,& .footer{
-			background:$primary-dark;
+			background:$default-dark;
 			color:$contrasting;
 			position:relative;
 		}
@@ -690,7 +690,7 @@ tbody.collapse.in {display:table-row-group;}
 			cursor:pointer;
 			margin:0px;
 			padding:0.3em 0.4em;
-			&:hover{background:$primary-light;}
+			&:hover{background:$default-light;}
 			&>a{
 				display: block;
 				margin: -0.3em -0.4em;
@@ -746,7 +746,7 @@ tbody.collapse.in {display:table-row-group;}
 			cursor:pointer;
 			margin:0px;
 			padding:0.3em 0.4em;
-			&:hover{background:$primary-light;}
+			&:hover{background:$default-light;}
 			&>a{
 				display: block;
 				margin: -0.3em -0.4em;
@@ -774,13 +774,13 @@ tbody.collapse.in {display:table-row-group;}
 	padding:0px;
 	&.affix{position:fixed;top:0px;z-index:100;}
 	&.light, &.light .navbar-brand,&.light .navbar-toggler,&.light .navbar-nav{
-		color:$primary-dark;
-		background: $primary-light;
+		color:$default-dark;
+		background: $default-light;
 	}
 	&.dark, &.dark .navbar-brand,&.dark .navbar-toggler,&.dark .navbar-nav{
-		color:$primary-light;
-		background: $primary-dark;
-		&>.navbar-nav{@include to-m{&,&>.navbar-item{background:$primary-light;}}}
+		color:$default-light;
+		background: $default-dark;
+		&>.navbar-nav{@include to-m{&,&>.navbar-item{background:$default-light;}}}
 	}
 	&.reverse{
 		flex-direction: row-reverse;
@@ -813,7 +813,7 @@ tbody.collapse.in {display:table-row-group;}
 			flex-grow: 3;
 			flex-wrap:wrap;
 			z-index:4;
-			&,&>.navbar-item{background:$primary-light;}
+			&,&>.navbar-item{background:$default-light;}
 			&>.navbar-item{
 				width:100%;
 				margin-bottom: 0.1em !important;
