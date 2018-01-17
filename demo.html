@@ -7,37 +7,38 @@
 	<link rel=icon href=img/favicon.png type="image/png">
 	<!--<link rel="stylesheet" href="style/fireworks.css">-->
 	<link rel="stylesheet" href="style/fireworks.min.css">
-	<script src="js/main.js"></script>
 </head>
 <body>
-<header>
-	<h1 class="padding-s icon-menu icon float-left" id="menuButton"></h1>
-	<h1 class="padding-s text-center header float-left">FireWorks</h1>
-	<h1 class="padding-s icon-user icon float-right" id="footerButton"></h1>
-	<div class="clear-fix"></div>
+<header class="navbar affix dark reverse display-top-center width-100">
+	<h1 class="navbar-brand">
+		<img src="img/brand.svg" style="display: inline-block;max-height: 1em;vertical-align: bottom;">
+		FireWorks
+	</h1>
+	<div class="navbar-nav">
+		<div class="navbar-item dropdown">
+			<button class="btn btn-hovered recommend no-margin border-xs">Introducción</button>
+			<ul class="dropdown-menu border-recommend">
+				<li><a class="navbar-item" href="#intro">Introducción</a></li>
+				<li><a href="#fonts">Fuentes</a></li>
+				<li><a href="#icons">Iconos</a></li>
+				<li><a class="navbar-item" href="#colors">Colores</a></li>
+			</ul>
+		</div>
+		<div class="navbar-item dropdown">
+			<button class="btn btn-hovered recommend no-margin border-xs">Componentes</button>
+			<ul class="dropdown-menu border-recommend">
+				<li><a class="navbar-item" href="#semantics">Textos y semántica</a></li>
+				<li><a class="navbar-item" href="#align">Alineación de texto</a></li>
+				<li><a class="navbar-item" href="#list">Listas</a></li>
+				<li><a class="navbar-item" href="#quote">Citas y menciones</a></li>
+				<li><a class="navbar-item" href="#tables">Tablas</a></li>
+				<li><a class="navbar-item" href="#forms">Formularios</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="navbar-toggler"></div>
 </header>
-<nav id="menu" class="sidebar"  style="display:none;">
-<fieldset><legend>Lista de enlaces:</legend>
-	<ul class="container-flex no-list-style">
-		<li class="row-content align-center"><a href="#intro">Introducción</a></li>
-		<li class="row-content align-center"><a href="#fonts">Fuentes</a></li>
-		<li class="row-content align-center"><a href="#icons">Iconos</a></li>
-		<li class="row-content align-center"><a href="#semantics">Textos y semántica</a></li>
-		<li class="row-content align-center"><a href="#align">Alineación de texto</a></li>
-		<li class="row-content align-center"><a href="#list">Listas</a></li>
-		<li class="row-content align-center"><a href="#quote">Citas y menciones</a></li>
-		<li class="row-content align-center"><a href="#colors">Colores</a></li>
-		<li class="row-content align-center"><a href="#tables">Tablas</a></li>
-		<li class="row-content align-center"><a href="#forms">Formularios</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 7</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 8</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 9</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 10</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 11</a></li>
-		<li class="row-content align-center"><a href="#">elemento ul 12</a></li>
-	</ul>
-</fieldset>
-</nav>
+<img src="img/fireworks.svg" alt="FireWorks logo" class="width-100-v height-100-v">
 <section id="intro">
 	<h2 class="text-center margin-y fg-recommend">Introducción</h2>
 	<p>Comience a usar FireWorks, el framework de desarrollo frontend modular ideal para crear sitios web adaptativos a dispositivos móviles sin esfuerzo y ajustándose a lo que necesite. Al ser modular tiene opción de elegir qué elementos quieres tener y reducir el peso y tiempos de carga de tu web.</p>
@@ -135,6 +136,90 @@
 	margin:0px;
 }
 	</style>
+</section>
+<section id="colors">
+	<h2 class="text-center margin-y fg-recommend">Paleta de colores</h2>
+<style>
+.pallete{flex-grow: 1;min-width:120px;width: auto;min-height: 120px;border:solid 1px black;padding:0;}
+.pallete *{color:white;padding:10px;height:40px;margin:0px;width:100%;text-align:center;font-family: monospace;}
+.pallete *.fg-gray-dark{color:#555;}
+.circle-test{width:100px;height:100px;margin:0px;display:table-cell;vertical-align:middle;text-align:center;color:#fff;font-weight:bolder;}
+</style>
+<p>Los siguientes colores son colores semánticos:</p>
+<div class="container-flex">
+	<div><div class="circle-test circle bg-recommend">recommend</div></div>
+	<div><div class="circle-test circle bg-info">info</div></div>
+	<div><div class="circle-test circle bg-error">error</div></div>
+	<div><div class="circle-test circle bg-warning">warning</div></div>
+	<div><div class="circle-test circle bg-alert"><mark>alert</mark></div></div>
+	<div><div class="circle-test circle bg-success">success</div></div>
+</div>
+<p>Se pueden usar con las clases <code>.fg-recommend</code> para aplicarlo como color de fuente y <code>.bg-recommend</code> como color de fondo. Lo mismo con <code>.fg-info</code>, <code>.bg-info</code>, <code>.fg-success</code>, <code>.bg-success</code>, <code>.fg-alert</code>, <code>.bg-alert</code>, <code>.fg-warning</code>, <code>.bg-warning</code>, <code>.fg-error</code> y <code>.bg-error</code>.
+Si se quiere aplicar como color de borde se pueden agregar a las palabras <i>'recommend'</i>,<i>'info'</i>,<i>'success'</i>,<i>'alert'</i>,<i>'warning'</i> y <i>'error'</i> también se les pueden aplicar los prefijos: <i>'border-'</i> para todos los bordes, <i>'border-x'</i> para los bordes izquierdo y derecho, <i>'border-y'</i> para los bordes superior e inferior o <i>'border-top'</i>,<i>'border-left'</i>,<i>'border-bottom'</i> y <i>'border-right'</i> para tratar los bordes individuales.</p>
+<p>Los siguientes colores son las diferentes paletas de colores, empezando por la escala de grises que es la paleta por defecto:</p>
+<div class="container-flex">
+	<div class="pallete">
+		<div class="bg-black">black</div>
+		<div class="bg-gray-darker">gray-darker</div>
+		<div class="bg-gray-dark">gray-dark</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-gray">gray</div>
+		<div class="bg-gray-light fg-gray-dark">gray-light</div>
+		<div class="bg-gray-lighter fg-gray-dark">gray-lighter</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-green-dark title">green-dark</div>
+		<div class="bg-green-primary">green-primary</div>
+		<div class="bg-green-light fg-gray-dark">green-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-yellow-dark">yellow-dark</div>
+		<div class="bg-yellow-primary">yellow-primary</div>
+		<div class="bg-yellow-light fg-gray-dark">yellow-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-orange-dark">orange-dark</div>
+		<div class="bg-orange-primary">orange-primary</div>
+		<div class="bg-orange-light fg-gray-dark">orange-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-red-dark">red-dark</div>
+		<div class="bg-red-primary">red-primary</div>
+		<div class="bg-red-light">red-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-pink-dark">pink-dark</div>
+		<div class="bg-pink-primary">pink-primary</div>
+		<div class="bg-pink-light">pink-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-purple-dark">purple-dark</div>
+		<div class="bg-purple-primary">purple-primary</div>
+		<div class="bg-purple-light">purple-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-indigo-dark">indigo-dark</div>
+		<div class="bg-indigo-primary">indigo-primary</div>
+		<div class="bg-indigo-light fg-gray-dark">indigo-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-blue-dark">blue-dark</div>
+		<div class="bg-blue-primary">blue-primary</div>
+		<div class="bg-blue-light fg-gray-dark">blue-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-teal-dark">teal-dark</div>
+		<div class="bg-teal-primary">teal-primary</div>
+		<div class="bg-teal-light fg-gray-dark">teal-light</div>
+	</div>
+	<div class="pallete">
+		<div class="bg-bluegray-dark">bluegray-dark</div>
+		<div class="bg-bluegray-primary">bluegray-primary</div>
+		<div class="bg-bluegray-light fg-gray-dark">bluegray-light</div>
+	</div>
+</div>
+<p>Se pueden usar cada uno de los colores como color de fuente anteponiendo el prefijo <i>'fg-'</i> al nombre mostrado en cada color, como por ejemplo <code>fg-green-dark</code>. De igual modo para color de fondo con <i>'bg-'</i>. Se acepta tanto <i>'gray'</i> como <i>'grey'</i> en el nombre de las clases para facilitar el desarrollo. Agregando las clases con los prefijos de borde: <i>'border-'</i>,<i>'border-x'</i>,<i>'border-y'</i>,<i>'border-top'</i>,<i>'border-left'</i>,<i>'border-bottom'</i> y <i>'border-right'</i> se obtienen los mismos resultados que con los colores semánticos.</p>
 </section>
 <section id="semantics">
 	<h2 class="text-center fg-recommend margin-y">Textos y semántica</h2>
@@ -259,12 +344,12 @@ además de las clases &lt;span class="sub"&gt;.sub&lt;/span&gt; y &lt;span class
 		<div class="padding-m">
 			<div class="text-lowercase">ESTE TEXTO ESTÁ EN MAYÚSCULAS PERO SE MUESTRA EN MINÚSCULAS</div>
 			<div class="text-uppercase">este texto está en minúsculas pero se muestra en mayúsculas</div>
-			<div class="text-capitalize">todo el texto está en minúsculas y se muestrá capitalizado</div>
+			<div class="text-capitalize">todo el texto está en minúsculas y se muestra capitalizado</div>
 			<div class="text-small-caps">Este texto se muestra con las letras en versálitas.</div>
 		</div>
 		<div class="highlight code no-radius">&lt;div class="text-lowercase"&gt;ESTE TEXTO ESTÁ EN MAYÚSCULAS PERO SE MUESTRA EN MINÚSCULAS&lt;/div&gt;
 &lt;div class="text-uppercase"&gt;este texto está en minúsculas pero se muestra en mayúsculas&lt;/div&gt;
-&lt;div class="text-capitalize"&gt;todo el texto está en minúsculas y se muestrá capitalizado&lt;/div&gt;
+&lt;div class="text-capitalize"&gt;todo el texto está en minúsculas y se muestra capitalizado&lt;/div&gt;
 &lt;div class="text-small-caps"&gt;Este texto se muestra con las letras en versálitas.&lt;/div&gt;</div>
 	</div>
 	<div class="h3 margin-y">Direcciones</div>
@@ -445,103 +530,6 @@ Muestra de la etiqueta &lt;i&gt;span&lt;/i&gt; con la clase &lt;span class="code
 &lt;/div&gt;</div>
 	</div>
 </section>
-<section id="colors">
-	<h2 class="text-center margin-y fg-recommend">Paleta de colores</h2>
-<style>
-.pallete{flex-grow: 1;min-width:120px;width: auto;min-height: 120px;border:solid 1px black;padding:0;}
-.pallete *{color:white;padding:10px;height:40px;margin:0px;width:100%;text-align:center;font-family: monospace;}
-.pallete *.fg-gray-dark{color:#555;}
-.circle-test{width:100px;height:100px;margin:0px;display:table-cell;vertical-align:middle;text-align:center;color:#fff;font-weight:bolder;}
-</style>
-<p>Los siguientes colores son colores semánticos:</p>
-<div class="container-flex">
-	<div>
-		<div class="circle-test circle bg-recommend">recommend</div>
-	</div>
-	<div>
-		<div class="circle-test circle bg-info">info</div>
-	</div>
-	<div>
-		<div class="circle-test circle bg-error">error</div>
-	</div>
-	<div>
-		<div class="circle-test circle bg-warning">warning</div>
-	</div>
-	<div>
-		<div class="circle-test circle bg-alert"><mark>alert</mark></div>
-	</div>
-	<div>
-		<div class="circle-test circle bg-success">success</div>
-	</div>
-</div>
-<p>Se pueden usar con las clases <code>.fg-recommend</code> para aplicarlo como color de fuente y <code>.bg-recommend</code> como color de fondo. Lo mismo con <code>.fg-info</code>, <code>.bg-info</code>, <code>.fg-success</code>, <code>.bg-success</code>, <code>.fg-alert</code>, <code>.bg-alert</code>, <code>.fg-warning</code>, <code>.bg-warning</code>, <code>.fg-error</code> y <code>.bg-error</code>.
-Si se quiere aplicar como color de borde se pueden agregar a las palabras <i>'recommend'</i>,<i>'info'</i>,<i>'success'</i>,<i>'alert'</i>,<i>'warning'</i> y <i>'error'</i> también se les pueden aplicar los prefijos: <i>'border-'</i> para todos los bordes, <i>'border-x'</i> para los bordes izquierdo y derecho, <i>'border-y'</i> para los bordes superior e inferior o <i>'border-top'</i>,<i>'border-left'</i>,<i>'border-bottom'</i> y <i>'border-right'</i> para tratar los bordes individuales.</p>
-<p>Los siguientes colores son las diferentes paletas de colores, empezando por la escala de grises que es la paleta por defecto:</p>
-<div class="container-flex">
-	<div class="pallete">
-		<div class="bg-black">black</div>
-		<div class="bg-gray-darker">gray-darker</div>
-		<div class="bg-gray-dark">gray-dark</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-gray">gray</div>
-		<div class="bg-gray-light fg-gray-dark">gray-light</div>
-		<div class="bg-gray-lighter fg-gray-dark">gray-lighter</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-green-dark title">green-dark</div>
-		<div class="bg-green-primary">green-primary</div>
-		<div class="bg-green-light fg-gray-dark">green-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-yellow-dark">yellow-dark</div>
-		<div class="bg-yellow-primary">yellow-primary</div>
-		<div class="bg-yellow-light fg-gray-dark">yellow-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-orange-dark">orange-dark</div>
-		<div class="bg-orange-primary">orange-primary</div>
-		<div class="bg-orange-light fg-gray-dark">orange-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-red-dark">red-dark</div>
-		<div class="bg-red-primary">red-primary</div>
-		<div class="bg-red-light">red-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-pink-dark">pink-dark</div>
-		<div class="bg-pink-primary">pink-primary</div>
-		<div class="bg-pink-light">pink-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-purple-dark">purple-dark</div>
-		<div class="bg-purple-primary">purple-primary</div>
-		<div class="bg-purple-light">purple-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-indigo-dark">indigo-dark</div>
-		<div class="bg-indigo-primary">indigo-primary</div>
-		<div class="bg-indigo-light fg-gray-dark">indigo-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-blue-dark">blue-dark</div>
-		<div class="bg-blue-primary">blue-primary</div>
-		<div class="bg-blue-light fg-gray-dark">blue-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-teal-dark">teal-dark</div>
-		<div class="bg-teal-primary">teal-primary</div>
-		<div class="bg-teal-light fg-gray-dark">teal-light</div>
-	</div>
-	<div class="pallete">
-		<div class="bg-bluegray-dark">bluegray-dark</div>
-		<div class="bg-bluegray-primary">bluegray-primary</div>
-		<div class="bg-bluegray-light fg-gray-dark">bluegray-light</div>
-	</div>
-</div>
-<p>Se pueden usar cada uno de los colores como color de fuente anteponiendo el prefijo <i>'fg-'</i> al nombre mostrado en cada color, como por ejemplo <code>fg-green-dark</code>. De igual modo para color de fondo con <i>'bg-'</i>. Se acepta tanto <i>'gray'</i> como <i>'grey'</i> en el nombre de las clases para facilitar el desarrollo. Agregando las clases con los prefijos de borde: <i>'border-'</i>,<i>'border-x'</i>,<i>'border-y'</i>,<i>'border-top'</i>,<i>'border-left'</i>,<i>'border-bottom'</i> y <i>'border-right'</i> se obtienen los mismos resultados que con los colores semánticos.</p>
-</section>
-
 <section id="tables">
 	<h2 class="text-center margin-y fg-recommend">Tablas</h2>
 	<p>A la hora de componer tablas hemos hecho algunas adaptaciones de visualización. Como por ejemplo los subtitulos, para una mejor visibilidad los hemos movido arriba:</p>
@@ -612,7 +600,7 @@ Si se quiere aplicar como color de borde se pueden agregar a las palabras <i>'re
 	&lt;caption&gt;striped table&lt;/caption&gt;
 &lt;/table&gt;</div>
 	</div>
-	<p>Con la clase <code>.collapsed</code> desaparece el espacion entre celdas:</p>
+	<p>Con la clase <code>.collapsed</code> desaparece el espacio entre celdas:</p>
 	<div class="callout margin-y">
 		<div class="padding-m">
 			<table class="collapsed">
@@ -630,7 +618,7 @@ Si se quiere aplicar como color de borde se pueden agregar a las palabras <i>'re
 &lt;/table&gt;</div>
 
 	</div>
-	<p>Con la clase <code>.hovered</code> se resalatará la fila que sobrepase el ratón</p>
+	<p>Con la clase <code>.hovered</code> se resaltará la fila que sobrepase el ratón</p>
 	<div class="callout margin-y">
 		<div class="padding-m">
 			<table class="striped collapsed hovered size-xs">
@@ -798,175 +786,42 @@ Si se quiere aplicar como color de borde se pueden agregar a las palabras <i>'re
 					</div>
 				</fieldset>
 			</div>
+			<div class="col xs-12">
+				<fieldset>
+					<legend>Switch buttons</legend>
+					Normal:
+					<label class="switch">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+					Recommend:
+					<label class="switch recommend">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+					Info:
+					<label class="switch info">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+					Success:
+					<label class="switch success">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+					Alert:
+					<label class="switch alert">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+					Warning:
+					<label class="switch warning">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+					Danger:
+					<label class="switch danger" data-label="true">
+						<input type="checkbox"><span class="slider"></span>
+					</label>
+				</fieldset>
+			</div>
 		</form>
 	</article>
 </section>
-<section>
-<article>
-<h3 class="title">Título del artículo</h3>
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sapiente accusamus earum, quo soluta dolorem odit eos dignissimos consequuntur. <abbr title="prueba">Tempora</abbr> earum itaque repellat vel modi id, rerum repellendus eveniet quisquam!</div>
-<div style="font-family: FiraSans;">Lorem ipsum <strong>duolor</strong> <em>suit</em> <strong><em>uamet</em></strong>, consectetur adipisicing elit. Aut id <a href="#">repellat</a>, et deleniti earum dolores culpa fugit sequi sint aspernatur hic autem, omnis quis maiores, recusandae assumenda voluptas quam corporis.</div>
-<div>
-	Lorem <a href="#" class="icon-file-pdf">ipsum</a> dolor sit amet, <a href="#" class="icon-libreoffice">consectetur adipisicing</a> elit. Quibusdam ducimus voluptatem veritatis voluptatum, accusantium at, dicta harum magnam asperiores repellat sunt dignissimos? Dolore nam sapiente deleniti, saepe ducimus excepturi nostrum. <a href="https://telegram.me/ishmilan" class="icon-telegram">ishmilan</a>.
-</div>
-<!--	table[style=text-align:center]>tr>th{cabecera$}*10^tr*3>td{celda$}*10-->
-</article>
-</section>
-<section>
-	<div class="head bold">GRID SYSTEM</div>
-	<div class="container-grid">
-		<div class="row">
-			<div class="col text-center xs-12 border">12</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-11 border">11</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-10 border">10</div>
-			<div class="col text-center xs-2 border">2</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-10 border">10</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-9 border">9</div>
-			<div class="col text-center xs-3 border">3</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-9 border">9</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-9 border">9</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-8 border">8</div>
-			<div class="col text-center xs-4 border">4</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-8 border">8</div>
-			<div class="col text-center xs-3 border">3</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-8 border">8</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-2 border">2</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-8 border">8</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-8 border">8</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-7 border">7</div>
-			<div class="col text-center xs-5 border">5</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-7 border">7</div>
-			<div class="col text-center xs-4 border">4</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-7 border">7</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-3 border">3</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-7 border">7</div>
-			<div class="col text-center xs-3 border">3</div>
-			<div class="col text-center xs-2 border">2</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-7 border">7</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-2 border">2</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-7 border">7</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-6 border">6</div>
-			<div class="col text-center xs-6 border">6</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-5 border">5</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-5 border">5</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-4 border">4</div>
-			<div class="col text-center xs-4 border">4</div>
-			<div class="col text-center xs-4 border">4</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-3 border">3</div>
-			<div class="col text-center xs-3 border">3</div>
-			<div class="col text-center xs-3 border">3</div>
-			<div class="col text-center xs-3 border">3</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-2 border">2</div>
-			<div class="col text-center xs-2 border">2</div>
-		</div>
-		<div class="row">
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-			<div class="col text-center xs-1 border">1</div>
-		</div>
-	</div>
-</section>
-<section>
-<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi soluta suscipit nobis eius. Neque ea expedita quidem quam ratione ex consequuntur dolorem rem, error non quaerat tempore quod, facere temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat iusto illo ducimus incidunt quis unde quibusdam at aut minima itaque, corporis quia aliquid dicta fugit, molestiae dolor numquam natus reprehenderit!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa asperiores atque, accusantium temporibus.</blockquote>
-<samp>Presiona <kbd>Ctrl</kbd> y mantenla presionada
-mientras presionas <kbd>C</kbd>.
-Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd>
-y mantenla presionada mientras presionas <kbd>V</kbd>.</samp>
-<div class="code-block">
-Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. Luego pasa al segundo documento y presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>V</kbd>.
-</div>
-<blockquote class="blockquote">
-	blockquote with class <em>blockquote</em>.<br>
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam odio, eaque similique esse tempore distinctio quibusdam aut dicta eos deleniti voluptate est deserunt ipsum cum facere hic assumenda! Consequatur, vitae.
-	<div class="footer">Lorem Ipsum</div>
-</blockquote>
-</section>
-
 <section class="bg-warm-grey no-padding-x">
 <table class="no-border table-left">
 	<tr>
@@ -1002,21 +857,35 @@ Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. 
 <section>
 	<h3 class="title text-center">Slideshows</h3>
 	<br>
-	<div class="container-flex space-around">
-		<div id="imgContainer01" class="no-grow little-padding" style="margin: 0.5em;">
-			<img src="pics/ej1.jpg" alt="img1" style="margin:auto;">
-			<img src="pics/ej2.jpg" alt="img2" style="margin:auto;">
-			<img src="pics/ej3.jpg" alt="img3" style="margin:auto;">
-			<img src="pics/ej4.jpg" alt="img4" style="margin:auto;">
+	<div id="imgContainer01" class="slideshow" style="margin: 0.5em;">
+		<img src="pics/ej1.jpg" alt="img1" class="slide-item width-100 active">
+		<img src="pics/ej2.jpg" alt="img2" class="slide-item width-100">
+		<img src="pics/ej3.jpg" alt="img3" class="slide-item width-100">
+		<img src="pics/ej4.jpg" alt="img4" class="slide-item width-100">
+		<div class="slide-indicators">
+			<div class="indicator active"></div>
+			<div class="indicator"></div>
+			<div class="indicator"></div>
+			<div class="indicator"></div>
 		</div>
-		<div id="imgContainer02" class="no-grow little-padding" style="margin: 0.5em;">
-			<img src="pics/ej4.jpg" alt="img4" style="margin:auto;">
-			<img src="pics/ej5.jpg" alt="img5" style="margin:auto;">
-			<img src="pics/ej6.jpg" alt="img6" style="margin:auto;">
-			<img src="pics/ej1.jpg" alt="img1" style="margin:auto;">
-			<img src="pics/ej2.jpg" alt="img2" style="margin:auto;">
-			<img src="pics/ej3.jpg" alt="img3" style="margin:auto;">
+	</div>
+	<div id="imgContainer02" class="slideshow play" style="margin: 0.5em;">
+		<div class="slide-item active">
+			<img src="pics/ej1.jpg" alt="img1" class="width-100">
+			<div class="label">SLIDE 1</div>
 		</div>
+		<div class="slide-item">
+			<img src="pics/ej2.jpg" alt="img2" class="width-100">
+		</div>
+		<div class="slide-item">
+			<img src="pics/ej3.jpg" alt="img3" class="width-100">
+		</div>
+		<div class="slide-item">
+			<img src="pics/ej4.jpg" alt="img4" class="width-100">
+		</div>
+		<div class="control prev"></div>
+		<div class="control next"></div>
+		<div class="control play"></div>
 	</div>
 </section>
 <hr class="bg-orange2">
@@ -1095,30 +964,30 @@ Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. 
 </div>
 </section>
 <section>
-	<h2>Filter List</h2>
+	<h2>Filtro de listas</h2>
 
-	<p>Search for a name in the input field:</p>
-
-	<input oninput="f.filter('#id01', this.value)" placeholder="Search for names.." type="text">
-
+	<p>Busque alguna ciudad:&nbsp;&nbsp;<input oninput="f.filter('#id01', this.value)" placeholder="buscar" type="text"></p>
 	<ul id="id01">
-	  <li>Alfreds Futterkiste</li>
-	  <li>Berglunds snabbköp</li>
-	  <li>Centro comercial Moctezuma</li>
-	  <li>Ernst Handel</li>
-	  <li>FISSA Fabrica Inter. Salchichas S.A.</li>
-	  <li>Galería del gastrónomo</li>
-	  <li>Island Trading</li>
-	  <li>Königlich Essen</li>
-	  <li>Laughing Bacchus Wine Cellars</li>
-	  <li>Magazzini Alimentari Riuniti</li>
-	  <li>North/South</li>
-	  <li>Paris spécialités</li>
-	  <li>Rattlesnake Canyon Grocery</li>
-	  <li>Simons bistro</li>
-	  <li>The Big Cheese</li>
-	  <li>Vaffeljernet</li>
-	  <li>Wolski Zajazd</li>
+		<li>Tokio.</li>
+		<li>Nueva York.</li>
+		<li>Los Ángeles.</li>
+		<li>Seúl.</li>
+		<li>Londres.</li>
+		<li>París.</li>
+		<li>Osaka.</li>
+		<li>Shanghái.</li>
+		<li>Chicago.</li>
+		<li>Moscú.</li>
+		<li>Pekín.</li>
+		<li>Colonia.</li>
+		<li>Houston.</li>
+		<li>Washinton DC.</li>
+		<li>São Paulo.</li>
+		<li>Hong Kong.</li>
+		<li>Dallas.</li>
+		<li>Ciudad de México.</li>
+		<li>Cantón.</li>
+		<li>Tianjin.</li>
 	</ul>
 
 
@@ -1191,6 +1060,6 @@ Presiona <kbd>Ctrl</kbd> y mantenla presionada mientras presionas <kbd>C</kbd>. 
 	<li class="row-content text-center"><a href="https://telegram.me/ishmilan" class="icon-telegram"> ishmilan</a></li>
 </ol>
 </footer>
-<script src="js/calls.js"></script>
+<script src="js/fireworks.js"></script>
 </body>
 </html>
