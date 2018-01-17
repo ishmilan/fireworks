@@ -58,7 +58,7 @@ li {
 	}
 	&>dt,&>.dt{
 		float: left;
-		width: 160px;
+		width: 90px;
 		overflow: hidden;
 		clear: left;
 		text-align: right;
@@ -66,10 +66,14 @@ li {
 		white-space: nowrap;
 		position: relative;
 		margin-top: -2px;
+		@include s{width:120px}
+		@include m{width:160px;}
 	}
 	&>dd,&>.dd{
-		margin-left: 180px;
+		margin-left: 100px;
 		&:after{clear:both;}
+		@include s{margin-left:130px}
+		@include m{margin-left:180px;}
 	}
 }
 dl,.dl{

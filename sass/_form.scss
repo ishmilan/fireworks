@@ -32,7 +32,7 @@ textarea{
 		max-width: 100%;
 		box-shadow: none;
 		font-family: $sans;
-		background: inherit;
+		background:$white;
 		overflow: visible;
 		padding: 6px 12px;
 		text-transform: none;
@@ -398,6 +398,73 @@ textarea {
 			color: $error;
 		}
 	}
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 3em;
+	height: 1.45em;
+	&>[type="checkbox"] {
+		display:none;
+		&:checked + .slider {background: $primary;}
+		&:checked + .slider:before {left:1.7em;}
+		&:checked + .slider:after {
+			font-size:inherit;
+			position: absolute;
+			content: "";
+			color: $white;
+			left: 0.3em;
+			top: 0.2em;
+			font-size:0.9em;
+		}
+	}
+	&>.slider {
+		font-size:inherit;
+		border-radius: 0.75em;
+		position: absolute;
+		cursor: pointer;
+		top:1px;
+		left:0;
+		right:0;
+		bottom:0;
+		background: $lighter-gray;
+		-webkit-transition: .4s;
+		transition: .4s;
+		&:before {
+			font-size:inherit;
+			position: absolute;
+			content: "";
+			background-color: $white;
+			height: 1.2em;
+			width: 1.2em;
+			border-radius: 50%;
+			left: 0.1em;
+			top: 0.1em;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+	}
+	&.recommend{
+		&>[type="checkbox"]:checked+.slider{background:$normal-link;}
+	}
+	&.info{
+		&>[type="checkbox"]:checked+.slider{background:$active-link;}
+	}
+	&.success{
+		&>[type="checkbox"]:checked+.slider{background:$success;}
+	}
+	&.alert{
+		&>[type="checkbox"]:checked+.slider{background:$mark;}
+		&>[type="checkbox"]:checked+.slider:after{color:$darker-gray;}
+	}
+	&.warning{
+		&>[type="checkbox"]:checked+.slider{background:$warning;}
+	}
+	&.error,&.danger{
+		&>[type="checkbox"]:checked+.slider{background:$error;}
+	}
+	&[data-label="true"]>[type="checkbox"]:checked+.slider:after{content:"ON";}
 }
 @import "buttons";
 //TODO form xs & xl
