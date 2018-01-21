@@ -7,7 +7,7 @@
 [placeholder] {
 	color: $gray;
 }
-
+select,
 input[type="email"],
 input[type="number"],
 input[type="search"],
@@ -29,6 +29,7 @@ textarea{
 	[type="range"],
 	optgroup {
 		font-size: 95%;
+		width: 100%;
 		max-width: 100%;
 		box-shadow: none;
 		font-family: $sans;
@@ -66,6 +67,19 @@ fieldset {
 	border: 1px solid $light-gray;
 }
 
+legend {
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 4px;
+	border: 0;
+	margin: 0;
+	white-space: normal;
+	font-size: inherit;
+	line-height: inherit;
+	color: $darker-gray;
+}
+
 label {
 	cursor: default;
 	display: inline-block;
@@ -97,19 +111,6 @@ label {
 			margin-bottom: 1em;
 		}
 	}
-}
-
-legend {
-	color: inherit;
-	display: table;
-	max-width: 100%;
-	padding: 4px;
-	border: 0;
-	margin: 0;
-	white-space: normal;
-	font-size: inherit;
-	line-height: inherit;
-	color: $darker-gray;
 }
 
 select[multiple],
@@ -161,28 +162,19 @@ textarea {
 	}
 }
 
-[type="checkbox"]+label:before {
-	content: "\e98d";
+[type="checkbox"]{
+	&+label:before {content: "\e98d";}
+	&:checked+label:before {content: "\e98c";}
 }
 
-[type="checkbox"]:checked+label:before {
-	content: "\e98c";
+[type="radio"]{
+	&+label:before {content: "\e990";}
+	&:checked+label:before {content: "\e98f";}
 }
-
-[type="radio"]+label:before {
-	content: "\e990";
-}
-
-[type="radio"]:checked+label:before {
-	content: "\e98f";
-	cursor: default;
-}
-
 .disabled,
 [disabled] {
 	cursor: not-allowed;
 }
-
 .form-control {
 	position: relative;
 	display: flex;

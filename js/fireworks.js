@@ -31,7 +31,10 @@ var f = {};
 		}
 		var dropups = document.querySelectorAll('.dropup-hover');
 		if(dropups && dropups.length>0) for (var i = 0; i < dropups.length; i++) {
-			dropups[i].querySelector('button').addEventListener('mouseover',function(){this.parentNode.querySelector('.dropup-menu').style.setProperty('top',('-'+this.parentNode.querySelector('.dropup-menu').clientHeight+'px'))});
+			dropups[i].querySelector('button').addEventListener('mouseover',function(){
+				this.parentNode.querySelector('.dropup-menu').style.setProperty('top',
+				'-'+this.parentNode.querySelector('.dropup-menu').clientHeight+'px');
+			});
 		}
 		dropups = document.querySelectorAll('.dropup');
 		if(dropups && dropups.length>0) for (var i = 0; i < dropups.length; i++) {
@@ -48,74 +51,74 @@ var f = {};
 			});
 		}
 		var slideshows = document.querySelectorAll('.slideshow');
-		if(slideshows && slideshows.length>0)
-			for(var i = 0;i < slideshows.length; i++){
-				if(slideshows[i].classList.contains('play'))f.carousel(slideshows[i],2000);
-				var prev = slideshows[i].querySelector('.control.prev');
-				if(prev) prev.addEventListener(click,function(){
-					var items = this.parentNode.querySelectorAll('.slide-item');
-					var indexItem = 0;
+		if(slideshows && slideshows.length>0) for(var i = 0;i < slideshows.length; i++){
+			if(slideshows[i].classList.contains('play'))f.carousel(slideshows[i],2000);
+			var prev = slideshows[i].querySelector('.control.prev');
+			if(prev) prev.addEventListener(click,function(){
+				var items = this.parentNode.querySelectorAll('.slide-item');
+				var indexItem = 0;
+				var l = items.length;
+				for (var i = 0; i < l; i++)
+					if(items[i].classList.contains('active')){
+						indexItem = i-1;
+						items[i].classList.remove('active');
+					}
+				if (indexItem == -1) indexItem = l-1;
+				items[indexItem].classList.add('active');
+			});
+			var next = slideshows[i].querySelector('.control.next');
+			if(next) next.addEventListener(click,function(){
+				var items = this.parentNode.querySelectorAll('.slide-item');
+				var indexItem = 0;
+				var l = items.length;
+				for (var i = 0; i < l; i++)
+					if(items[i].classList.contains('active')){
+						indexItem = i+1;
+						items[i].classList.remove('active');
+					}
+				if (indexItem == l) indexItem = 0;
+				items[indexItem].classList.add('active');
+			});
+			var play = slideshows[i].querySelector('.control.play');
+			if(play) play.addEventListener(click,function(){
+				var time=this.parentNode.getAttribute('data-time');
+				if(!time) time = 2000;
+				this.parentNode.classList.toggle('play');
+			});
+			var indicators = slideshows[i].querySelectorAll('.slide-indicators .indicator');
+			if(indicators && indicators.length>0) for(var j = 0;j < indicators.length; j++){
+				indicators[j].setAttribute('data-slide-to',j);
+				indicators[j].addEventListener(click,function(){
+					var goTo = this.getAttribute('data-slide-to');
+					var items = this.parentNode.parentNode.querySelectorAll('.slide-item');
 					var l = items.length;
 					for (var i = 0; i < l; i++)
 						if(items[i].classList.contains('active')){
-							indexItem = i-1;
 							items[i].classList.remove('active');
+							this.parentNode.querySelectorAll('.indicator')[i].classList.remove('active');
 						}
-					if (indexItem == -1) indexItem = l-1;
-					items[indexItem].classList.add('active');
-				});
-				var next = slideshows[i].querySelector('.control.next');
-				if(next) next.addEventListener(click,function(){
-					var items = this.parentNode.querySelectorAll('.slide-item');
-					var indexItem = 0;
-					var l = items.length;
-					for (var i = 0; i < l; i++)
-						if(items[i].classList.contains('active')){
-							indexItem = i+1;
-							items[i].classList.remove('active');
-						}
-					if (indexItem == l) indexItem = 0;
-					items[indexItem].classList.add('active');
-				});
-				var play = slideshows[i].querySelector('.control.play');
-				if(play) play.addEventListener(click,function(){
-					var time=this.parentNode.getAttribute('data-time');
-					if(!time) time = 2000;
-					this.parentNode.classList.toggle('play');
-					f.carousel(this.parentNode,time);
-				});
-				var indicators = slideshows[i].querySelectorAll('.slide-indicators .indicator');
-				if(indicators && indicators.length>0) for(var j = 0;j < indicators.length; j++){
-					indicators[j].setAttribute('data-slide-to',j);
-					indicators[j].addEventListener(click,function(){
-						var goTo = this.getAttribute('data-slide-to');
-						var items = this.parentNode.parentNode.querySelectorAll('.slide-item');
-						var l = items.length;
-						for (var i = 0; i < l; i++)
-							if(items[i].classList.contains('active')){
-								items[i].classList.remove('active');
-								this.parentNode.querySelectorAll('.indicator')[i].classList.remove('active');
-							}
-						this.classList.add('active');
-						items[goTo].classList.add('active');
-					})
-				}
+					this.classList.add('active');
+					items[goTo].classList.add('active');
+				})
 			}
+		}
 		if(callback) callback();
 	};
 	/*FUNCTION FOR SLIDESHOW*/
 	f.carousel = function(slideshow,time){
 		if(slideshow.classList.contains('play')){
 			var items =slideshow.querySelectorAll('.slide-item');
+			var indicators = slideshow.querySelectorAll('.indicator');
 			var indexItem = 0;
 			var l = items.length;
-			for (var i = 0; i < l; i++)
-				if(items[i].classList.contains('active')){
-					items[i].classList.remove('active');
-					indexItem = i+1;
-				}
+			for (var i = 0; i < l; i++){
+				if(items[i].classList.contains('active')) indexItem = i+1;
+				if(indicators && indicators.length>0) indicators[i].classList.remove('active');
+				items[i].classList.remove('active');
+			}
 			if (indexItem == l) indexItem = 0;
 			items[indexItem].classList.add('active');
+			if(indicators && indicators.length>0) indicators[indexItem].classList.add('active');
 			if(time && time != 0){
 				if(time=='default') time = 2000;
 				slideshow.setAttribute('data-time',time);
@@ -157,6 +160,7 @@ var f = {};
 		else return document.querySelectorAll(element);
 	}
 	/*TODO select parent, childs & return the element*/
+	/*TODO attr*/
 	/*FUNCTION FOR STYLE CSS*/
 	f.css = function(element,prop,val){
 		if(!(element && prop)) return false;
@@ -264,15 +268,11 @@ var f = {};
 		}
 		if (callback) callback();
 	};
-
-
-/*function MD5*/
-var md5 = function(string) {
-
+	/*FUNCTION MD5*/
+	f.md5 = function(string) {
 	function RotateLeft(lValue, iShiftBits) {
 		return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
 	}
-
 	function AddUnsigned(lX, lY) {
 		var lX4, lY4, lX8, lY8, lResult;
 		lX8 = (lX & 0x80000000);
@@ -293,28 +293,22 @@ var md5 = function(string) {
 			return (lResult ^ lX8 ^ lY8);
 		}
 	}
-
 	function F(x, y, z) {
 		return (x & y) | ((~x) & z);
 	}
-
 	function G(x, y, z) {
 		return (x & z) | (y & (~z));
 	}
-
 	function H(x, y, z) {
 		return (x ^ y ^ z);
 	}
-
 	function I(x, y, z) {
 		return (y ^ (x | (~z)));
 	}
-
 	function FF(a, b, c, d, x, s, ac) {
 		a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
 		return AddUnsigned(RotateLeft(a, s), b);
 	};
-
 	function GG(a, b, c, d, x, s, ac) {
 		a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
 		return AddUnsigned(RotateLeft(a, s), b);
@@ -491,9 +485,7 @@ var md5 = function(string) {
 		c = AddUnsigned(c, CC);
 		d = AddUnsigned(d, DD);
 	}
-
 	var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
-
 	return temp.toLowerCase();
 }
 //TODO make recursive methods like jquery

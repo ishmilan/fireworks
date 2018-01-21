@@ -45,10 +45,10 @@ a.thumbnail > img{
 	border-radius:$border-radius-normal;
 }
 /*SLIDESHOW*/
-.slideshow,.carousel-inner{
+.slideshow{
 	position:relative;
 	padding:0;
-	& .slide-item,& .carousel-item{
+	& .slide-item{
 		display:none;
 		position:relative;
 		top:0;
@@ -89,7 +89,7 @@ a.thumbnail > img{
 			}
 		}
 		&.play{
-			font-size: 3em;
+			font-size: 2em;
 			left:50%;
 			transform: translate(-50%, -50%);
 			-ms-transform: translate(-50%, -50%);
@@ -109,7 +109,7 @@ a.thumbnail > img{
 	}
 	&:hover .control.play{display:block;}
 	&.play:hover .control.play:before{content:"\e96d";}
-	& .carousel-indicators, & .slide-indicators{
+	& .slide-indicators{
 		position:absolute;
 		bottom:0px;
 		left: 50%;
@@ -132,6 +132,7 @@ a.thumbnail > img{
 			&.active{
 				background: $default-light;
 			}
+			&.no-radius{border-radius:0px;}
 		}
 	}
 }

@@ -286,8 +286,9 @@ $success-alpha:rgba(68, 221, 85,0.2);
 
 
 //DEFAULT THEME
-$default-dark:$black;
 $default:$dark-gray;
+$default-dark:$black;
+$default-primary:$default;
 $default-light:$lighter-gray;
 $contrasting:$white;
 
