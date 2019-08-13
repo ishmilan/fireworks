@@ -1,0 +1,3211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo FireWorks</title>
+	<link rel=icon href=img/favicon.png type="image/png">
+	<link rel="stylesheet" href="style/fireworks.css">
+</head>
+
+<body>
+	<header class="navbar affix dark reverse display-top-center width-100">
+		<h1 class="navbar-brand">
+			<img src="/assets/img/brand.svg" style="display: inline-block;max-height: 1em;vertical-align: bottom;">
+			FireWorks
+		</h1>
+		<div class="navbar-nav">
+			<div class="navbar-item dropdown">
+				<button class="btn btn-hovered recommend no-margin border-xs">Introducción</button>
+				<ul class="dropdown-menu border-recommend">
+					<li><a class="navbar-item" href="#intro">Introducción</a></li>
+					<li><a href="#fonts">Fuentes</a></li>
+					<li><a href="#icons">Iconos</a></li>
+					<li><a class="navbar-item" href="#colors">Colores</a></li>
+				</ul>
+			</div>
+			<div class="navbar-item dropdown">
+				<button class="btn btn-hovered recommend no-margin border-xs">Componentes</button>
+				<ul class="dropdown-menu border-recommend">
+					<li><a class="navbar-item" href="#semantics">Textos y semántica</a></li>
+					<li><a class="navbar-item" href="#align">Alineación de texto</a></li>
+					<li><a class="navbar-item" href="#list">Listas</a></li>
+					<li><a class="navbar-item" href="#quote">Citas y menciones</a></li>
+					<li><a class="navbar-item" href="#tables">Tablas</a></li>
+					<li><a class="navbar-item" href="#forms">Formularios</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="navbar-toggler"></div>
+	</header>
+	<img src="/assets/img/fireworks.svg" alt="FireWorks logo" class="width-100-v height-100-v">
+	<section id="intro">
+		<h2 class="text-center margin-y fg-recommend">Introducción</h2>
+		<p>Comience a usar FireWorks, el framework de desarrollo frontend modular ideal para crear sitios web
+			adaptativos a dispositivos móviles sin esfuerzo y ajustándose a lo que necesite. Al ser modular tiene opción
+			de elegir qué elementos quieres tener y reducir el peso y tiempos de carga de tu web.</p>
+		<div class="h3 margin-y">Inicio rápido</div>
+		<p>¿Desea agregar FireWorks rápidamente a su proyecto? <strong>Utilice nuestro CDN</strong>.</p>
+		<p>¿Necesita descargar los archivos fuente o desea elegir los componentes que necesita? <strong>Diríjase a la
+				página de descargas</strong>.</p>
+		<div class="h3 margin-y">CSS</div>
+		<p>Copie y pegue la hoja de estilo <code>&lt;link&gt;</code> en su <code>&lt;head&gt;</code> antes que el resto
+			de hojas de estilo para cargar nuestro CSS. Ejemplo:</p>
+		<div class="code-block">&lt;link rel= "stylesheet" href= "style/fireworks.min.css"&gt;</div>
+
+		<div class="h3 margin-y">JS</div>
+		<p>Algunos de nuestros componentes requieren el uso de JavaScript para funcionar. Además hay utilidades que
+			hacen del proceso de desarrollo de una aplicación una tarea mas cómoda. A diferencia de otros frameworks,
+			FireWorks no requiere de librerías externas, mejorando así la facilidad de implementación y la carga de
+			ejecución. Para importarlo sólo tiene que bajarlo desde <a href="#">aquí</a> y guardarlo en su proyecto.
+			Ejemplo:</p>
+		<div class="code-block">&lt;script src="js/fireworks.js"&gt;</div>
+
+		<div class="h3 margin-y">Configuraciones globales importantes</div>
+		<p>FireWorks emplea una serie de estilos y configuraciones globales importantes que deberá tener en cuenta al
+			usarlo, los cuales están orientados mayormente a la normalización de estilos entre navegadores pero no
+			exclusivamente.</p>
+		<p>FireWorks recomienda el uso del estándar HTML5 empezando por el doctype HTML5. Es, hasta la fecha, el doctype
+			más cómodo de implementar y el primer paso para el uso del mencionado estándar:</p>
+		<div class="code-block">&lt;!doctype html&gt;
+			&lt;html lang= "es"&gt;
+			...
+			&lt;/html&gt;</div>
+
+		<div class="h3 margin-y">Maquetación responsiva</div>
+		<p>FireWorks se desarrolla bajo la metodología mobile-first, una estrategia en la que se optimiza el código para
+			dispositivos móviles primero y luego se escalan componentes según sea necesario usando mediaqueries en CSS.
+			Para garantizar una reproducción adecuada y un zoom táctil para todos los dispositivos, agregue la
+			metaetiqueta de la ventana sensible a su <code>&lt;head&gt;</code>:</p>
+		<div class="code-block">&lt;meta name= "viewport" content= "width=device-width, initial-scale=1,
+			shrink-to-fit=no"&gt;</div>
+
+		<p>Puede deshabilitar las funciones de ampliación en los dispositivos móviles agregando
+			<code>user-scalable=no</code> a la metaetiqueta. Esto desactiva el zoom, lo que significa que los usuarios
+			solo pueden desplazarse, y hace que su sitio se sienta un poco más como una aplicación nativa aunque no
+			siempre es recomendable.</p>
+		<div class="code-block">&lt;meta name= "viewport" content= "width=device-width, initial-scale=1,
+			maximum-scale=1, user-scalable=no"&gt;</div>
+
+		<div class="h3 margin-y">Tamaño de caja</div>
+		<p>Para una mejor adaptación del CSS concerniente al tamaño de los elementos y su distribución se ha optado por
+			el valor global de <em>box-sizing</em> a <em>border-box</em> en lugar de <em>content-box</em>. Puede causar
+			confictos con software de terceros como Google Maps y Google Custom Search Engine por tanto, si fuese
+			necesario, se pueden cambiar los componentes que se deseen usando la clase <code>.content-box</code> o
+			creando una clase en su CSS:</p>
+		<div class="code-block">.some-element { box-sizing : content-box ; }</div>
+		<p>Obtenga más información sobre el modelo de caja y el tamaño en <a href="https://css-tricks.com/box-sizing/"
+				target="_blank">CSS Tricks</a>.</p>
+	</section>
+	<section id="fonts">
+		<h2 class="text-center margin-y fg-recommend">Fuentes e iconos</h2>
+		<p>FireWorks implementa una serie de tipografías para personalizar sus sitios web. Puede implementar todas o
+			reducir a las que crea conveniente. Lo mismo ocurre con los iconos.</p>
+		<div class="callout info">
+			<div class="body"><strong>Aviso:</strong> pese a que se puedan elegir qué fuentes descargar (tanto en iconos
+				como tipografías), a menos que se descarguen componentes de forma individual como el sistema de
+				rejillas, vienen por defecto para una mejor experiencia de usuario Fira-Sans e Icomoon, con licencias
+				SIL Open Font License v1.10 y CC BY 4.0 respectivamente.</div>
+		</div>
+		<p>Como puede apreciar, Fira-Sans es la tipografía por defecto pero no la única. Aleo(SIL Open Font License
+			v1.10) para la letra con serifa y Ubuntu(Ubuntu Font Licence Version 1.0) o Raleway(SIL Open Font License
+			v1.10) como alternativas a la sans-serif. Fira-Mono(SIL Open Font License v1.10) y Ubuntu-Mono(Ubuntu Font
+			Licence Version 1.0) como fuentes monoespaciadas y como alternativas a Icomoon se puede usar Feather(MIT
+			License), Glyphicon(CC BY 3.0) o FontAwesome(SIL Open Font License v1.1).</p>
+		<p>Ejemplo de texto por defecto, con Fira-Sans(también se puede aplicar usando la clase
+			<code>.font-fira-sans</code>):</p>
+		<div class="callout padding-m margin-y">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt atque
+			adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt iste repellendus
+			praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con negrita y Fira-Sans (además de los tags <code>b</code> y <code>strong</code> se puede
+			usar la clase <code>.bold</code>):</p>
+		<div class="callout padding-m margin-y bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
+			atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt iste
+			repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con cursiva y Fira-Sans (además de las clases <code>i</code> y <code>em</code> se puede usar
+			la clase <code>.italic</code>):</p>
+		<div class="callout padding-m margin-y italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt iste
+			repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con Fira-Code (<code>.font-fira-code</code>):</p>
+		<div class="callout padding-m margin-y font-fira-code">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt iste
+			repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con negrita y Fira-Code:</p>
+		<div class="callout padding-m margin-y font-fira-code bold">Lorem ipsum dolor sit amet, consectetur adipisicing
+			elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt
+			iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con Ubuntu,(<code>.font-ubuntu-sans</code>):</p>
+		<div class="callout padding-m margin-y font-ubuntu-sans">Lorem ipsum dolor sit amet, consectetur adipisicing
+			elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt
+			iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con negrita y Ubuntu:</p>
+		<div class="callout padding-m margin-y font-ubuntu-sans bold">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio
+			facere sunt iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con cursiva Ubuntu:</p>
+		<div class="callout padding-m margin-y font-ubuntu-sans italic">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio
+			facere sunt iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con Ubuntu-Mono,(<code>.font-ubuntu-code</code>):</p>
+		<div class="callout padding-m margin-y font-ubuntu-sans">Lorem ipsum dolor sit amet, consectetur adipisicing
+			elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt
+			iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con negrita y Ubuntu-Mono:</p>
+		<div class="callout padding-m margin-y font-ubuntu-code bold">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio
+			facere sunt iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con Raleway,(<code>.font-raleway-sans</code>):</p>
+		<div class="callout padding-m margin-y font-raleway-sans">Lorem ipsum dolor sit amet, consectetur adipisicing
+			elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt
+			iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con negrita y Raleway:</p>
+		<div class="callout padding-m margin-y font-raleway-sans bold">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio
+			facere sunt iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con cursiva y Raleway:</p>
+		<div class="callout padding-m margin-y font-raleway-sans italic">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio
+			facere sunt iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con Aleo,(<code>.font-aleo-serif</code>):</p>
+		<div class="callout padding-m margin-y font-aleo-serif">Lorem ipsum dolor sit amet, consectetur adipisicing
+			elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt
+			iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con negrita y Aleo:</p>
+		<div class="callout padding-m margin-y font-aleo-serif bold">Lorem ipsum dolor sit amet, consectetur adipisicing
+			elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio facere sunt
+			iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<p>Ejemplo de texto con cursiva y Aleo:</p>
+		<div class="callout padding-m margin-y font-aleo-serif italic">Lorem ipsum dolor sit amet, consectetur
+			adipisicing elit. Deserunt atque adipisci voluptatem nostrum, maiores aspernatur dolore assumenda distinctio
+			facere sunt iste repellendus praesentium accusantium ipsa non deleniti placeat inventore. Quas!</div>
+		<div class="h3 margin-y" id="icons">Iconos</div>
+		<div class="callout alert container-flex">
+			<div class="container-icon fi-arrow-left">fi-arrow-left</div>
+			<div class="container-icon fi-arrow-up">fi-arrow-up</div>
+			<div class="container-icon fi-arrow-right">fi-arrow-right</div>
+			<div class="container-icon fi-arrow-down">fi-arrow-down</div>
+			<div class="container-icon fi-arrow-up-left">fi-arrow-up-left</div>
+			<div class="container-icon fi-arrow-up-right">fi-arrow-up-right</div>
+			<div class="container-icon fi-arrow-down-right">fi-arrow-down-right</div>
+			<div class="container-icon fi-arrow-down-left">fi-arrow-down-left</div>
+			<div class="container-icon fi-corner-left-up">fi-corner-left-up</div>
+			<div class="container-icon fi-corner-right-up">fi-corner-right-up</div>
+			<div class="container-icon fi-corner-right-down">fi-corner-right-down</div>
+			<div class="container-icon fi-corner-left-down">fi-corner-left-down</div>
+			<div class="container-icon fi-corner-up-left">fi-corner-up-left</div>
+			<div class="container-icon fi-corner-up-right">fi-corner-up-right</div>
+			<div class="container-icon fi-corner-down-right">fi-corner-down-right</div>
+			<div class="container-icon fi-corner-down-left">fi-corner-down-left</div>
+			<div class="container-icon fi-chevron-left">fi-chevron-left</div>
+			<div class="container-icon fi-chevron-up">fi-chevron-up</div>
+			<div class="container-icon fi-chevron-right">fi-chevron-right</div>
+			<div class="container-icon fi-chevron-down">fi-chevron-down</div>
+			<div class="container-icon fi-chevrons-left">fi-chevrons-left</div>
+			<div class="container-icon fi-chevrons-up">fi-chevrons-up</div>
+			<div class="container-icon fi-chevrons-right">fi-chevrons-right</div>
+			<div class="container-icon fi-chevrons-down">fi-chevrons-down</div>
+			<div class="container-icon fi-minimize">fi-minimize</div>
+			<div class="container-icon fi-minimize-2">fi-minimize-2</div>
+			<div class="container-icon fi-maximize">fi-maximize</div>
+			<div class="container-icon fi-maximize-2">fi-maximize-2</div>
+		</div>
+
+
+		<div class="callout info container-flex">
+			<div class="container-icon fi-thermometer">fi-thermometer</div>
+			<div class="container-icon fi-umbrella">fi-umbrella</div>
+			<div class="container-icon fi-wind">fi-wind</div>
+			<div class="container-icon fi-zap">fi-zap</div>
+			<div class="container-icon fi-moon">fi-moon</div>
+			<div class="container-icon fi-sun">fi-sun</div>
+			<div class="container-icon fi-sunrise">fi-sunrise</div>
+			<div class="container-icon fi-sunset">fi-sunset</div>
+			<div class="container-icon fi-droplet">fi-droplet</div>
+			<div class="container-icon fi-cloud-rain">fi-cloud-rain</div>
+			<div class="container-icon fi-cloud-snow">fi-cloud-snow</div>
+			<div class="container-icon fi-cloud-lightning">fi-cloud-lightning</div>
+			<div class="container-icon fi-cloud-drizzle">fi-cloud-drizzle</div>
+			<div class="container-icon fi-cloud-off">fi-cloud-off</div>
+			<div class="container-icon fi-cloud">fi-cloud</div>
+			<div class="container-icon fi-upload-cloud">fi-upload-cloud</div>
+			<div class="container-icon fi-download-cloud">fi-download-cloud</div>
+		</div>
+		<div class="callout container-flex">
+			<div class="container-icon fi-alert-octagon">fi-alert-octagon</div>
+			<div class="container-icon fi-alert-circle">fi-alert-circle</div>
+			<div class="container-icon fi-alert-triangle">fi-alert-triangle</div>
+			<div class="container-icon fi-activity">fi-activity</div>
+			<div class="container-icon fi-award">fi-award</div>
+			<div class="container-icon fi-bar-chart">fi-bar-chart</div>
+			<div class="container-icon fi-bar-chart-2">fi-bar-chart-2</div>
+			<div class="container-icon fi-pie-chart">fi-pie-chart</div>
+			<div class="container-icon fi-at-sign">fi-at-sign</div>
+			<div class="container-icon fi-hash">fi-hash</div>
+			<div class="container-icon fi-percent">fi-percent</div>
+			<div class="container-icon fi-command">fi-command</div>
+			<div class="container-icon fi-book">fi-book</div>
+			<div class="container-icon fi-bookmark">fi-bookmark</div>
+			<div class="container-icon fi-briefcase">fi-briefcase</div>
+			<div class="container-icon fi-calendar">fi-calendar</div>
+			<div class="container-icon fi-box">fi-box</div>
+			<div class="container-icon fi-check">fi-check</div>
+			<div class="container-icon fi-check-circle">fi-check-circle</div>
+			<div class="container-icon fi-check-square">fi-check-square</div>
+			<div class="container-icon fi-x">fi-x</div>
+			<div class="container-icon fi-x-circle">fi-x-circle</div>
+			<div class="container-icon fi-x-square">fi-x-square</div>
+			<div class="container-icon fi-minus">fi-minus</div>
+			<div class="container-icon fi-minus-circle">fi-minus-circle</div>
+			<div class="container-icon fi-minus-square">fi-minus-square</div>
+			<div class="container-icon fi-plus">fi-plus</div>
+			<div class="container-icon fi-plus-circle">fi-plus-circle</div>
+			<div class="container-icon fi-plus-square">fi-plus-square</div>
+			<div class="container-icon fi-circle">fi-circle</div>
+			<div class="container-icon fi-square">fi-square</div>
+			<div class="container-icon fi-message-circle">fi-message-circle</div>
+			<div class="container-icon fi-message-square">fi-message-square</div>
+			<div class="container-icon fi-cast">fi-cast</div>
+			<div class="container-icon fi-clipboard">fi-clipboard</div>
+			<div class="container-icon fi-clock">fi-clock</div>
+			<div class="container-icon fi-copy">fi-copy</div>
+			<div class="container-icon fi-cpu">fi-cpu</div>
+			<div class="container-icon fi-credit-card">fi-credit-card</div>
+			<div class="container-icon fi-disc">fi-disc</div>
+			<div class="container-icon fi-delete">fi-delete</div>
+			<div class="container-icon fi-download">fi-download</div>
+			<div class="container-icon fi-external-link">fi-external-link</div>
+			<div class="container-icon fi-filter">fi-filter</div>
+			<div class="container-icon fi-grid">fi-grid</div>
+			<div class="container-icon fi-home">fi-home</div>
+			<div class="container-icon fi-image">fi-image</div>
+			<div class="container-icon fi-inbox">fi-inbox</div>
+			<div class="container-icon fi-layers">fi-layers</div>
+			<div class="container-icon fi-info">fi-info</div>
+			<div class="container-icon fi-link">fi-link</div>
+			<div class="container-icon fi-link-2">fi-link-2</div>
+			<div class="container-icon fi-layout">fi-layout</div>
+			<div class="container-icon fi-list">fi-list</div>
+			<div class="container-icon fi-lock">fi-lock</div>
+			<div class="container-icon fi-loader">fi-loader</div>
+			<div class="container-icon fi-mail">fi-mail</div>
+			<div class="container-icon fi-menu">fi-menu</div>
+			<div class="container-icon fi-more-vertical">fi-more-vertical</div>
+			<div class="container-icon fi-more-horizontal">fi-more-horizontal</div>
+			<div class="container-icon fi-move">fi-move</div>
+			<div class="container-icon fi-music">fi-music</div>
+			<div class="container-icon fi-anchor">fi-anchor</div>
+			<div class="container-icon fi-compass">fi-compass</div>
+			<div class="container-icon fi-crosshair">fi-crosshair</div>
+			<div class="container-icon fi-target">fi-target</div>
+			<div class="container-icon fi-life-buoy">fi-life-buoy</div>
+			<div class="container-icon fi-map">fi-map</div>
+			<div class="container-icon fi-map-pin">fi-map-pin</div>
+			<div class="container-icon fi-navigation">fi-navigation</div>
+			<div class="container-icon fi-navigation-2">fi-navigation-2</div>
+			<div class="container-icon fi-flag">fi-flag</div>
+			<div class="container-icon fi-globe">fi-globe</div>
+			<div class="container-icon fi-octagon">fi-octagon</div>
+			<div class="container-icon fi-package">fi-package</div>
+			<div class="container-icon fi-search">fi-search</div>
+			<div class="container-icon fi-share">fi-share</div>
+			<div class="container-icon fi-share-2">fi-share-2</div>
+			<div class="container-icon fi-shield">fi-shield</div>
+			<div class="container-icon fi-settings">fi-settings</div>
+			<div class="container-icon fi-sidebar">fi-sidebar</div>
+			<div class="container-icon fi-slash">fi-slash</div>
+			<div class="container-icon fi-thumbs-up">fi-thumbs-up</div>
+			<div class="container-icon fi-thumbs-down">fi-thumbs-down</div>
+			<div class="container-icon fi-toggle-left">fi-toggle-left</div>
+			<div class="container-icon fi-toggle-right">fi-toggle-right</div>
+			<div class="container-icon fi-trash">fi-trash</div>
+			<div class="container-icon fi-tag">fi-tag</div>
+			<div class="container-icon fi-trash-2">fi-trash-2</div>
+			<div class="container-icon fi-trending-up">fi-trending-up</div>
+			<div class="container-icon fi-trending-down">fi-trending-down</div>
+			<div class="container-icon fi-triangle">fi-triangle</div>
+			<div class="container-icon fi-upload">fi-upload</div>
+			<div class="container-icon fi-unlock">fi-unlock</div>
+			<div class="container-icon fi-log-in">fi-log-in</div>
+			<div class="container-icon fi-log-out">fi-log-out</div>
+			<div class="container-icon fi-user">fi-user</div>
+			<div class="container-icon fi-users">fi-users</div>
+			<div class="container-icon fi-user-x">fi-user-x</div>
+			<div class="container-icon fi-user-minus">fi-user-minus</div>
+			<div class="container-icon fi-user-plus">fi-user-plus</div>
+			<div class="container-icon fi-user-check">fi-user-check</div>
+			<div class="container-icon fi-voicemail">fi-voicemail</div>
+			<div class="container-icon fi-watch">fi-watch</div>
+		</div>
+		<div class="callout warning container-flex">
+			<div class="container-icon fi-play-circle">fi-play-circle</div>
+			<div class="container-icon fi-pause-circle">fi-pause-circle</div>
+			<div class="container-icon fi-stop-circle">fi-stop-circle</div>
+			<div class="container-icon fi-play">fi-play</div>
+			<div class="container-icon fi-pause">fi-pause</div>
+			<div class="container-icon fi-rewind">fi-rewind</div>
+			<div class="container-icon fi-fast-forward">fi-fast-forward</div>
+			<div class="container-icon fi-skip-back">fi-skip-back</div>
+			<div class="container-icon fi-skip-forward">fi-skip-forward</div>
+			<div class="container-icon fi-rotate-ccw">fi-rotate-ccw</div>
+			<div class="container-icon fi-refresh-ccw">fi-refresh-ccw</div>
+			<div class="container-icon fi-shuffle">fi-shuffle</div>
+			<div class="container-icon fi-refresh-cw">fi-refresh-cw</div>
+			<div class="container-icon fi-rotate-cw">fi-rotate-cw</div>
+
+		</div>
+		<div class="callout success container-flex">
+			<div class="container-icon fi-aperture">fi-aperture</div>
+			<div class="container-icon fi-battery">fi-battery</div>
+			<div class="container-icon fi-battery-charging">fi-battery-charging</div>
+			<div class="container-icon fi-bell">fi-bell</div>
+			<div class="container-icon fi-bell-off">fi-bell-off</div>
+			<div class="container-icon fi-bluetooth">fi-bluetooth</div>
+			<div class="container-icon fi-camera">fi-camera</div>
+			<div class="container-icon fi-camera-off">fi-camera-off</div>
+			<div class="container-icon fi-eye">fi-eye</div>
+			<div class="container-icon fi-eye-off">fi-eye-off</div>
+			<div class="container-icon fi-film">fi-film</div>
+			<div class="container-icon fi-mic">fi-mic</div>
+			<div class="container-icon fi-mic-off">fi-mic-off</div>
+			<div class="container-icon fi-volume">fi-volume</div>
+			<div class="container-icon fi-volume-1">fi-volume-1</div>
+			<div class="container-icon fi-volume-2">fi-volume-2</div>
+			<div class="container-icon fi-volume-x">fi-volume-x</div>
+			<div class="container-icon fi-power">fi-power</div>
+			<div class="container-icon fi-radio">fi-radio</div>
+			<div class="container-icon fi-wifi">fi-wifi</div>
+			<div class="container-icon fi-wifi-off">fi-wifi-off</div>
+			<div class="container-icon fi-video">fi-video</div>
+			<div class="container-icon fi-video-off">fi-video-off</div>
+			<div class="container-icon fi-phone">fi-phone</div>
+			<div class="container-icon fi-phone-off">fi-phone-off</div>
+			<div class="container-icon fi-phone-call">fi-phone-call</div>
+			<div class="container-icon fi-phone-forwarded">fi-phone-forwarded</div>
+			<div class="container-icon fi-phone-missed">fi-phone-missed</div>
+			<div class="container-icon fi-phone-outgoing">fi-phone-outgoing</div>
+			<div class="container-icon fi-phone-incoming">fi-phone-incoming</div>
+			<div class="container-icon fi-zoom-in">fi-zoom-in</div>
+			<div class="container-icon fi-zoom-out">fi-zoom-out</div>
+			<div class="container-icon fi-headphones">fi-headphones</div>
+			<div class="container-icon fi-help-circle">fi-help-circle</div>
+			<div class="container-icon fi-shopping-cart">fi-shopping-cart</div>
+			<div class="container-icon fi-tv">fi-tv</div>
+			<div class="container-icon fi-sliders">fi-sliders</div>
+			<div class="container-icon fi-star">fi-star</div>
+			<div class="container-icon fi-star-on">fi-star-on</div>
+			<div class="container-icon fi-heart">fi-heart</div>
+			<div class="container-icon fi-heart-on">fi-heart-on</div>
+			<div class="container-icon fi-type">fi-type</div>
+			<div class="container-icon fi-underline">fi-underline</div>
+			<div class="container-icon fi-italic">fi-italic</div>
+			<div class="container-icon fi-bold">fi-bold</div>
+			<div class="container-icon fi-paperclip">fi-paperclip</div>
+			<div class="container-icon fi-crop">fi-crop</div>
+			<div class="container-icon fi-align-left">fi-align-left</div>
+			<div class="container-icon fi-align-center">fi-align-center</div>
+			<div class="container-icon fi-align-right">fi-align-right</div>
+			<div class="container-icon fi-align-justify">fi-align-justify</div>
+			<div class="container-icon fi-file">fi-file</div>
+			<div class="container-icon fi-file-text">fi-file-text</div>
+			<div class="container-icon fi-file-minus">fi-file-minus</div>
+			<div class="container-icon fi-file-plus">fi-file-plus</div>
+			<div class="container-icon fi-folder">fi-folder</div>
+			<div class="container-icon fi-edit">fi-edit</div>
+			<div class="container-icon fi-edit-1">fi-edit-1</div>
+			<div class="container-icon fi-edit-2">fi-edit-2</div>
+		</div>
+		<div class="callout error container-flex">
+			<div class="container-icon fi-airplay">fi-airplay</div>
+			<div class="container-icon fi-monitor">fi-monitor</div>
+			<div class="container-icon fi-printer">fi-printer</div>
+			<div class="container-icon fi-server">fi-server</div>
+			<div class="container-icon fi-smartphone">fi-smartphone</div>
+			<div class="container-icon fi-speaker">fi-speaker</div>
+			<div class="container-icon fi-tablet">fi-tablet</div>
+			<div class="container-icon fi-chrome">fi-chrome</div>
+			<div class="container-icon fi-codepen">fi-codepen</div>
+			<div class="container-icon fi-feather">fi-feather</div>
+			<div class="container-icon fi-facebook">fi-facebook</div>
+			<div class="container-icon fi-github">fi-github</div>
+			<div class="container-icon fi-instagram">fi-instagram</div>
+			<div class="container-icon fi-gitlab">fi-gitlab</div>
+			<div class="container-icon fi-pocket">fi-pocket</div>
+			<div class="container-icon fi-slack">fi-slack</div>
+			<div class="container-icon fi-twitter">fi-twitter</div>
+
+		</div>
+
+		<style>
+			.container-icon {
+				display: inline-block;
+				flex: 1;
+				border: solid 1px #dcdcdc;
+				min-width: 6rem;
+				min-height: 4rem;
+				padding: 0.25rem;
+				margin: 0.25rem;
+				border-radius: 4px;
+				text-align: center;
+				font-size: 0.8em;
+			}
+
+			.container-icon:before {
+				font-size: 2em;
+				height: 50%;
+				text-align: center;
+				display: block;
+				padding: 8px;
+				margin-bottom: 0.25rem;
+			}
+		</style>
+	</section>
+	<section id="colors">
+		<h2 class="text-center margin-y fg-recommend">Paleta de colores</h2>
+		<style>
+			.pallete {
+				flex-grow: 1;
+				min-width: 120px;
+				width: auto;
+				min-height: 120px;
+				border: solid 1px black;
+				padding: 0;
+			}
+
+			.pallete * {
+				color: white;
+				padding: 10px;
+				height: 40px;
+				margin: 0px;
+				width: 100%;
+				text-align: center;
+				font-family: monospace;
+			}
+
+			.pallete *.fg-gray-dark {
+				color: #555;
+			}
+
+			.circle-test {
+				width: 100px;
+				height: 100px;
+				margin: 0px;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				color: #fff;
+				font-weight: bolder;
+			}
+		</style>
+		<div class="h3 margin-y">Colores semánticos</div>
+		<p>Los siguientes colores son colores semánticos, se usan para dar una información extra al usuario
+			independientemente de la paleta elegida:</p>
+		<div class="container-flex">
+			<div>
+				<div class="circle-test circle bg-recommend">recommend</div>
+			</div>
+			<div>
+				<div class="circle-test circle bg-info">info</div>
+			</div>
+			<div>
+				<div class="circle-test circle bg-error">error</div>
+			</div>
+			<div>
+				<div class="circle-test circle bg-warning">warning</div>
+			</div>
+			<div>
+				<div class="circle-test circle bg-alert"><mark>alert</mark></div>
+			</div>
+			<div>
+				<div class="circle-test circle bg-success">success</div>
+			</div>
+		</div>
+		<p>Se pueden usar con las clases <code>.fg-recommend</code> para aplicarlo como color de fuente y
+			<code>.bg-recommend</code> como color de fondo. Lo mismo con <code>.fg-info</code>, <code>.bg-info</code>,
+			<code>.fg-success</code>, <code>.bg-success</code>, <code>.fg-alert</code>, <code>.bg-alert</code>,
+			<code>.fg-warning</code>, <code>.bg-warning</code>, <code>.fg-error</code> y <code>.bg-error</code>.</p>
+		<div class="h3 margin-y">Paletas</div>
+		<p>Los siguientes colores son las diferentes paletas de colores, empezando por la escala de grises que es la
+			paleta por defecto:</p>
+		<div class="container-flex">
+			<div class="pallete">
+				<div class="bg-black">black</div>
+				<div class="bg-gray-darker">gray-darker</div>
+				<div class="bg-gray-dark">gray-dark</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-gray">gray</div>
+				<div class="bg-gray-light fg-gray-dark">gray-light</div>
+				<div class="bg-gray-lighter fg-gray-dark">gray-lighter</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-green-dark title">green-dark</div>
+				<div class="bg-green-primary">green-primary</div>
+				<div class="bg-green-light fg-gray-dark">green-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-yellow-dark">yellow-dark</div>
+				<div class="bg-yellow-primary">yellow-primary</div>
+				<div class="bg-yellow-light fg-gray-dark">yellow-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-orange-dark">orange-dark</div>
+				<div class="bg-orange-primary">orange-primary</div>
+				<div class="bg-orange-light fg-gray-dark">orange-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-red-dark">red-dark</div>
+				<div class="bg-red-primary">red-primary</div>
+				<div class="bg-red-light">red-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-pink-dark">pink-dark</div>
+				<div class="bg-pink-primary">pink-primary</div>
+				<div class="bg-pink-light">pink-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-purple-dark">purple-dark</div>
+				<div class="bg-purple-primary">purple-primary</div>
+				<div class="bg-purple-light">purple-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-indigo-dark">indigo-dark</div>
+				<div class="bg-indigo-primary">indigo-primary</div>
+				<div class="bg-indigo-light fg-gray-dark">indigo-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-blue-dark">blue-dark</div>
+				<div class="bg-blue-primary">blue-primary</div>
+				<div class="bg-blue-light fg-gray-dark">blue-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-teal-dark">teal-dark</div>
+				<div class="bg-teal-primary">teal-primary</div>
+				<div class="bg-teal-light fg-gray-dark">teal-light</div>
+			</div>
+			<div class="pallete">
+				<div class="bg-bluegray-dark">bluegray-dark</div>
+				<div class="bg-bluegray-primary">bluegray-primary</div>
+				<div class="bg-bluegray-light fg-gray-dark">bluegray-light</div>
+			</div>
+
+		</div>
+		<p>Además de los colores mostrados, está el color blanco con la palabra <code>white</code>. Se pueden usar cada
+			uno de los colores como color de fuente anteponiendo el prefijo <i>'fg-'</i> al nombre mostrado en cada
+			color, como por ejemplo <code>.fg-green-dark</code>. Se acepta tanto <i>'gray'</i> como <i>'grey'</i> en el
+			nombre de las clases para facilitar la compatiblidad.</p>
+		<p>De igual modo para color de fondo con el prefijo <i>'bg-'</i> asociado al color que se desee, ejemplo:
+			<code>.bg-red-light</code>.</p>
+		<div id="borders" class="h3 margin-y">Bordes</div>
+		<p>Agregando las clases con los prefijos de borde:
+			<i>'border-'</i>,<i>'border-x'</i>,<i>'border-y'</i>,<i>'border-top'</i>,<i>'border-left'</i>,<i>'border-bottom'</i>
+			y <i>'border-right'</i> se obtienen los mismos resultados que con los colores semánticos. Para que los
+			colores de borde tengan efecto es necesario usar alguna de las siguientes clases <code>.border</code> o
+			<code>.border-s</code> para un borde pequeño <code>.border-m</code> para un borde de un tamaño mediano y
+			<code>.border-large</code> o <code>.border-l</code> para bordes grandes.</p>
+		<p>Si sólo se desea aplicar borde a un lado, están disponibles las clases <code>.border-top-<sup>*</sup></code>,
+			<code>.border-bottom-<sup>*</sup></code>, <code>.border-left-<sup>*</sup></code> y
+			<code>.border-right-<sup>*</sup></code> siendo <b><sup>*</sup></b> <i>s</i>,<i>m</i> o <i>l</i> para
+			especificar el grosor. También se pueden usar <code>.border-x-<sup>*</sup></code> y
+			<code>.border-y-<sup>*</sup></code> para afectar a los bordes izquierdo y derecho o superior e inferior al
+			mismo tiempo.</p>
+		<p>Si lo que se pretende es cambiar el estilo, existen las clases <code>.border-solid</code>,
+			<code>.border-dashed</code>, <code>.border-dotted</code>, <code>.border-double</code>,
+			<code>.border-inset</code>, <code>.border-outset</code>, <code>.border-groove</code> y
+			<code>.border-ridge</code>.</p>
+		<p>Si se quiere aplicar como color de borde se pueden agregar a las palabras
+			<i>'recommend'</i>,<i>'info'</i>,<i>'success'</i>,<i>'alert'</i>,<i>'warning'</i> y <i>'error'</i> también
+			se les pueden aplicar los prefijos de borde.</p>
+		<p>En el caso de que algo ya venga con borde heredado por su comportamiento normal y se desee quitar también
+			existe la clase <code>.no-border</code>. Ejemplos:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div
+					class="border-s border-y-l border-left-gray-light border-right-black border-y-gray padding-m margin-m">
+					border-m border-y-l border-left-gray-light border-right-black border-y-gray</div>
+				<div class="border-m border-dashed padding-m margin-m">border-m border-dashed</div>
+				<div class="border-s border-inset padding-m margin-m">border-s border-inset</div>
+				<div class="border-l border-groove padding-m margin-m">border-l border-groove</div>
+				<div class="border-l border-double  border-gray-darker padding-m margin-m">border-l border-double
+					border-gray-darker</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="border-s border-y-l border-left-gray-light
+				border-right-black border-y-gray padding-m
+				margin-m"&gt;border-m border-y-l border-left-gray-light border-right-black border-y-gray&lt;/div&gt;
+				&lt;div class="border-m border-dashed padding-m margin-m"&gt;border-m border-dashed&lt;/div&gt;
+				&lt;div class="border-s border-inset padding-m margin-m"&gt;border-s border-inset&lt;/div&gt;
+				&lt;div class="border-l border-groove padding-m margin-m"&gt;border-l border-groove&lt;/div&gt;
+				&lt;div class="border-l border-double border-gray-darker padding-m margin-m"&gt;
+				border-l border-double border-gray-darker&lt;/div&gt;</div>
+		</div>
+	</section>
+	<section id="grid-system">
+		<h2 class="text-center margin-y fg-recommend">Sistema de rejillas</h2>
+		<p>FireWorks incluye un sistema de rejillas de 12 columnas que se adaptan a medida que varía el tamaño del
+			dispositivo o la ventana.Desarrollado desde un planteamiento <i>mobile-first</i>, escalando de menos a más y
+			así hacer una vista responsive y una página adecuada para todos los dispositivos en los que se visualice.
+			Incluye clases predefinidas para facilitar las opciones de diseño. Aquí mostramos un ejemplo: </p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container border-m">
+					<div class="row">
+						<div class="col xs-12 label border-s text-center size-xs no-padding-x">12/12</div>
+					</div>
+					<div class="row">
+						<div class="col xs-11 label border-s text-center size-xs no-padding-x">11/12</div>
+						<div class="col xs-1  label border-s text-center size-xs no-padding-x">1/12</div>
+					</div>
+					<div class="row">
+						<div class="col xs-10 label border-s text-center size-xs no-padding-x">10/12</div>
+						<div class="col xs-2  label border-s text-center size-xs no-padding-x">2/12</div>
+					</div>
+					<div class="row">
+						<div class="col xs-9  label border-s text-center size-xs no-padding-x">9/12</div>
+						<div class="col xs-3  label border-s text-center size-xs no-padding-x">3/12</div>
+					</div>
+					<div class="row">
+						<div class="col xs-8  label border-s text-center size-xs no-padding-x">8/12</div>
+						<div class="col xs-4  label border-s text-center size-xs no-padding-x">4/12</div>
+					</div>
+					<div class="row">
+						<div class="col xs-7  label border-s text-center size-xs no-padding-x">7/12</div>
+						<div class="col xs-5  label border-s text-center size-xs no-padding-x">5/12</div>
+					</div>
+					<div class="row">
+						<div class="col xs-6  label border-s text-center size-xs no-padding-x">6/12</div>
+						<div class="col xs-6  label border-s text-center size-xs no-padding-x">6/12</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container border-m border-blue-dark"&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-12 label border-s text-center size-xs no-padding-x"&gt;12/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-11 label border-s text-center size-xs no-padding-x"&gt;11/12&lt;/div&gt;
+				&lt;div class="col xs-1 label border-s text-center size-xs no-padding-x"&gt;1/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-10 label border-s text-center size-xs no-padding-x"&gt;10/12&lt;/div&gt;
+				&lt;div class="col xs-2 label border-s text-center size-xs no-padding-x"&gt;2/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-9 label border-s text-center size-xs no-padding-x"&gt;9/12&lt;/div&gt;
+				&lt;div class="col xs-3 label border-s text-center size-xs no-padding-x"&gt;3/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-8 label border-s text-center size-xs no-padding-x"&gt;8/12&lt;/div&gt;
+				&lt;div class="col xs-4 label border-s text-center size-xs no-padding-x"&gt;4/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-7 label border-s text-center size-xs no-padding-x"&gt;7/12&lt;/div&gt;
+				&lt;div class="col xs-5 label border-s text-center size-xs no-padding-x"&gt;5/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="row"&gt;
+				&lt;div class="col xs-6 label border-s text-center size-xs no-padding-x"&gt;6/12&lt;/div&gt;
+				&lt;div class="col xs-6 label border-s text-center size-xs no-padding-x"&gt;6/12&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Instrucciones para utilizar el sistema de rejillas</div>
+		<p>Los sistemas de rejilla o grid se utilizan para crear diseños de página a través de una serie de filas y
+			columnas que alojan su contenido. Así es como funciona el sistema grid de FireWorks: </p>
+		<ul>
+			<li>Las filas se deben colocar dentro de una clase <code>.container</code> o
+				<code>.container-grid</code>.Opcionalmente, se pueden estructurar las columnas dentro de una clase
+				<code>.row</code> separando el contenido en filas dentro del mismo contenedor. Como se ve en el ejemplo
+				de arriba.</li>
+			<li>Se usan las filas(<code>.row</code>) para crear grupos horizontales de columnas.</li>
+			<li>El contenido se coloca dentro de las columnas.</li>
+			<li>La diferencia es que el <code>.container</code> utiliza todo el ancho total y el
+				<code>.container-grid</code> limita el tamaño del contenedor a través de mediaqueries. Se utiliza los
+				mixins al usar las mediaqueries determinadas :<dl class="list-inline margin-y">
+					<dt>s:</dt>
+					<dd>para un máximo de 440px </dd>
+					<dt>m:</dt>
+					<dd>para un máximo de 720px </dd>
+					<dt>l:</dt>
+					<dd>para un máximo de 900px </dd>
+					<dt>xl:</dt>
+					<dd>para un máximo de 1200px </dd>
+				</dl>
+			<li>Para usar este sistema siempre tiene que estar la clase <strong>.col</strong>. Esta clase coge todo el
+				ancho de la ventana. Dentro de esta clase están definidas las columnas. Se especifica el número de
+				columnas que se quiera abarcar teniendo un máximo de 12 columnas y un mínimo de 1 columna. En el
+				siguiente ejemplo vemos una clase <code>col</code> que ocupa 7 columnas:
+				<div class="callout margin-y">
+					<div class="padding-m">
+						<div class="container">
+							<div class="col xs-7 label border-s text-center size-xs no-padding-x">col xs-7</div>
+						</div>
+					</div>
+					<div class="highlight code no-radius">&lt;div class="container"&gt;
+						&lt;div class="col xs-7"&gt;col xs-7&lt;/div&gt;
+						&lt;/div&gt;</div>
+				</div>
+			</li>
+			<li>Para ajustar el número de columnas con diferente contenido, se haría restando 12 al número de columnas
+				que se haya especificado, dividiéndose así el número de columnas hasta llegar a 12.</li>
+			<li>Si se añaden más de 12 columnas, se adaptarán estas nuevas a una nueva fila.</li>
+			<li>Las clases de cuadricula se adaptan a dispositivos con anchos mayor o iguales a los tamaños de puntos de
+				ruptura anulando las clases de tamaños de dispositivos más pequeños. Por lo tanto si se aplica
+				<code>col xs-<sup>*</sup></code> se aplicará a todos los tamaños, y se abarcará siempre el mismo número
+				de columnas en todos los tamaños de distintos dispositivos, sin necesidad de cambiar a otra clase como
+				<code>s-<sup>*<sup></code>, por el contrario se se aplicara otra clase con un punto de ruptura superior
+				el anterior dejará de tener efecto.</li>
+		</ul>
+		<div class="h3 margin-y">Opciones de la cuadrícula</div>
+		<div class="callout margin-y table-responsive">
+			<table class="collapsed neat-table hovered striped">
+				<tr>
+					<th></th>
+					<th>Dispositivos extra<br> pequeños (teléfonos<br> móviles modo retrato)<br> <code
+							class="fg-gray-dark">< 479px </code></th>
+					<th>Dispositivos pequeños<br> (teléfonos móviles<br> modo apaisada y teléfonos<br> móviles de gran
+						resolución)<br> <code class="fg-gray-dark">> 480px </code></th>
+					<th>Dispositivos medianos<br> (phablets y tablets en<br> modo retrato) <code
+							class="fg-gray-dark"> >=769px</code></th>
+					<th>Dispositivos grandes<br> (ordenadores pequeños <br>y tablets modo apaisado)<br> <code
+							class="fg-gray-dark"> >=992px </code></th>
+					<th>Dispositivos extra grandes<br> (pantallas grandes<br> y televisores)<br> <code
+							class="fg-gray-dark"> >=1200px </code></th>
+				</tr>
+				<tr>
+					<td>Comportamiento de<br> columnas</td>
+					<td>Horizontal en todo momento</td>
+					<td colspan="4">Se rompe para comenzar filas en los puntos de interrupción</td>
+				</tr>
+				<tr>
+					<td>Clase <strong>.container</strong></td>
+					<td colspan="5">100%</td>
+				</tr>
+				<tr>
+					<td>Clase <strong>.container-grid</strong></td>
+					<td>100%</td>
+					<td>440px</td>
+					<td>768px</td>
+					<td>991px</td>
+					<td>1191px</td>
+				</tr>
+				<tr>
+					<td>Prefijo de clase</td>
+					<td>xs-</td>
+					<td>s-</td>
+					<td>m-</td>
+					<td>l-</td>
+					<td>xl-</td>
+				</tr>
+				<tr>
+					<td>Columnas</td>
+					<td colspan="5">12</td>
+				</tr>
+			</table>
+		</div>
+		<div class="h3 margin-y">Clase <code>.container</code></div>
+		<p>Se puede convertir el diseño utilizando todo el ancho de la ventana. Como se muestra en el siguiente ejemplo:
+		</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12 label border-s text-center size-xs no-padding-x">12/12</div>
+					<div class="col xs-6 label border-s text-center size-xs no-padding-x">6/12</div>
+					<div class="col xs-6 label border-s text-center size-xs no-padding-x">6/12</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12"&gt;12/12&lt;/div&gt;
+				&lt;div class="col xs-6"&gt;6/12&lt;/div&gt;
+				&lt;div class="col xs-6"&gt;6/12&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Clase <code>.container-grid</code></div>
+		<p>Se puede convertir el diseño sin utilizar todo el ancho de la ventana. Como se muestra en el siguiente
+			ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container-grid">
+					<div class="col xs-12 label border-s text-center size-xs no-padding-x">12/12</div>
+					<div class="col xs-6 label border-s text-center size-xs no-padding-x">6/12</div>
+					<div class="col xs-6 label border-s text-center size-xs no-padding-x">6/12</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container-grid"&gt;
+				&lt;div class="col xs-12"&gt;12/12&lt;/div&gt;
+				&lt;div class="col xs-6"&gt;6/12&lt;/div&gt;
+				&lt;div class="col xs-6"&gt;6/12&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Ejemplo móvil y escritorio</div>
+		<p>Se pueden combinar las clases para una visualización en móvil y en escritorio combinando ambas clases. La
+			clase para móviles normales <code>.s-<sup>*</sup></code> y la clase para pantallas de ordenadores normales
+			<code>.m-<sup>*</sup></code> Como se muestra en el siguiente ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12 m-8 label border-s text-center size-xs no-padding-x">col xs-12 m-8</div>
+					<div class="col xs-6 m-4 label border-s text-center size-xs no-padding-x">col xs-6 m-4</div>
+					<div class="col xs-6 m-6 label border-s text-center size-xs no-padding-x">col xs-6 m-4</div>
+					<div class="col xs-6 m-6 label border-s text-center size-xs no-padding-x">col xs-6 m-4</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12 m-8 label border-s text-center size-xs no-padding-x"&gt;col xs-12
+				m-8&lt;/div&gt;
+				&lt;div class="col xs-6 m-4 label border-s text-center size-xs no-padding-x"&gt;col xs-6 m-4&lt;/div&gt;
+				&lt;div class="col xs-6 m-6 label border-s text-center size-xs no-padding-x"&gt;col xs-6 m-4&lt;/div&gt;
+				&lt;div class="col xs-6 m-6 label border-s text-center size-xs no-padding-x"&gt;col xs-6 m-4&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		</div>
+		<div class="h3 margin-y">Colocar más de 12 columnas</div>
+		<p>Si se desea colocar más de 12 columnas dentro de una sóla fila, cada grupo de columnas se colocarán en una
+			nueva fila. Como se muestra en el siguiente ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-10 label border-s text-center size-xs no-padding-x">col xs-10</div>
+					<div class="col xs-6 label border-s text-center size-xs no-padding-x">col xs-6<br>Puesto que 10 + 6
+						son más de 12, este div de 6 columnas se inicia en una fila nueva.</div>
+					<div class="col xs-6 label border-s text-center size-xs no-padding-x">col xs-6<br>Este div sigue en
+						la misma fila, ya que cabe porque 6+6 son 12.</div>
+				</div>
+			</div>
+		</div>
+		<div class="h3 margin-y">Compensar columnas</div>
+		<p>Se colocan las columnas hacia la derecha usando la clase <code>.<sup>*</sup>-offset-<sup>*</sup></code>. Esta
+			clase mueve las columnas con un margen izquierdo. Por ejemplo si se ponen la clases
+			<code>.col .m-8 .m-offset-2</code> mueve <code>.col .m-8</code> en dos columnas, con un margen izquierdo del
+			16.6666%. A continuación se muestra un ejemplo de como funciona <code>.xs-offset-<sup>*</sup></code>,
+			<code>.s-offset-<sup>*</sup></code>, <code>.m-offset-<sup>*</sup></code>,
+			<code>.l-offset-<sup>*</sup></code> o <code>.xl-offset-<sup>*</sup></code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-8 xs-offset-2 label border-s text-center size-xs no-padding-x">col xs-8
+						<s></s>-offset-2</div>
+					<div class="col xs-3 label border-s text-center size-xs no-padding-x">col xs-3</div>
+					<div class="col xs-6 xs-offset-3 label border-s text-center size-xs no-padding-x">col xs-6
+						s-offset-3</div>
+					<div class="col xs-3 xs-offset-3 label border-s text-center size-xs no-padding-x">col xs-3
+						s-offset-3</div>
+					<div class="col xs-3 xs-offset-3 label border-s text-center size-xs no-padding-x">col xs-3
+						s-offset-3</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-8 xs-offset-2 label border-s text-center size-xs no-padding-x"&gt;col xs-8
+				xs-offset-2&lt;/div&gt;
+				&lt;div class="col xs-3 xs-offset-3 label border-s text-center size-xs no-padding-x"&gt;col xs-3
+				xs-offset-3&lt;/div&gt;
+				&lt;div class="col xs-3 xs-offset-3 label border-s text-center size-xs no-padding-x"&gt;col xs-3
+				xs-offset-3&lt;/div&gt;
+				&lt;div class="col xs-6 xs-offset-3 label border-s text-center size-xs no-padding-x"&gt;col xs-6
+				xs-offset-3&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>También se puede anular compensaciones de columnas con <code>.col <sup>*</sup>-offset-0</code></p>
+		<div class="h3 margin-y">Ordenación de columnas</div>
+		<p>Se pueden modificar el orden de las columnas con las clases que lo modifican
+			<code>.col s-pull-<sup>*</sup></code>y <code>.col s-push-<sup>*</sup></code></p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-3 xs-push-9 label border-s text-center size-xs no-padding-x">col xs-3 xs-push-9
+					</div>
+					<div class="col xs-9 xs-pull-3 label border-s text-center size-xs no-padding-x">col xs-9 xs-pull-3
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-3 xs-push-9 label border-s text-center size-xs no-padding-x"&gt;col xs-3
+				xs-push-9&lt;/div&gt;
+				&lt;div class="col xs-9 xs-pull-3 label border-s text-center size-xs no-padding-x"&gt;col xs-9
+				xs-pull-3&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+	</section>
+	<section id="semantics">
+		<h2 class="text-center fg-recommend margin-y">Textos y semántica</h2>
+		<div class="h3 margin-y">Encabezados</div>
+		<p>Existiendo los encabezados desde <span class="italic">h1</span> hasta <span class="italic">h6</span>, su
+			aplicación depende del valor semántico de los mismos. Hay veces que queremos usar la apariencia de un
+			encabezado pero por cuestión de <acronym title="Search Engine Optimization">SEO</acronym> no podemos hacer
+			tal cosa. Para ello FireWorks brinda las clases
+			<code>.h1</code>,<code>.h2</code>,<code>.h3</code>,<code>.h4</code>,<code>.h5</code> y
+			<code>.h6</code>.<br>Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m text-center">
+				<h1>real h1</h1>
+				<h2>real h2</h2>
+				<h3>real h3</h3>
+				<h4>real h4</h4>
+				<h5>real h5</h5>
+				<h6>real h6</h6>
+			</div>
+			<div class="highlight code no-radius">&lt;h1&gt;real h1&lt;/h1&gt; &lt;h2&gt;real h2&lt;/h2&gt;
+				&lt;h3&gt;real h3&lt;/h3&gt; &lt;h4&gt;real h4&lt;/h4&gt;
+				&lt;h5&gt;real h5&lt;/h5&gt; &lt;h6&gt;real h6&lt;/h6&gt;</div>
+		</div>
+		<div class="callout margin-y">
+			<div class="padding-m text-center">
+				<div class="h1">class <span class="italic">h1</span></div>
+				<div class="h2">class <span class="italic">h2</span></div>
+				<div class="h3">class <span class="italic">h3</span></div>
+				<div class="h4">class <span class="italic">h4</span></div>
+				<div class="h5">class <span class="italic">h5</span></div>
+				<div class="h6">class <span class="italic">h6</span></div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="h1"&gt;class &lt;span
+				class="italic"&gt;h1&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="h2"&gt;class &lt;span class="italic"&gt;h2&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="h3"&gt;class &lt;span class="italic"&gt;h3&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="h4"&gt;class &lt;span class="italic"&gt;h4&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="h5"&gt;class &lt;span class="italic"&gt;h5&lt;/span&gt;&lt;/div&gt;
+				&lt;div class="h6"&gt;class &lt;span class="italic"&gt;h6&lt;/span&gt;&lt;/div&gt;</div>
+		</div>
+		<p>Añada texto secundario más ligero en cualquier elemento con una etiqueta <code>&lt;small&gt;</code> o la
+			clase <code>.small</code> .</p>
+		<p>Haga lo mismo, dando más peso con una etiqueta <code>&lt;big&gt;</code> o la clase <code>.big</code>. O si lo
+			prefiere use la clase <code>.lead</code> para elementos tipo <span class="italic">display:block</span> y
+			obtendran un tamaño similiar al de la etiqueta <span class="italic">h1.</span></p>
+		<p>Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="lead">Uso de <span class="italic">.lead</span></div>
+				<p>Esto es un ejemplo de tag <small>small</small> y clase <span class="small">.small</span>.</p>
+				<p>Esto es un ejemplo de tag <big>big</big> y clase <span class="big">.big</span>.</p>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="lead"&gt;Uso de &lt;span
+				class="italic"&gt;.lead&lt;/span&gt;&lt;/div&gt;
+				&lt;p&gt;Esto es un ejemplo de tag &lt;small&gt;small&lt;/small&gt; y clase &lt;span
+				class="small"&gt;.small&lt;/span&gt;.&lt;/p&gt;
+				&lt;p&gt;Esto es un ejemplo de tag &lt;big&gt;big&lt;/big&gt; y clase &lt;span
+				class="big"&gt;.big&lt;/span&gt;.&lt;/p&gt;</div>
+		</div>
+		<div class="h3 margin-y">Tamaño de fuentes</div>
+		<p>Para dotar de diferentes tamaños de fuentes al desarrollador, hemos creado las siguientes clases
+			<code>.size-xxxs</code>,<code>.size-xxs</code>, <code>.size-xs</code>, <code>.size-s</code>,
+			<code>.size-m</code>/<code>.size-normal</code>/<code>.font-normal</code>, <code>.size-l</code>,
+			<code>.size-xl</code>, <code>.size-xxl</code>,<code>.size-xxxl</code>. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<p class="size-xxxs">size-xxxs</p>
+				<p class="size-xxs">size-xxs</p>
+				<p class="size-xs">size-xs</p>
+				<p class="size-s">size-s</p>
+				<p class="size-m">size-m</p>
+				<p class="size-l">size-l</p>
+				<p class="size-xl">size-xl</p>
+				<p class="size-xxl">size-xxl</p>
+				<p class="size-xxxl">size-xxxl</p>
+			</div>
+			<div class="highlight code no-radius">&lt;p class="size-xxxs"&gt;size-xxxs&lt;/p&gt;
+				&lt;p class="size-xxs"&gt;size-xxs&lt;/p&gt;
+				&lt;p class="size-xs"&gt;size-xs&lt;/p&gt;
+				&lt;p class="size-s"&gt;size-s&lt;/p&gt;
+				&lt;p class="size-m"&gt;size-m&lt;/p&gt;
+				&lt;p class="size-l"&gt;size-l&lt;/p&gt;
+				&lt;p class="size-xl"&gt;size-xl&lt;/p&gt;
+				&lt;p class="size-xxl"&gt;size-xxl&lt;/p&gt;
+				&lt;p class="size-xxxl"&gt;size-xxxl&lt;/p&gt;</div>
+		</div>
+		<div class="h3 margin-y">Elementos en línea</div>
+		<p>Los enlaces han sido modificados en su estilo para dar una mejor experiencia de usuario. A parte de la clase
+			<code>a</code> también hemos agregado una clase <code>.link</code> para elementos que se quieran ver como
+			enlace:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<p>Esto es un <a href="#">enlace</a>. Esto otro <span class="link">no</span>.</p>
+			</div>
+			<div class="highlight code no-radius">&lt;p&gt;Esto es un &lt;a href="#"&gt;enlace&lt;/a&gt;. Esto otro
+				&lt;span class="link"&gt;no&lt;/span&gt;.&lt;/p&gt;</div>
+		</div>
+		<p>Para resaltar un segmento de texto a su relevancia en otro contexto, use la etiqueta
+			<code>&lt;mark&gt;</code> o ahorre el valor semántico usando la clase <code>.mark</code>. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				Esta <mark>parte</mark> destaca del resto, al igual que <span class="mark">esta otra que no tiene valor
+					semántico</span>.
+			</div>
+			<div class="highlight code no-radius">Esta &lt;mark&gt;parte&lt;/mark&gt; destaca del resto,
+				al igual que &lt;span class="mark"&gt;esta otra que no tiene valor semántico&lt;/span&gt;.</div>
+		</div>
+		<p>Para tratar texto como eliminado se usará la etiqueta <code>&lt;del&gt;</code>.Para indicar segmentos que ya
+			no son relevantes, use la etiqueta <code>&lt;s&gt;</code>. Por el contrario si lo que desea es únicamente
+			tachar algo, use la clase <code>.strike</code>. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<del>Este texto está eliminado por la etiqueta del</del>, <s>por tanto este otro tampoco vale y lo marco
+					con la etiqueta s</s>.<br><span class="strike">Quiero seguir tachando texto y uso la clase
+					.strike</span>.
+			</div>
+			<div class="highlight code no-radius">&lt;del&gt;Este texto está eliminado por la etiqueta del&lt;/del&gt;,
+				&lt;s&gt;por tanto este otro tampoco vale y lo marco con la etiqueta s&lt;/s&gt;.&lt;br&gt;
+				&lt;span class="strike"&gt;Quiero seguir tachando texto y uso la clase .strike&lt;/span&gt;.</div>
+		</div>
+		<p>Para tratar texto como modificado o se trata de una nueva inserción se usará la etiqueta
+			<code>&lt;ins&gt;</code>. En caso de que se quiera subrayar algo, use la clase <code>.underline</code>.
+			Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<ins>Este texto es nuevo</ins>.<br><span class="underline">Quiero seguir subrayando texto y uso la clase
+					.underline</span>.
+			</div>
+			<div class="highlight code no-radius">&lt;ins&gt;Este texto es nuevo&lt;/ins&gt;.&lt;br&gt;&lt;span
+				class="underline"&gt;
+				Quiero seguir subrayando texto y uso la clase .underline&lt;/span&gt;.</div>
+		</div>
+		<p>Para poner la letra en negrita se puede usar la etiqueta <code>strong</code> para resaltar el valor semántico
+			o simplemente <code>b</code>. Si lo prefiere también puede usar la clase vista anteriormente
+			<code>.bold</code>. Para poner la letra en cursiva se puede usar la etiqueta <code>em</code>, esto enfatiza
+			el texto contenido o si lo que quiere es usar palabras que por el contexto se sale del lenguaje usado, como
+			por ejemplo tecnicismos puede usar <code>i</code>. También puede usar la clase <code>.italic</code> para
+			prescindir de la semántica.Ejemplos:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				Uso de las etiquetas <strong>strong</strong>, <b>b</b>, <em>em</em>, <i>i</i> y las clases <span
+					class="bold">.bold</span> e <span class="italic">.italic</span>.
+			</div>
+			<div class="highlight code no-radius">Uso de las etiquetas &lt;strong&gt;strong&lt;/strong&gt;,
+				&lt;b&gt;b&lt;/b&gt;, &lt;em&gt;em&lt;/em&gt;, &lt;i&gt;i&lt;/i&gt;
+				y las clases &lt;span class="bold"&gt;.bold&lt;/span&gt; e &lt;span
+				class="italic"&gt;.italic&lt;/span&gt;.</div>
+		</div>
+		<p>Para el uso de subíndices y superíndices puede usar tanto las etiquetas como las clases homonimas
+			<code>sub</code> y <code>sup</code>. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				Esto es un ejemplo de <sub>subíndice</sub> y este de <sup>superíndice</sup> además de las clases <span
+					class="sub">.sub</span> y <span class="sup">.sup</span>.
+			</div>
+			<div class="highlight code no-radius">Esto es un ejemplo de &lt;sub&gt;subíndice&lt;/sub&gt; y este de
+				&lt;sup&gt;superíndice&lt;/sup&gt;
+				además de las clases &lt;span class="sub"&gt;.sub&lt;/span&gt; y &lt;span
+				class="sup"&gt;.sup&lt;/span&gt;.</div>
+		</div>
+		<p>En ocasiones se necesita usar acrónimos o abreviaturas y se quiere expresar su significado, para eso están
+			las etiquetas <code>acronym</code> y <code>abbr</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<abbr title="Abreviación">abbr</abbr> o <acronym title="HyperText Mark-up Language">HTML</acronym>.
+			</div>
+			<div class="highlight code no-radius">&lt;abbr title="Abreviación"&gt;abbr&lt;/abbr&gt; o &lt;acronym
+				title="HyperText Mark-up Language"&gt;HTML&lt;/acronym&gt;.</div>
+		</div>
+		<div class="h3 margin-y" id="align">Alineación de texto</div>
+		<p>Para cambiar la alineación de texto puedes usar las clases <code>.align-left</code> o <code>.text-left</code>
+			para alinear el texto a la izquierda, <code>.align-right</code> o <code>.text-right</code> para alinear a la
+			derecha, <code>.align-center</code> o <code>.text-center</code> para centrar y para jusstificar el texto
+			<code>.align-justify</code> y <code>.text-justify</code>. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="align-left">align-left</div>
+				<div class="align-right">align-right</div>
+				<div class="align-center">align-center</div>
+				<div class="align-justify">align-justify: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Pariatur nemo animi nostrum fuga deserunt asperiores esse tenetur dolorum iure, repellat quam in
+					commodi autem dignissimos, earum incidunt culpa aliquid explicabo.</div>
+				<div class="text-left">text-left</div>
+				<div class="text-right">text-right</div>
+				<div class="text-center">text-center</div>
+				<div class="text-justify">text-justify: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Pariatur nemo animi nostrum fuga deserunt asperiores esse tenetur dolorum iure, repellat quam in
+					commodi autem dignissimos, earum incidunt culpa aliquid explicabo.</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="align-left"&gt;align-left&lt;/div&gt;
+				&lt;div class="align-right"&gt;align-right&lt;/div&gt;
+				&lt;div class="align-center"&gt;align-center&lt;/div&gt;
+				&lt;div class="align-justify"&gt;align-justify: Lorem ipsum dolor sit amet, consectetur adipisicing
+				elit. Pariatur nemo animi nostrum fuga deserunt asperiores esse tenetur dolorum iure, repellat quam in
+				commodi autem dignissimos, earum incidunt culpa aliquid explicabo.&lt;/div&gt;
+				&lt;div class="text-left"&gt;text-left&lt;/div&gt;
+				&lt;div class="text-right"&gt;text-right&lt;/div&gt;
+				&lt;div class="text-center"&gt;text-center&lt;/div&gt;
+				&lt;div class="text-justify"&gt;text-justify: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Pariatur nemo animi nostrum fuga deserunt asperiores esse tenetur dolorum iure, repellat quam in commodi
+				autem dignissimos, earum incidunt culpa aliquid explicabo.&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Manipulación de texto</div>
+		<p>Para cambiar todo el texto a minúsculas puede usar la clase <code>.text-lowercase</code>, mayúsculas con
+			<code>.text-uppercase</code>, si se quiere capitalizar un texto se tiene <code>.text-capitalize</code>, por
+			último para las letras en versálitas se tienen las clases <code>.text-small-caps</code> e
+			<code>.initialism</code>. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="text-lowercase">ESTE TEXTO ESTÁ EN MAYÚSCULAS PERO SE MUESTRA EN MINÚSCULAS</div>
+				<div class="text-uppercase">este texto está en minúsculas pero se muestra en mayúsculas</div>
+				<div class="text-capitalize">todo el texto está en minúsculas y se muestra capitalizado</div>
+				<div class="text-small-caps">Este texto se muestra con las letras en versálitas.</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="text-lowercase"&gt;ESTE TEXTO ESTÁ EN MAYÚSCULAS PERO
+				SE MUESTRA EN MINÚSCULAS&lt;/div&gt;
+				&lt;div class="text-uppercase"&gt;este texto está en minúsculas pero se muestra en
+				mayúsculas&lt;/div&gt;
+				&lt;div class="text-capitalize"&gt;todo el texto está en minúsculas y se muestra
+				capitalizado&lt;/div&gt;
+				&lt;div class="text-small-caps"&gt;Este texto se muestra con las letras en versálitas.&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Tamaños de caja</div>
+		<p>Se han desarrollado las siguientes clases para facilitar el tamaño de los componentes:</p>
+		<div class="callout margin-y table-responsive">
+			<table class="collapsed neat-table width-100 bordered">
+				<thead>
+					<tr>
+						<th colspan="8" class="text-center size-l bg-gray-lighter">ANCHO</th>
+					</tr>
+					<tr>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.width-10</td>
+						<td class="bg-gray-lighter">width:10%;</td>
+						<td>.max-width-10</td>
+						<td class="bg-gray-lighter">max-width:10%;</td>
+						<td>.width-10-v</td>
+						<td class="bg-gray-lighter">width:10vw;</td>
+						<td>.max-width-10-v</td>
+						<td class="bg-gray-lighter">max-width:10vw;</td>
+					</tr>
+					<tr>
+						<td>.width-20</td>
+						<td class="bg-gray-lighter">width:20%;</td>
+						<td>.max-width-20</td>
+						<td class="bg-gray-lighter">max-width:20%;</td>
+						<td>.width-20-v</td>
+						<td class="bg-gray-lighter">width:20vw;</td>
+						<td>.max-width-20-v</td>
+						<td class="bg-gray-lighter">max-width:20vw;</td>
+					</tr>
+					<tr>
+						<td>.width-30</td>
+						<td class="bg-gray-lighter">width:30%;</td>
+						<td>.max-width-30</td>
+						<td class="bg-gray-lighter">max-width:30%;</td>
+						<td>.width-30-v</td>
+						<td class="bg-gray-lighter">width:30vw;</td>
+						<td>.max-width-30-v</td>
+						<td class="bg-gray-lighter">max-width:30vw;</td>
+					</tr>
+					<tr>
+						<td>.width-40</td>
+						<td class="bg-gray-lighter">width:40%;</td>
+						<td>.max-width-40</td>
+						<td class="bg-gray-lighter">max-width:40%;</td>
+						<td>.width-40-v</td>
+						<td class="bg-gray-lighter">width:40vw;</td>
+						<td>.max-width-40-v</td>
+						<td class="bg-gray-lighter">max-width:40vw;</td>
+					</tr>
+					<tr>
+						<td>.width-50</td>
+						<td class="bg-gray-lighter">width:50%;</td>
+						<td>.max-width-50</td>
+						<td class="bg-gray-lighter">max-width:50%;</td>
+						<td>.width-50-v</td>
+						<td class="bg-gray-lighter">width:50vw;</td>
+						<td>.max-width-50-v</td>
+						<td class="bg-gray-lighter">max-width:50vw;</td>
+					</tr>
+					<tr>
+						<td>.width-60</td>
+						<td class="bg-gray-lighter">width:60%;</td>
+						<td>.max-width-60</td>
+						<td class="bg-gray-lighter">max-width:60%;</td>
+						<td>.width-60-v</td>
+						<td class="bg-gray-lighter">width:60vw;</td>
+						<td>.max-width-60-v</td>
+						<td class="bg-gray-lighter">max-width:60vw;</td>
+					</tr>
+					<tr>
+						<td>.width-70</td>
+						<td class="bg-gray-lighter">width:70%;</td>
+						<td>.max-width-70</td>
+						<td class="bg-gray-lighter">max-width:70%;</td>
+						<td>.width-70-v</td>
+						<td class="bg-gray-lighter">width:70vw;</td>
+						<td>.max-width-70-v</td>
+						<td class="bg-gray-lighter">max-width:70vw;</td>
+					</tr>
+					<tr>
+						<td>.width-80</td>
+						<td class="bg-gray-lighter">width:80%;</td>
+						<td>.max-width-80</td>
+						<td class="bg-gray-lighter">max-width:80%;</td>
+						<td>.width-80-v</td>
+						<td class="bg-gray-lighter">width:80vw;</td>
+						<td>.max-width-80-v</td>
+						<td class="bg-gray-lighter">max-width:80vw;</td>
+					</tr>
+					<tr>
+						<td>.width-90</td>
+						<td class="bg-gray-lighter">width:90%;</td>
+						<td>.max-width-90</td>
+						<td class="bg-gray-lighter">max-width:90%;</td>
+						<td>.width-90-v</td>
+						<td class="bg-gray-lighter">width:90vw;</td>
+						<td>.max-width-90-v</td>
+						<td class="bg-gray-lighter">max-width:90vw;</td>
+					</tr>
+					<tr>
+						<td>.width-100</td>
+						<td class="bg-gray-lighter">width:100%;</td>
+						<td>.max-width-100</td>
+						<td class="bg-gray-lighter">max-width:100%;</td>
+						<td>.width-100-v</td>
+						<td class="bg-gray-lighter">width:100vw;</td>
+						<td>.max-width-100-v</td>
+						<td class="bg-gray-lighter">max-width:100vw;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="callout margin-y table-responsive">
+			<table class="collapsed neat-table width-100 bordered">
+				<thead>
+					<tr>
+						<th colspan="8" class="text-center size-l bg-gray-lighter">ALTO</th>
+					</tr>
+					<tr>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+						<td class="text-center bg-gray-lighter">CLASE</td>
+						<td class="text-center bg-gray-lighter">CSS</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.height-10</td>
+						<td class="bg-gray-lighter">height:10%;</td>
+						<td>.max-height-10</td>
+						<td class="bg-gray-lighter">max-height:10%;</td>
+						<td>.height-10-v</td>
+						<td class="bg-gray-lighter">height:10vh;</td>
+						<td>.max-height-10-v</td>
+						<td class="bg-gray-lighter">max-height:10vh;</td>
+					</tr>
+					<tr>
+						<td>.height-20</td>
+						<td class="bg-gray-lighter">height:20%;</td>
+						<td>.max-height-20</td>
+						<td class="bg-gray-lighter">max-height:20%;</td>
+						<td>.height-20-v</td>
+						<td class="bg-gray-lighter">height:20vh;</td>
+						<td>.max-height-20-v</td>
+						<td class="bg-gray-lighter">max-height:20vh;</td>
+					</tr>
+					<tr>
+						<td>.height-30</td>
+						<td class="bg-gray-lighter">height:30%;</td>
+						<td>.max-height-30</td>
+						<td class="bg-gray-lighter">max-height:30%;</td>
+						<td>.height-30-v</td>
+						<td class="bg-gray-lighter">height:30vh;</td>
+						<td>.max-height-30-v</td>
+						<td class="bg-gray-lighter">max-height:30vh;</td>
+					</tr>
+					<tr>
+						<td>.height-40</td>
+						<td class="bg-gray-lighter">height:40%;</td>
+						<td>.max-height-40</td>
+						<td class="bg-gray-lighter">max-height:40%;</td>
+						<td>.height-40-v</td>
+						<td class="bg-gray-lighter">height:40vh;</td>
+						<td>.max-height-40-v</td>
+						<td class="bg-gray-lighter">max-height:40vh;</td>
+					</tr>
+					<tr>
+						<td>.height-50</td>
+						<td class="bg-gray-lighter">height:50%;</td>
+						<td>.max-height-50</td>
+						<td class="bg-gray-lighter">max-height:50%;</td>
+						<td>.height-50-v</td>
+						<td class="bg-gray-lighter">height:50vh;</td>
+						<td>.max-height-50-v</td>
+						<td class="bg-gray-lighter">max-height:50vh;</td>
+					</tr>
+					<tr>
+						<td>.height-60</td>
+						<td class="bg-gray-lighter">height:60%;</td>
+						<td>.max-height-60</td>
+						<td class="bg-gray-lighter">max-height:60%;</td>
+						<td>.height-60-v</td>
+						<td class="bg-gray-lighter">height:60vh;</td>
+						<td>.max-height-60-v</td>
+						<td class="bg-gray-lighter">max-height:60vh;</td>
+					</tr>
+					<tr>
+						<td>.height-70</td>
+						<td class="bg-gray-lighter">height:70%;</td>
+						<td>.max-height-70</td>
+						<td class="bg-gray-lighter">max-height:70%;</td>
+						<td>.height-70-v</td>
+						<td class="bg-gray-lighter">height:70vh;</td>
+						<td>.max-height-70-v</td>
+						<td class="bg-gray-lighter">max-height:70vh;</td>
+					</tr>
+					<tr>
+						<td>.height-80</td>
+						<td class="bg-gray-lighter">height:80%;</td>
+						<td>.max-height-80</td>
+						<td class="bg-gray-lighter">max-height:80%;</td>
+						<td>.height-80-v</td>
+						<td class="bg-gray-lighter">height:80vh;</td>
+						<td>.max-height-80-v</td>
+						<td class="bg-gray-lighter">max-height:80vh;</td>
+					</tr>
+					<tr>
+						<td>.height-90</td>
+						<td class="bg-gray-lighter">height:90%;</td>
+						<td>.max-height-90</td>
+						<td class="bg-gray-lighter">max-height:90%;</td>
+						<td>.height-90-v</td>
+						<td class="bg-gray-lighter">height:90vh;</td>
+						<td>.max-height-90-v</td>
+						<td class="bg-gray-lighter">max-height:90vh;</td>
+					</tr>
+					<tr>
+						<td>.height-100</td>
+						<td class="bg-gray-lighter">height:100%;</td>
+						<td>.max-height-100</td>
+						<td class="bg-gray-lighter">max-height:100%;</td>
+						<td>.height-100-v</td>
+						<td class="bg-gray-lighter">height:100vh;</td>
+						<td>.max-height-100-v</td>
+						<td class="bg-gray-lighter">max-height:100vh;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="h3 margin-y">Direcciones</div>
+		<p>Con la llegada de HTML5 de se incorporan nuevas etiquetas semánticas como la de <code>&lt;address&gt;</code>
+			para que los motores de búsqueda lo detecten como datos de contacto agrupados (dirrecciones, correo, números
+			de teléfono). Para conservar el formato conviene hacer saltos de linea por cada nuevo dato de contacto o el
+			uso de listas. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<address>
+					<strong>Ish Milan</strong><br>
+					Web Developer & SysAdmin<br>
+					E-mail: <a href="mailto:ish.milan.dev@gmail.com">ish.milan.dev@gmail.com</a><br>
+					Telegram: <a href="https://t.me/ishmilan">@ishmilan</a>
+				</address>
+			</div>
+			<div class="highlight code no-radius">&lt;address&gt;
+				&lt;strong&gt;Ish Milan&lt;/strong&gt;&lt;br&gt;
+				Web Developer & SysAdmin&lt;br&gt;
+				E-mail: &lt;a href="mailto:ish.milan.dev@gmail.com"&gt;ish.milan.dev@gmail.com&lt;/a&gt;&lt;br&gt;
+				Telegram: &lt;a href="https://t.me/ishmilan"&gt;@ishmilan&lt;/a&gt;
+				&lt;/address&gt;</div>
+		</div>
+		<div class="h3 margin-y" id="#list">Listas</div>
+		<p>El uso de las listas ordenadas(<code>&lt;ol&gt;</code>) y desordenadas(<code>&lt;ul&gt;</code>) dependerá del
+			propósito del contenido o del desarrollador. Las listas de definición(<code>&lt;dl&gt;</code>) sirven para
+			cuando se tiene una lista de términos con sus descripciones asociadas.</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div><strong>Lista desordenada</strong></div>
+				<ul>
+					<li>item1</li>
+					<li>item2</li>
+					<ul>
+						<li>item2-1</li>
+						<ul>
+							<li>item2-1-1</li>
+							<li>item2-1-2</li>
+						</ul>
+						<li>item2-2</li>
+					</ul>
+				</ul>
+				<div><strong>Lista ordenada</strong></div>
+				<ol>
+					<li>Lista ordenada</li>
+					<ol>
+						<li>item1</li>
+						<li>item2</li>
+					</ol>
+					<li>item2</li>
+				</ol>
+				<div><strong>Lista de definiciones</strong></div>
+				<dl>
+					<dt>ul</dt>
+					<dd>Lista desordenada</dd>
+					<dt>ol</dt>
+					<dd>Lista ordenada</dd>
+					<dt>dl</dt>
+					<dd>Lista de definiciones</dd>
+				</dl>
+			</div>
+			<div class="highlight code no-radius">&lt;div&gt;&lt;strong&gt;Lista desordenada&lt;/strong&gt;&lt;/div&gt;
+				&lt;ul&gt;&lt;li&gt;item1&lt;/li&gt;&lt;li&gt;item2&lt;/li&gt;
+				&lt;ul&gt;&lt;li&gt;item2-1&lt;/li&gt;
+				&lt;ul&gt;&lt;li&gt;item2-1-1&lt;/li&gt;&lt;li&gt;item2-1-2&lt;/li&gt;&lt;/ul&gt;
+				&lt;li&gt;item2-2&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;/ul&gt;
+				&lt;div&gt;&lt;strong&gt;Lista ordenada&lt;/strong&gt;&lt;/div&gt;
+				&lt;ol&gt;&lt;li&gt;Lista ordenada&lt;/li&gt;
+				&lt;ol&gt;&lt;li&gt;item1&lt;/li&gt;&lt;li&gt;item2&lt;/li&gt;&lt;/ol&gt;
+				&lt;li&gt;item2&lt;/li&gt;
+				&lt;/ol&gt;
+				&lt;div&gt;&lt;strong&gt;Lista de definiciones&lt;/strong&gt;&lt;/div&gt;
+				&lt;dl&gt;
+				&lt;dt&gt;ul&lt;/dt&gt;&lt;dd&gt;Lista desordenada&lt;/dd&gt;
+				&lt;dt&gt;ol&lt;/dt&gt;&lt;dd&gt;Lista ordenada&lt;/dd&gt;
+				&lt;dt&gt;dl&lt;/dt&gt;&lt;dd&gt;Lista de definiciones&lt;/dd&gt;
+				&lt;/dl&gt;</div>
+		</div>
+		<p>Para extender las opciones de las listas, FireWorks proporcia las clases <code>.no-list-style</code> para
+			quitar las numeraciones o viñetas y <code>.list-inline</code> para mostrar los elementos de las listas en
+			linea. Si se tiene pensado hacer listas anidadas se deberá agregar en cada una de ellas las clases
+			correspondientes. Ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div><strong>Lista sin viñetas</strong></div>
+				<ul class="no-list-style">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+					<ul>
+						<li>item3-1</li>
+						<li>item3-2</li>
+					</ul>
+				</ul>
+				<div><strong>Lista en linea</strong></div>
+				<ul class="list-inline">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+					<ul>
+						<li>item3-1</li>
+						<li>item3-2</li>
+					</ul>
+				</ul>
+				<div><strong>Lista en linea y sin viñetas</strong></div>
+				<ul class="list-inline">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+				<div><strong>Lista de definiciones en linea</strong></div>
+				<dl class="list-inline">
+					<dt>ul</dt>
+					<dd>Lista desordenada</dd>
+					<dt>ol</dt>
+					<dd>Lista ordenada</dd>
+					<dt>dl</dt>
+					<dd>Lista de definiciones</dd>
+				</dl>
+			</div>
+			<div class="highlight code no-radius">&lt;div&gt;&lt;strong&gt;Lista sin viñetas&lt;/strong&gt;&lt;/div&gt;
+				&lt;ul class="no-list-style"&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;li&gt;Item
+				3&lt;/li&gt;
+				&lt;ul&gt;&lt;li&gt;item3-1&lt;/li&gt;&lt;li&gt;item3-2&lt;/li&gt;&lt;/ul&gt;
+				&lt;/ul&gt;
+				&lt;div&gt;&lt;strong&gt;Lista en linea&lt;/strong&gt;&lt;/div&gt;
+				&lt;ul class="list-inline"&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;li&gt;Item
+				3&lt;/li&gt;
+				&lt;ul&gt;&lt;li&gt;item3-1&lt;/li&gt;&lt;li&gt;item3-2&lt;/li&gt;&lt;/ul&gt;
+				&lt;/ul&gt;
+				&lt;div&gt;&lt;strong&gt;Lista en linea y sin viñetas&lt;/strong&gt;&lt;/div&gt;
+				&lt;ul class="list-inline"&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;li&gt;Item
+				3&lt;/li&gt;&lt;/ul&gt;
+				&lt;div&gt;&lt;strong&gt;Lista de definiciones en linea&lt;/strong&gt;&lt;/div&gt;
+				&lt;dl class="list-inline"&gt;
+				&lt;dt&gt;ul&lt;/dt&gt;&lt;dd&gt;Lista desordenada&lt;/dd&gt;
+				&lt;dt&gt;ol&lt;/dt&gt;&lt;dd&gt;Lista ordenada&lt;/dd&gt;
+				&lt;dt&gt;dl&lt;/dt&gt;&lt;dd&gt;Lista de definiciones&lt;/dd&gt;
+				&lt;/dl&gt;</div>
+		</div>
+		<div class="h3 margin-y" id="quote">Citas y menciones</div>
+		<p>Hay ocasiones en las que queremos hacer mención a una cita, queremos escribir una representación literal o
+			queremos hacer referencia a algún contenido publicado con las etiquetas en linea <code>q</code> y
+			<code>cite</code> y en bloque <code>blockquote</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<p>Como dijo Groucho Marx, <cite>Encuentro la televisión muy educativa, cada vez que me siento frente a
+						ella la apago y me pongo a leer</cite></p>
+				<blockquote>No se cómo será la tercera guerra mundial, pero la cuarta será con palos y piedras
+				</blockquote>
+				<div>Albert Einstein</div>
+			</div>
+			<div class="highlight code no-radius">&lt;p&gt;Como dijo Groucho Marx, &lt;cite&gt;Encuentro la televisión
+				muy educativa, cada vez que me siento frente a ella la apago y me pongo a leer&lt;/cite&gt;&lt;/p&gt;
+				&lt;blockquote&gt;No se cómo será la tercera guerra mundial, pero la cuarta será con palos y
+				piedras&lt;/blockquote&gt;
+				&lt;div&gt;Albert Einstein&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Si a la etiqueta <code>blockquote</code> se le añade la clase <code>.blockquote</code> se muestra con el
+			ejemplo, también se puede mostrar de forma alineada a la derecha con la clase <code>.reverse</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<blockquote class="blockquote">
+					No se cómo será la tercera guerra mundial, pero la cuarta será con palos y piedras
+					<div class="footer">Albert Einstein</div>
+				</blockquote>
+				<blockquote class="blockquote reverse">
+					No se cómo será la tercera guerra mundial, pero la cuarta será con palos y piedras
+					<div class="footer">Albert Einstein</div>
+				</blockquote>
+			</div>
+			<div class="highlight code no-radius">&lt;blockquote class="blockquote"&gt;
+				No se cómo será la tercera guerra mundial, pero la cuarta será con palos y piedras
+				&lt;div class="footer"&gt;Albert Einstein&lt;/div&gt;
+				&lt;/blockquote&gt;
+				&lt;blockquote class="blockquote reverse"&gt;
+				No se cómo será la tercera guerra mundial, pero la cuarta será con palos y piedras
+				&lt;div class="footer"&gt;Albert Einstein&lt;/div&gt;
+				&lt;/blockquote&gt;</div>
+		</div>
+		<div class="h3 margin-y" id="code">Código</div>
+		<p>Para escribir código en linea se pueden usar las etiquetas <code>code</code>, <code>kbd</code> y
+			<code>samp</code> o las clase <code>.code</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				Muestra de la etiqueta <code>code</code>.<br>
+				Muestra de la etiqueta <kbd>kbd</kbd>.<br>
+				Muestra de la etiqueta <samp>samp</samp>.<br>
+				Muestra de la etiqueta <i>span</i> con la clase <span class="code">.code</span>.<br>
+			</div>
+			<div class="highlight code no-radius">Muestra de la etiqueta &lt;code&gt;code&lt;/code&gt;.&lt;br&gt;
+				Muestra de la etiqueta &lt;kbd&gt;kbd&lt;/kbd&gt;.&lt;br&gt;
+				Muestra de la etiqueta &lt;samp&gt;samp&lt;/samp&gt;.&lt;br&gt;
+				Muestra de la etiqueta &lt;i&gt;span&lt;/i&gt; con la clase &lt;span
+				class="code"&gt;.code&lt;/span&gt;.&lt;br&gt;</div>
+		</div>
+		<p>Para escribir códigos en bloque se puede usar la etiqueta <code>pre</code> o la clase y
+			<code>.code-block</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda, excepturi ad voluptate quod, fugit veritatis vero at eaque voluptates, nihil dolorum repellendus, placeat non quisquam? Tenetur rem, beatae aspernatur.</pre>
+				<div class="code-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime iure similique
+					labore porro optio, blanditiis, deserunt ab culpa nulla omnis veritatis, harum magni. Ullam tempora,
+					tempore facere, perspiciatis dolor quam?</div>
+			</div>
+			<div class="highlight code no-radius">&lt;pre&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Animi assumenda, excepturi ad voluptate quod, fugit veritatis vero at eaque voluptates, nihil dolorum
+				repellendus, placeat non quisquam? Tenetur rem, beatae aspernatur.&lt;/pre&gt;
+				&lt;div class="code-block"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime iure
+				similique labore porro optio, blanditiis, deserunt ab culpa nulla omnis veritatis, harum magni. Ullam
+				tempora, tempore facere, perspiciatis dolor quam?&lt;/div&gt;</div>
+		</div>
+		<p>Con la clase <code>.code-scrollable</code> se limita el tamaño a 4 renglones de código visible y para el
+			resto aparecerá una barra de desplazamiento:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="code-block code-scrollable">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Molestiae, tempore officiis delectus aliquam nulla.
+					Reprehenderit ullam nihil voluptatibus dolorem quod, voluptas, hic ipsum et dicta molestias, saepe
+					nostrum placeat ducimus!
+					Amet saepe placeat magni ea officiis, consequatur suscipit,
+					voluptates illum, rerum non totam cumque enim quisquam fugit aliquid sunt delectus! Vero repudiandae
+					dolores, deleniti, nulla asperiores beatae possimus assumenda inventore!
+					Tempore, vero reprehenderit culpa nisi dolores eligendi, officia nulla aliquid sed asperiores neque
+					impedit, esse libero modi consequatur ipsa sint qui,
+					dolor perferendis iste vitae perspiciatis earum distinctio? Velit, voluptas.
+					Omnis enim quisquam quia consequatur fugit laudantium reprehenderit quasi rem,
+					soluta ducimus nobis dolores alias hic esse, voluptates ab, odio asperiores aperiam ut illo
+					accusamus ea libero molestiae animi nostrum.</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="code-block code-scrollable"&gt;
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, tempore officiis delectus aliquam
+				nulla.
+				Reprehenderit ullam nihil voluptatibus dolorem quod, voluptas, hic ipsum et dicta molestias, saepe
+				nostrum placeat ducimus!
+				Amet saepe placeat magni ea officiis, consequatur suscipit,
+				voluptates illum, rerum non totam cumque enim quisquam fugit aliquid sunt delectus! Vero repudiandae
+				dolores, deleniti, nulla asperiores beatae possimus assumenda inventore!
+				Tempore, vero reprehenderit culpa nisi dolores eligendi, officia nulla aliquid sed asperiores neque
+				impedit, esse libero modi consequatur ipsa sint qui,
+				dolor perferendis iste vitae perspiciatis earum distinctio? Velit, voluptas.
+				Omnis enim quisquam quia consequatur fugit laudantium reprehenderit quasi rem,
+				soluta ducimus nobis dolores alias hic esse, voluptates ab, odio asperiores aperiam ut illo accusamus ea
+				libero molestiae animi nostrum.&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+	</section>
+	<section id="tables">
+		<h2 class="text-center margin-y fg-recommend">Tablas</h2>
+		<p>A la hora de componer tablas hemos hecho algunas adaptaciones de visualización. Como por ejemplo los
+			subtitulos, para una mejor visibilidad los hemos movido arriba:</p>
+		<div class="callout no-margin margin-x-m margin-top">
+			<div class="padding-m">
+				<table>
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<caption>Normal table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;Normal table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+		</div>
+		<p>También se pueden usar las clases
+			<code>.table</code>,<code>.thead</code>,<code>.tfoot</code>,<code>.tbody</code>,<code>.tr</code>,<code>.td</code>
+			y <code>.caption</code>:</p>
+		<div class="callout no-margin margin-x-m margin-top">
+			<div class="padding-m">
+				<div class="table">
+					<div class="caption">Fake table (class caption)</div>
+					<div class="tr">
+						<div class="th">(class th)</div>
+						<div class="th">this table</div>
+					</div>
+					<div class="tr">
+						<div class="td">(class td)</div>
+						<div class="td">is a div group with classes</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="table"&gt;
+				&lt;div class="caption"&gt;Fake table (class caption)&lt;/div&gt;
+				&lt;div class="tr"&gt;&lt;div class="th"&gt;(class th)&lt;/div&gt;&lt;div class="th"&gt;this
+				table&lt;/div&gt;&lt;/div&gt;
+				&lt;div class="tr"&gt;&lt;div class="td"&gt;(class td)&lt;/div&gt;&lt;div class="td"&gt;is a div group
+				with classes&lt;/div&gt;&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Con las clase <code>.bordered</code> se le aplica un borde al contorno de las celdas:</p>
+		<div class="callout no-margin margin-x-m margin-top">
+			<div class="padding-m">
+				<table class="bordered">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<caption>bordered table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table class="bordered"&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;bordered table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+		</div>
+		<p>Con la clase <code>.stripped</code> se resaltan las filas pares:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<table class="striped">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<caption>striped table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table class="striped size-xs"&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;striped table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+		</div>
+		<p>Con la clase <code>.collapsed</code> desaparece el espacio entre celdas:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<table class="collapsed">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<caption>collapsed table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table class="collapsed"&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;collapsed table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+
+		</div>
+		<p>Con la clase <code>.hovered</code> se resaltará la fila que sobrepase el ratón</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<table class="striped collapsed hovered size-xs">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<caption>striped & hovered table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table class="striped collapsed hovered size-xs"&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;striped & hovered table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+		</div>
+		<style>
+			.big-cells td {
+				height: 50px;
+			}
+		</style>
+		<p>Con las clases <code>.table-top</code>,<code>.table-middle</code> y <code>.table-bottom</code> se puede
+			modificar la alineación vertical del contenido de una celda o de aquella que tenga apariencia de celda(como
+			la clase <code>.td</code> o aquella que en el CSS se le aplique la propiedad
+			<code>display:table-cell;</code>). Con las clases <code>.table-left</code>,<code>.table-center</code> y
+			<code>.table-right</code> se modifica la alineación horizontal de una celda:</p>
+		<div class="callout margin-y">
+			<div class="padding-m big-cells">
+				<table class="collapsed width-100">
+					<tbody class="size-xs">
+						<tr>
+							<td class="table-top table-left">table-top table-left</td>
+							<td class="table-top table-center">table-top table-center</td>
+							<td class="table-top table-right">table-top table-right</td>
+						</tr>
+						<tr>
+							<td class="table-middle table-left">table-middle table-left</td>
+							<td class="table-middle table-center">table-middle table-center</td>
+							<td class="table-middle table-right">table-middle table-right</td>
+						</tr>
+						<tr>
+							<td class="table-bottom table-left">table-bottom table-left</td>
+							<td class="table-bottom table-center">table-bottom table-center</td>
+							<td class="table-bottom table-right">table-bottom table-right</td>
+						</tr>
+					</tbody>
+					<caption>Align table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table class="collapsed width-100"&gt;
+				&lt;tbody class="size-xs"&gt;
+				&lt;tr&gt;&lt;td class="table-top table-left"&gt;table-top table-left&lt;/td&gt;&lt;td class="table-top
+				table-center"&gt;table-top table-center&lt;/td&gt;&lt;td class="table-top table-right"&gt;table-top
+				table-right&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td class="table-middle table-left"&gt;table-middle table-left&lt;/td&gt;&lt;td
+				class="table-middle table-center"&gt;table-middle table-center&lt;/td&gt;&lt;td class="table-middle
+				table-right"&gt;table-middle table-right&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td class="table-bottom table-left"&gt;table-bottom table-left&lt;/td&gt;&lt;td
+				class="table-bottom table-center"&gt;table-bottom table-center&lt;/td&gt;&lt;td class="table-bottom
+				table-right"&gt;table-bottom table-right&lt;/td&gt;&lt;/tr&gt;
+				&lt;/tbody&gt;
+				&lt;caption&gt;Align table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+		</div>
+		<p>Con la clase <code>.responsive</code> en una etiqueta <code>div</code> que la envuelve, si la tabla excede el
+			ancho de la venta o de la capa contenedora, aparecerá una barra de desplazamiento horizontal para visualizar
+			el contenido:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="table-responsive">
+					<table class="width-100 size-xs">
+						<tr>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th>
+							<th>celda</th<th>celda</th>
+						</tr>
+						<tr>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+							<td>celda</td>
+						</tr>
+						<caption>Normal table width 100%</caption>
+					</table>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="table-responsive"&gt;
+				&lt;table class="width-100 size-xs"&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;Normal table width 100%&lt;/caption&gt;
+				&lt;/table&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Con la clase <code>.neat-table</code> se le aplica un estilo mas elegante que mejora la experiencia de
+			usuario:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<table class="neat-table width-100">
+					<tr>
+						<th>celda</th>
+						<th>celda</th>
+						<th>celda</th>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<tr>
+						<td>celda</td>
+						<td>celda</td>
+						<td>celda</td>
+					</tr>
+					<caption>Neat table</caption>
+				</table>
+			</div>
+			<div class="highlight code no-radius">&lt;table class="neat-table width-100"&gt;
+				&lt;tr&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;th&gt;celda&lt;/th&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;tr&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;td&gt;celda&lt;/td&gt;&lt;/tr&gt;
+				&lt;caption&gt;Neat table&lt;/caption&gt;
+				&lt;/table&gt;</div>
+		</div>
+	</section>
+
+	<section id="responsive-utils">
+		<h2 class="text-center margin-y fg-recommend">Utilidades responsive</h2>
+		<p>Para realizar un desarrollo adaptativo más eficiente y rápido, se pueden utilizar estas clases para mostrar y
+			ocultar contenidos dependiendo del tamaño de la pantalla en la que se visualice la página. Es decir según
+			los sufijos <i>-xs</i>,<i>-s</i><i>-m</i><i>-l</i><i>-xl</i> en las clases <code>.visible</code> y
+			<code>.hidden</code> se mostrará o no el contenido. Las clases disponibles se muestran a continuación: </p>
+		<div class="callout margin-y table-responsive">
+			<table class="collapsed neat-table width-100 bordered">
+				<tr>
+					<th></th>
+					<th>Dispositivos extra pequeños <br> <code class="fg-gray-dark">&lt; 479px </code></th>
+					<th>Dispositivos pequeños<br> <code class="fg-gray-dark">&ge; 480px </code></th>
+					<th>Dispositivos medianos<br> <code class="fg-gray-dark"> &ge; 769px</code></th>
+					<th>Dispositivos grandes<br> <code class="fg-gray-dark"> &ge; 992px </code></th>
+					<th>Dispositivos extra grandes<br> <code class="fg-gray-dark"> &ge; 1200px </code></th>
+				</tr>
+				<tr>
+					<th>.visible-xs-<sup>*</sup></th>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+				</tr>
+				<tr>
+					<th>.visible-s-<sup>*</sup></th>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+				</tr>
+				<tr>
+					<th>.visible-m-<sup>*</sup></th>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+				</tr>
+				<tr>
+					<th>.visible-l-<sup>*</sup></th>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+				</tr>
+				<tr>
+					<th>.visible-xl-<sup>*</sup></th>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+				</tr>
+				<tr>
+					<th colspan="6"></th>
+				</tr>
+				<tr>
+					<th>.hidden-xs<sup>*</sup></th>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td>Visible</td>
+				</tr>
+				<tr>
+					<th>.hidden-s<sup>*</sup></th>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td>Visible</td>
+				</tr>
+				<tr>
+					<th>.hidden-m<sup>*</sup></th>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+					<td>Visible</td>
+				</tr>
+				<tr>
+					<th>.hidden-l<sup>*</sup></th>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+					<td>Visible</td>
+				</tr>
+				<tr>
+					<th>.hidden-xl<sup>*</sup></th>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td>Visible</td>
+					<td class="bg-gray-light">Oculto</td>
+				</tr>
+			</table>
+		</div>
+		<p>Las clases <code>.visible-<sup>*</sup></code> para cada punto de ruptura están en tres variantes, una para
+			cada CSS como se muestra a continuación: </p>
+		<div class="callout margin-y table-responsive">
+			<table class="collapsed width-100 bordered">
+				<tr class="bg-gray-lighter">
+					<th>Grupo de clases</th>
+					<th>CSS</th>
+				</tr>
+				<tr>
+					<td><code>.visible-<sup>*</sup>-block</code></td>
+					<td><code>display:block;</code></td>
+
+				</tr>
+				<tr>
+					<td><code>.visible-<sup>*</sup>-inline</code></td>
+					<td><code>display:inline;</code></td>
+				</tr>
+				<tr>
+					<td><code>.visible-<sup>*</sup>-inline-block</code></td>
+					<td><code>display:inline-block;</code></td>
+				</tr>
+			</table>
+		</div>
+		<div class="h3 margin-y">Las clases de impresión</div>
+		<p>Estas clases se utilizan para mostrar u ocultar contenido a la hora de imprimir.</p>
+		<div class="callout margin-y table-responsive">
+			<table class="collapsed width-100 bordered">
+				<tr class="bg-gray-lighter">
+					<th>Clases</th>
+					<th>Navegador</th>
+					<th>Impresión</th>
+				</tr>
+				<tr>
+					<td><code>.visible-print</code></td>
+					<td class="bg-gray-lighter" rowspan="4">Oculto</td>
+					<td rowspan="4">Visible</td>
+				</tr>
+				<tr>
+					<td><code>.visible-print-block</code></td>
+				</tr>
+				<tr>
+					<td><code>.visible-print-inline</code></td>
+				</tr>
+				<tr>
+					<td><code>.visible-print-inline-block</code></td>
+				</tr>
+				<tr>
+					<td><code>.hidden-print</code></td>
+					<td>Visible</td>
+					<td class="bg-gray-lighter">Oculto</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	<!--TODO HR -->
+	<!--TODO Fieldset, legend, input(text,number,mail,search,phone,checkbox,radio,file), select(multiple,size,optgroup), datalist, output, textarea,  -->
+	<!--TODO .disable .formcontrol .form-control-feedback>.form-control+.feedback-message, switch -->
+	<!--TODO clases width height margin padding -->
+	<!--TODO clases center float clear display(absolute)  -->
+	<!--TODO animations  -->
+	<!--TODO text format  -->
+	<!--TODO .scrollable-x .scrollable-y .scrollable -->
+	<!--TODO SELECTED TEXT BY THEME -->
+	<section id="forms">
+		<div class="h3 margin-y">Formularios</div>
+		<p>Los controles de formulario individuales reciben automáticamente un estilo global. Todos los elementos
+			<code>&lt;input&gt;</code> , <code>&lt;textarea&gt;</code> y <code>&lt;select&gt;</code> con
+			<code>.form-control</code> se establecen en width: 100%; por defecto. Envuelva los controles en elementos
+			contenedores para que sea mas facil de manejar.</p>
+		<div class="callout error">
+			<div class="body padding-m"><strong>¡MUY IMPORTANTE!:</strong>Cabe destacar que para ciertos elementos como
+				los inputs de tipo <i>checkbox</i>, <i>radio</i> o <i>file</i> tienen la obligación de ir seguido a éste
+				un <code>&lt;label for=""&gt;</code>. En caso de no hacerse, el elemento quedará oculto.</div>
+		</div>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4">
+						<fieldset>
+							<legend>Formulario con iconos</legend>
+							<div>
+								<input type="file" id="testfile"><label for="testfile"
+									class="btn-3d width-100">Subir</label>
+							</div>
+							<label class="icon-user" for="user"></label>
+							<input type="text" placeholder="user" id="user">
+							<label class="icon-lock" for="pass"></label>
+							<input type="password" placeholder="password" id="pass">
+							<label class="icon-envelop" for="mail"></label>
+							<input type="email" placeholder="email" for="mail">
+							<label class="icon-mobile" for="phone"></label>
+							<input type="tel" placeholder="phone number" id="phone">
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4"&gt;
+				&lt;fieldset&gt;
+				&lt;legend&gt;Formulario con iconos&lt;/legend&gt;
+				&lt;div&gt;
+				&lt;input type="file" id="testfile"&gt;
+				&lt;label for="testfile" class="btn-3d width-100"&gt;Subir&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;label class="icon-user" for="user"&gt;&lt;/label&gt;
+				&lt;input type="text" placeholder="user" id="user"&gt;
+				&lt;label class="icon-lock" for="pass"&gt;&lt;/label&gt;
+				&lt;input type="password" placeholder="password" id="pass"&gt;
+				&lt;label class="icon-envelop" for="mail"&gt;&lt;/label&gt;
+				&lt;input type="email" placeholder="email" for="mail"&gt;
+				&lt;label class="icon-mobile" for="phone"&gt;&lt;/label&gt;
+				&lt;input type="tel" placeholder="phone number" id="phone"&gt;
+				&lt;/fieldset&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Se ha puesto a disposición del desarrollador una clase <code>.form-control</code> tanto para agrupar
+			visualmente elementos como para dar <i>agregados</i>, los cuales son muy útiles para dar información
+			respecto la campo del formulario:</p>
+
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4">
+						<fieldset>
+							<legend>Form control</legend>
+							<div class="form-control">
+								<label class="addon"><span class="icon-pencil"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+							<div class="form-control success">
+								<label class="addon"><span class="icon-checkmark"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+							<div class="form-control recommend">
+								<label class="addon"><span class="icon-key2"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+							<div class="form-control info">
+								<label class="addon"><span class="icon-info"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+							<div class="form-control alert">
+								<label class="addon"><span class="icon-notification"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+							<div class="form-control warning">
+								<label class="addon"><span class="icon-warning"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+							<div class="form-control error">
+								<label class="addon"><span class="icon-cross"></span></label>
+								<input type="text" name="" value="" placeholder="input">
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4"&gt;
+				&lt;fieldset&gt;
+				&lt;legend&gt;Form control&lt;/legend&gt;
+				&lt;div class="form-control"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-pencil"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control success"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-checkmark"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control recommend"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-key2"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control info"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-info"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control alert"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-notification"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control warning"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-warning"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control error"&gt;
+				&lt;label class="addon"&gt;&lt;span class="icon-cross"&gt;&lt;/span&gt;&lt;/label&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;/div&gt;
+				&lt;/fieldset&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>En ocasiones, dentro de un formulario habrá que tener retroalimentación con el usuario para ello ponemos a
+			disposición las clases <code>.form-control-feedback</code> y <code>.feedback-message</code>:</p>
+
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4">
+						<fieldset>
+							<legend>Form control</legend>
+							<div class="form-control-feedback">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+							<div class="form-control-feedback success">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+							<div class="form-control-feedback recommend">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+							<div class="form-control-feedback info">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+							<div class="form-control-feedback alert">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+							<div class="form-control-feedback warning">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+							<div class="form-control-feedback error">
+								<input type="text" name="" value="" placeholder="input">
+								<div class="feedback-message">Information for input</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4"&gt;
+				&lt;fieldset&gt;
+				&lt;legend&gt;Form control&lt;/legend&gt;
+				&lt;div class="form-control-feedback"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control-feedback success"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control-feedback recommend"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control-feedback info"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control-feedback alert"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control-feedback warning"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="form-control-feedback error"&gt;
+				&lt;input type="text" name="" value="" placeholder="input"&gt;
+				&lt;div class="feedback-message"&gt;Information for input&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/fieldset&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Otros elementos de formulario son:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4">
+						<div>Ejemplo de select</div>
+						<div class="forn-control">
+							<select name="" id="">
+								<optgroup label="Grupo de Opciones">
+									<option>Opción 1</option>
+									<option>Opción 2</option>
+								</optgroup>
+								<option>Opción 3</option>
+								<option>Opción 4</option>
+							</select>
+						</div>
+						<div>Ejemplo de textarea</div>
+						<div class="form-control">
+							<textarea name="name" rows="8" cols="80"></textarea>
+						</div>
+						<div>Ejemplos de checkbox:</div>
+						<div class="container-flex">
+							<div>
+								<input id="checkbox" type="checkbox"><label for="checkbox"> checkbox</label>
+							</div>
+							<div>
+								<input id="normal" type="checkbox" class="normal"><label for="normal"> normal </label>
+							</div>
+							<div>
+								<input id="alert" type="checkbox" class="alert"><label for="alert"> alert </label>
+							</div>
+							<div>
+								<input id="warn" type="checkbox" class="danger"><label for="warn"> warning</label>
+							</div>
+						</div>
+						<div>Ejemplos de radio:</div>
+						<div class="container-flex">
+							<div>
+								<input id="radio" type="radio" name="radio"><label for="radio"> radio </label>
+							</div>
+							<div>
+								<input id="rnormal" type="radio" name="radio" class="normal"><label for="rnormal">
+									normal </label>
+							</div>
+							<div>
+								<input id="ralert" type="radio" name="radio" class="alert"><label for="ralert"> alert
+								</label>
+							</div>
+							<div>
+								<input id="rwarn" type="radio" name="radio" class="danger"><label for="rwarn">
+									warning</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12 m-10 m-offset-1 l-6 l-offset-3 xl-4 xl-offset-4"&gt;
+				&lt;div&gt;Ejemplo de select&lt;/div&gt;
+				&lt;div class="forn-control"&gt;
+				&lt;select name="" id=""&gt;
+				&lt;optgroup label="Grupo de Opciones"&gt;
+				&lt;option&gt;Opción 1&lt;/option&gt;
+				&lt;option&gt;Opción 2&lt;/option&gt;
+				&lt;/optgroup&gt;
+				&lt;option&gt;Opción 3&lt;/option&gt;
+				&lt;option&gt;Opción 4&lt;/option&gt;
+				&lt;/select&gt;
+				&lt;/div&gt;
+				&lt;div&gt;Ejemplo de textarea&lt;/div&gt;
+				&lt;div class="form-control"&gt;
+				&lt;textarea name="name" rows="8" cols="80"&gt;&lt;/textarea&gt;
+				&lt;/div&gt;
+				&lt;div&gt;Ejemplos de checkbox:&lt;/div&gt;
+				&lt;div class="container-flex"&gt;
+				&lt;div&gt;
+				&lt;input id="checkbox" type="checkbox"&gt;&lt;label for="checkbox"&gt; checkbox&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+				&lt;input id="normal" type="checkbox" class="normal"&gt;&lt;label for="normal"&gt; normal &lt;/label&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+				&lt;input id="alert" type="checkbox" class="alert"&gt;&lt;label for="alert"&gt; alert &lt;/label&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+				&lt;input id="warn" type="checkbox" class="danger"&gt;&lt;label for="warn"&gt; warning&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div&gt;Ejemplos de radio:&lt;/div&gt;
+				&lt;div class="container-flex"&gt;
+				&lt;div&gt;
+				&lt;input id="radio" type="radio" name="radio"&gt;&lt;label for="radio"&gt; radio &lt;/label&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+				&lt;input id="rnormal" type="radio" name="radio" class="normal"&gt;&lt;label for="rnormal"&gt; normal
+				&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+				&lt;input id="ralert" type="radio" name="radio" class="alert"&gt;&lt;label for="ralert"&gt; alert
+				&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;div&gt;
+				&lt;input id="rwarn" type="radio" name="radio" class="danger"&gt;&lt;label for="rwarn"&gt;
+				warning&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Dropdowns y Dropups</div>
+		<p>Ya sea para formularios, navegación o configuraciones, los desplegables suelen ser muy útiles. Veamos algunos
+			ejemplos:</p>
+		<div class="callout margin-y">
+			<div class="padding-xl">
+				<div class="container-flex">
+					<div class="dropdown">
+						<button class="btn primary">Normal DropDown</button>
+						<ul class="dropdown-menu border-priamry">
+							<li>Item 1</li>
+							<li>Item 2</li>
+						</ul>
+					</div>
+					<div class="dropdown-hover">
+						<button class="btn info">Hover DropDown</button>
+						<ul class="dropdown-menu border-info">
+							<li>Item 1</li>
+							<li>Item 2</li>
+						</ul>
+					</div>
+					<div class="dropup">
+						<ul class="dropup-menu border-success">
+							<li>Item 1</li>
+							<li>Item 2</li>
+						</ul>
+						<button class="btn success">Normal DropUp</button>
+					</div>
+					<div class="dropup-hover">
+						<ul class="dropup-menu border-warning">
+							<li>Item 1</li>
+							<li>Item 2</li>
+						</ul>
+						<button class="btn warning">Hover Dropup</button>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container-flex"&gt;
+				&lt;div class="dropdown"&gt;
+				&lt;button class="btn primary"&gt;Normal DropDown&lt;/button&gt;
+				&lt;ul class="dropdown-menu border-priamry"&gt;
+				&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;/div&gt;
+				&lt;div class="dropdown-hover"&gt;
+				&lt;button class="btn info"&gt;Hover DropDown&lt;/button&gt;
+				&lt;ul class="dropdown-menu border-info"&gt;
+				&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;/div&gt;
+				&lt;div class="dropup"&gt;
+				&lt;ul class="dropup-menu border-success"&gt;
+				&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;button class="btn success"&gt;Normal DropUp&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;div class="dropup-hover"&gt;
+				&lt;ul class="dropup-menu border-warning"&gt;
+				&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;
+				&lt;/ul&gt;
+				&lt;button class="btn warning"&gt;Hover Dropup&lt;/button&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Switches</div>
+		<p>En ocasiones para ofrecer una configuración binaria y dar una mejor experecia de usuario un checkbox se queda
+			corto. Por eso hemos añadido los switches. Para que aparezca <i>"on"</i> en el interruptor se debe poner el
+			atributo <code> data-label="true"</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col xs-12">
+						Normal:
+						<label class="switch">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+						Recommend:
+						<label class="switch recommend" data-label="true">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+						Info:
+						<label class="switch info">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+						Success:
+						<label class="switch success">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+						Alert:
+						<label class="switch alert">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+						Warning:
+						<label class="switch warning">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+						Danger:
+						<label class="switch danger">
+							<input type="checkbox"><span class="slider"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col xs-12"&gt;
+				Normal:
+				&lt;label class="switch"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				Recommend:
+				&lt;label class="switch recommend" data-label="true"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				Info:
+				&lt;label class="switch info"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				Success:
+				&lt;label class="switch success"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				Alert:
+				&lt;label class="switch alert"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				Warning:
+				&lt;label class="switch warning"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				Danger:
+				&lt;label class="switch danger"&gt;
+				&lt;input type="checkbox"&gt;&lt;span class="slider"&gt;&lt;/span&gt;
+				&lt;/label&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Botones</div>
+		<p>Para los botones hemos establecido 3 tipos de apariencias, <code>.btn</code> o <code>.btn-2d</code>,
+			<code>.btn-hovered</code> y <code>.btn-3d</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="h4">2d buttons</div>
+				<div class="container-flex">
+					<button class="margin-1px btn-link">button link</button>
+					<button disabled="disabled" class="margin-1px btn-link">link disabled</button>
+					<button class="margin-1px btn-2d white">white button</button>
+					<button disabled="disabled" class="margin-1px btn-2d white">white disabled</button>
+					<button class="margin-1px btn-2d default">default button</button>
+					<button disabled="disabled" class="margin-1px btn-2d default">default disabled</button>
+					<button class="margin-1px btn-2d success">success button</button>
+					<button disabled="disabled" class="margin-1px btn-2d success">success disabled</button>
+					<button class="margin-1px btn-2d primary">primary button</button>
+					<button disabled="disabled" class="margin-1px btn-2d primary">primary disabled</button>
+					<button class="margin-1px btn-2d info">info button</button>
+					<button disabled="disabled" class="margin-1px btn-2d info">info disabled</button>
+					<button class="margin-1px btn-2d alert">alert button</button>
+					<button disabled="disabled" class="margin-1px btn-2d alert">alert disabled</button>
+					<button class="margin-1px btn-2d warning">warning button</button>
+					<button disabled="disabled" class="margin-1px btn-2d warning">warning disabled</button>
+					<button class="margin-1px btn-2d danger">danger button</button>
+					<button disabled="disabled" class="margin-1px btn-2d danger">danger disabled</button>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="h4"&gt;2d buttons&lt;/div&gt;
+				&lt;div class="container-flex"&gt;
+				&lt;button class="margin-1px btn-link"&gt;button link&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-link"&gt;link disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d white"&gt;white button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d white"&gt;white disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d default"&gt;default button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d default"&gt;default disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d success"&gt;success button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d success"&gt;success disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d primary"&gt;primary button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d primary"&gt;primary disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d info"&gt;info button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d info"&gt;info disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d alert"&gt;alert button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d alert"&gt;alert disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d warning"&gt;warning button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d warning"&gt;warning disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-2d danger"&gt;danger button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-2d danger"&gt;danger disabled&lt;/button&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="h4">Hovered buttons</div>
+				<div class="container-flex">
+					<button class="margin-1px btn-hovered default">default button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered default">default disabled</button>
+					<button class="margin-1px btn-hovered success">success button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered success">success disabled</button>
+					<button class="margin-1px btn-hovered primary">primary button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered primary">primary disabled</button>
+					<button class="margin-1px btn-hovered info">info button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered info">info disabled</button>
+					<button class="margin-1px btn-hovered alert">alert button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered alert">alert disabled</button>
+					<button class="margin-1px btn-hovered warning">warning button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered warning">warning disabled</button>
+					<button class="margin-1px btn-hovered danger">danger button</button>
+					<button disabled="disabled" class="margin-1px btn-hovered danger">danger disabled</button>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="h4"&gt;Hovered buttons&lt;/div&gt;
+				&lt;div class="container-flex"&gt;
+				&lt;button class="margin-1px btn-hovered default"&gt;default button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered default"&gt;default disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-hovered success"&gt;success button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered success"&gt;success disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-hovered primary"&gt;primary button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered primary"&gt;primary disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-hovered info"&gt;info button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered info"&gt;info disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-hovered alert"&gt;alert button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered alert"&gt;alert disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-hovered warning"&gt;warning button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered warning"&gt;warning disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn-hovered danger"&gt;danger button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-hovered danger"&gt;danger disabled&lt;/button&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="callout margin-y">
+			<div class="paddding-m">
+				<div class="h4">3d buttons</div>
+				<div class="container-flex">
+					<button class="margin-1px btn-3d default">default button</button>
+					<button disabled="disabled" class="margin-1px btn-3d default">default disabled</button>
+					<button class="margin-1px btn btn-3d success">success button</button>
+					<button disabled="disabled" class="margin-1px btn btn-3d success">success disabled</button>
+					<button class="margin-1px btn btn-3d primary">primary button</button>
+					<button disabled="disabled" class="margin-1px btn btn-3d primary">primary disabled</button>
+					<button class="margin-1px btn btn-3d info">info button</button>
+					<button disabled="disabled" class="margin-1px btn btn-3d info">info disabled</button>
+					<button class="margin-1px btn btn-3d alert">alert button</button>
+					<button disabled="disabled" class="margin-1px btn btn-3d alert">alert disabled</button>
+					<button class="margin-1px btn btn-3d warning">warning button</button>
+					<button disabled="disabled" class="margin-1px btn btn-3d warning">warning disabled</button>
+					<button class="margin-1px btn btn-3d danger">danger button</button>
+					<button disabled="disabled" class="margin-1px btn btn-3d danger">danger disabled</button>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="h4"&gt;3d buttons&lt;/div&gt;
+				&lt;div class="container-flex"&gt;
+				&lt;button class="margin-1px btn-3d default"&gt;default button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn-3d default"&gt;default disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn btn-3d success"&gt;success button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn btn-3d success"&gt;success disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn btn-3d primary"&gt;primary button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn btn-3d primary"&gt;primary disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn btn-3d info"&gt;info button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn btn-3d info"&gt;info disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn btn-3d alert"&gt;alert button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn btn-3d alert"&gt;alert disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn btn-3d warning"&gt;warning button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn btn-3d warning"&gt;warning disabled&lt;/button&gt;
+				&lt;button class="margin-1px btn btn-3d danger"&gt;danger button&lt;/button&gt;
+				&lt;button disabled="disabled" class="margin-1px btn btn-3d danger"&gt;danger disabled&lt;/button&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Tanto en los botones como en el resto de componentes se pueden hacer figuras más o menos redondeadas con las
+			clases: <code>.no-radius</code>, <code>.radius-xs</code>,<code>.radius-s</code>, <code>.radius-m</code>,
+			<code>.radius-l</code>, <code>.radius-xl</code> o <code>.circle</code></p>
+	</section>
+	<section id="slideshows">
+		<h2 class="text-center margin-y fg-recommend">Slideshows</h2>
+		<p>Para mostrar información o alguna galería de imágenes hay veces que es preferible usar presentaciones de
+			diapositivas o slideshows.</p>
+		<div class="callout warning">
+			<div class="body no-padding-bottom"><span class="bold">Importe:</span> para que el slider funcione asegurese
+				de esté incluido el fichero <strong><i>fireworks.js</i></strong> en su proyecto.</div>
+		</div>
+		<p>Para que implementarlo se necesita un elemento contenedor con la clase <code>slideshow</code> y los elementos
+			que se quieran ir alternando, la clase <code>.slide-item</code>.</p>
+		<p>Veamos un ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m container">
+				<div class="slideshow play col l-10 l-offset-1 xl-8 xl-offset-2">
+					<img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active">
+					<img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100">
+					<img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100">
+					<img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100">
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="slideshow play"&gt;
+				&lt;img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active"&gt;
+				&lt;img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100"&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Se pueden agregar etiquetas a las diapositivas con la clase <code>.label</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m container">
+				<div class="slideshow play  col l-10 l-offset-1 xl-8 xl-offset-2">
+					<div class="slide-item active">
+						<img src="/assets/pictures/ej1.jpg" alt="Picture1" class="width-100">
+						<div class="label">SLIDE 1</div>
+					</div>
+					<div class="slide-item">
+						<img src="/assets/pictures/ej2.jpg" alt="Picture2" class="width-100">
+						<div class="label">SLIDE 2</div>
+					</div>
+					<div class="slide-item">
+						<img src="/assets/pictures/ej3.jpg" alt="Picture3" class="width-100">
+						<div class="label">SLIDE 3</div>
+					</div>
+					<div class="slide-item">
+						<img src="/assets/pictures/ej4.jpg" alt="Picture4" class="width-100">
+						<div class="label">SLIDE 4</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="slideshow play"&gt;
+				&lt;div class="slide-item active"&gt;
+				&lt;img src="/assets/pictures/ej1.jpg" alt="Picture1" class="width-100"&gt;
+				&lt;div class="label"&gt;SLIDE 1&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="slide-item"&gt;
+				&lt;img src="/assets/pictures/ej2.jpg" alt="Picture2" class="width-100"&gt;
+				&lt;div class="label"&gt;SLIDE 2&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="slide-item"&gt;
+				&lt;img src="/assets/pictures/ej3.jpg" alt="Picture3" class="width-100"&gt;
+				&lt;div class="label"&gt;SLIDE 3&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="slide-item"&gt;
+				&lt;img src="/assets/pictures/ej4.jpg" alt="Picture4" class="width-100"&gt;
+				&lt;div class="label"&gt;SLIDE 4&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Para que aparezcan controles en el slider, sólo hay que añadir al contenedor <code>.slideshow</code> un
+			elemento <code>.control.prev</code> para el botón de diapositiva anterior, un <code>.control.next</code>
+			para la diapositiva siguiente y opcionalmente un elemento <code>.control.play</code> que permite pausar y
+			reanudar la reproducción del contenedor y aparece cuando el <code>.slideshow</code> obtiene el foco:</p>
+		<div class="callout margin-y">
+			<div class="padding-m container">
+				<div class="slideshow play col l-10 l-offset-1 xl-8 xl-offset-2">
+					<img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active">
+					<img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100">
+					<img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100">
+					<img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100">
+					<div class="control prev"></div>
+					<div class="control next"></div>
+					<div class="control play"></div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="slideshow play"&gt;
+				&lt;img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active"&gt;
+				&lt;img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100"&gt;
+				&lt;div class="control prev"&gt;&lt;/div&gt;
+				&lt;div class="control next"&gt;&lt;/div&gt;
+				&lt;div class="control play"&gt;&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Para usar indicadores como accesos directos a esa diapositiva se debe agregar una etiqueta contenedora con la
+			clase <code>.slide-indicators</code> y tantos elementos con la clase <code>.indicator</code> como
+			diapositivas haya:</p>
+		<div class="callout margin-y">
+			<div class="padding-m container">
+				<div class="slideshow play col l-10 l-offset-1 xl-8 xl-offset-2">
+					<img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active">
+					<img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100">
+					<img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100">
+					<img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100">
+					<div class="control prev"></div>
+					<div class="control next"></div>
+					<div class="control play"></div>
+					<div class="slide-indicators">
+						<div class="indicator active"></div>
+						<div class="indicator"></div>
+						<div class="indicator"></div>
+						<div class="indicator"></div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="slideshow play"&gt;
+				&lt;img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active"&gt;
+				&lt;img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100"&gt;
+				&lt;div class="control prev"&gt;&lt;/div&gt;
+				&lt;div class="control next"&gt;&lt;/div&gt;
+				&lt;div class="control play"&gt;&lt;/div&gt;
+				&lt;div class="slide-indicators"&gt;
+				&lt;div class="indicator active"&gt;&lt;/div&gt;
+				&lt;div class="indicator"&gt;&lt;/div&gt;
+				&lt;div class="indicator"&gt;&lt;/div&gt;
+				&lt;div class="indicator"&gt;&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Opcionalmente se pueden hacer los indicadores cuadrados agregando la clase <code>.no-radius</code> a cada
+			<code>.indicator</code>:</p>
+		<div class="callout margin-y">
+			<div class="padding-m container">
+				<div class="slideshow play col l-10 l-offset-1 xl-8 xl-offset-2">
+					<img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active">
+					<img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100">
+					<img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100">
+					<img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100">
+					<div class="control prev"></div>
+					<div class="control next"></div>
+					<div class="control play"></div>
+					<div class="slide-indicators">
+						<div class="indicator no-radius active"></div>
+						<div class="indicator no-radius"></div>
+						<div class="indicator no-radius"></div>
+						<div class="indicator no-radius"></div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="slideshow play"&gt;
+				&lt;img src="/assets/pictures/ej1.jpg" alt="Picture1" class="slide-item width-100 active"&gt;
+				&lt;img src="/assets/pictures/ej2.jpg" alt="Picture2" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej3.jpg" alt="Picture3" class="slide-item width-100"&gt;
+				&lt;img src="/assets/pictures/ej4.jpg" alt="Picture4" class="slide-item width-100"&gt;
+				&lt;div class="control prev"&gt;&lt;/div&gt;
+				&lt;div class="control next"&gt;&lt;/div&gt;
+				&lt;div class="control play"&gt;&lt;/div&gt;
+				&lt;div class="slide-indicators"&gt;
+				&lt;div class="indicator no-radius active"&gt;&lt;/div&gt;
+				&lt;div class="indicator no-radius"&gt;&lt;/div&gt;
+				&lt;div class="indicator no-radius"&gt;&lt;/div&gt;
+				&lt;div class="indicator no-radius"&gt;&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+	</section>
+	<style>
+		.margin-1px {
+			margin: 5px;
+		}
+	</style>
+	<section>
+		<h2 class="margin-y text-center fg-recommend">Modales</h2>
+		<p>A la hora de mostrar información al usuario un componente esencial es el modal. Con él se obtiene el foco de
+			la ventana y muestra una información que temporalmente es más importante que el resto. Ofrecemos unos
+			modales simples y facilmente personalizbles. Veamos algún ejemplo:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<button class="btn-2d rounded"
+					onclick="document.querySelector('#myModal1').classList.add('show')">simple modal</button>
+				<div class="modal" id="myModal1">
+					<div class="modal-content">
+						<div data-close="close"></div>
+						<div class="header">Cabecera del modal</div>
+						<div class="body">
+							<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a fugit inventore
+								perspiciatis, odio illo, placeat fuga nisi optio consequuntur deleniti, earum est
+								excepturi eaque consequatur distinctio itaque repudiandae nulla?</div>
+							<div>Atque fugit explicabo cupiditate reprehenderit neque, quis dignissimos officia dolor,
+								sapiente est cumque magnam doloremque, voluptate deleniti error. Repellendus
+								consequuntur maiores, esse, qui ab asperiores mollitia soluta praesentium hic illum!
+							</div>
+						</div>
+						<div class="footer">Pie del modal</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;button class="btn-2d rounded"
+				onclick="document.querySelector('#myModal1').classList.add('show')"&gt;simple modal&lt;/button&gt;
+				&lt;div class="modal" id="myModal1"&gt;
+				&lt;div class="modal-content"&gt;
+				&lt;div data-close="close"&gt;&lt;/div&gt;
+				&lt;div class="header"&gt;Cabecera del modal&lt;/div&gt;
+				&lt;div class="body"&gt;&lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci a
+				fugit inventore perspiciatis, odio illo, placeat fuga nisi optio consequuntur deleniti, earum est
+				excepturi eaque consequatur distinctio itaque repudiandae nulla?&lt;/div&gt;
+				&lt;div&gt;Atque fugit explicabo cupiditate reprehenderit neque, quis dignissimos officia dolor,
+				sapiente est cumque magnam doloremque, voluptate deleniti error. Repellendus consequuntur maiores, esse,
+				qui ab asperiores mollitia soluta praesentium hic illum!&lt;/div&gt;&lt;/div&gt;
+				&lt;div class="footer"&gt;Pie del modal&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<p>Tambien se le pueden agregar las clases
+			<code>.recommend</code>,<code>.info</code>,<code>.success</code>,<code>.alert</code>,<code>.warning</code> y
+			<code>.error</code></p>
+	</section>
+	<section id="callouts">
+		<h2 class="margin-y text-center fg-recommend">Destacados y notificaciones</h2>
+		<div class="h3 margin-y">Destacados</div>
+		<p>FireWorks tiene unos componentes con los cuales se pueden destacar contenido del resto, veamos algunos
+			ejemplos y cómo se construyen:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col m-12 padding-m">
+						<div class="callout">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="callout recommend">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="callout info">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="callout success">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="callout alert">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="callout warning">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="callout error">
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col m-12 padding-m"&gt;
+				&lt;div class="callout"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="callout recommend"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="callout info"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="callout success"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="callout alert"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="callout warning"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="callout error"&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+		<div class="h3 margin-y">Notificaciones</div>
+		<p>Para generar notificaciones, FireWorks permite que los <code>.callout</code> cambien su comportamiento
+			agregandole la clase <code>.card</code> y generando así tarjetas de notificación:</p>
+		<div class="callout margin-y">
+			<div class="padding-m">
+				<div class="container">
+					<div class="col m-12 padding-m">
+						<div class="card callout">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="card callout recommend">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="card callout info">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="card callout success">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="card callout alert">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="card callout warning">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+					<div class="col m-4 padding-m">
+						<div class="card callout error">
+							<span data-close></span>
+							<div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="highlight code no-radius">&lt;div class="container"&gt;
+				&lt;div class="col m-12 padding-m"&gt;
+				&lt;div class="card callout"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="card callout recommend"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="card callout info"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="card callout success"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="card callout alert"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="card callout warning"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="col m-4 padding-m"&gt;
+				&lt;div class="card callout error"&gt;
+				&lt;span data-close&gt;&lt;/span&gt;
+				&lt;div class="body"&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;/div&gt;</div>
+		</div>
+	</section>
+	<section>
+		<h2>Filtro de listas</h2>
+		<p>Busque alguna ciudad:&nbsp;&nbsp;<input oninput="f.filter('#id01', this.value)" placeholder="buscar"
+				type="search"></p>
+		<ul id="id01">
+			<li>Tokio.</li>
+			<li>Nueva York.</li>
+			<li>Los Ángeles.</li>
+			<li>Seúl.</li>
+			<li>Londres.</li>
+			<li>París.</li>
+			<li>Osaka.</li>
+			<li>Shanghái.</li>
+			<li>Chicago.</li>
+			<li>Moscú.</li>
+			<li>Pekín.</li>
+			<li>Colonia.</li>
+			<li>Houston.</li>
+			<li>Washinton DC.</li>
+			<li>São Paulo.</li>
+			<li>Hong Kong.</li>
+			<li>Dallas.</li>
+			<li>Ciudad de México.</li>
+			<li>Cantón.</li>
+			<li>Tianjin.</li>
+		</ul>
+	</section>
+
+	<footer class="bg-gray-darker padding-top-m no-margin" id="footer">
+		<ol class="no-list-style container-flex">
+			<li class="row-content text-center"><a href="https://twitter.com/ish-milan" class="icon-twitter">
+					@ish-milan</a></li>
+			<li class="row-content text-center"><a href="https://github.com/ishmilan" class="icon-github"> ishmilan</a>
+			</li>
+			<li class="row-content text-center"><a href="https://telegram.me/ishmilan" class="icon-telegram">
+					ishmilan</a></li>
+		</ol>
+	</footer>
+</body>
+
+</html>

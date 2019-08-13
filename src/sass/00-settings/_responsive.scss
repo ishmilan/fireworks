@@ -1,0 +1,25 @@
+///
+/// @name Responsive settings for SASS Project
+///
+/// @group Settings
+/// @access public
+/// @author ishmilan
+/// 
+/// Pre-setted variables for responsive utilities
+///
+
+$mobile-first: false !default;
+
+$breakpoint-xs: 480 !default;
+$breakpoint-sm: 768 !default;
+$breakpoint-md: 992 !default;
+$breakpoint-lg: 1024 !default;
+$breakpoint-xl: 1200 !default;
+
+$breakpoints: (
+    xs: $breakpoint-xs,
+    sm: $breakpoint-sm,
+    md: $breakpoint-md,
+    lg: $breakpoint-lg,
+    xl: $breakpoint-xl,
+);

@@ -1,0 +1,69 @@
+/********************
+ *		FONTS 		*
+ ********************/
+/*		FiraSans & FiraMono		*/
+//normal
+@font-face {
+    font-family: 'FiraSans';
+    src: url('/assets/fonts/FiraSans/FiraSans-Regular.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//italic
+@font-face {
+    font-family: 'FiraSans';
+    src: url('/assets/fonts/FiraSans/FiraSans-Italic.woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+//bold
+@font-face {
+    font-family: 'FiraSans';
+    src: url('/assets/fonts/FiraSans/FiraSans-Bold.woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+//bold&italic
+@font-face {
+    font-family: 'FiraSans';
+    src: url('/assets/fonts/FiraSans/FiraSans-Bold-Italic.woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+$sans:'FiraSans',
+Helvetica,
+sans-serif;
+
+//mono&normal
+@font-face {
+    font-family: 'FiraMono';
+    src: url('/assets/fonts/FiraMono/FiraMono-Regular.otf');
+    font-weight: normal;
+}
+
+//mono&bold
+@font-face {
+    font-family: 'FiraMono';
+    src: url('/assets/fonts/FiraMono/FiraMono-Bold.otf');
+    font-weight: bold;
+}
+
+$mono:'FiraMono',
+Courier,
+monospace;
+
+.font-fira-sans {
+    font-family: $sans;
+}
+
+.font-fira-code {
+    font-family: $mono;
+}
+
+// @import "fonts/fonts_ubuntu";
+// @import "fonts/fonts_aleo";
+// @import "fonts/fonts_raleway";
