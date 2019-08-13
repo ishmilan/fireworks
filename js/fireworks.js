@@ -151,8 +151,8 @@ var f = {};
 	};
 	/*FUNCTION FOR SELECT ELEMENTS*/
 	f.select = function(element){
-		if(!element) return false;
-		if(typeof element == 'object'){
+		if(!element) return null;
+		if(element !== null && typeof element === 'object'){
 			var l = element.length;
 			if(l) return element;
 			else return [element];
